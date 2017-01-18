@@ -1,0 +1,23 @@
+PODS:
+  - Realm (2.2.0):
+    - Realm/Headers (= 2.2.0)
+  - Realm/Headers (2.2.0)
+  - RealmSwift (2.2.0):
+    - Realm (= 2.2.0)
+  - SVProgressHUD (2.1.2)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Realm: d95b8fb34c83f1e764b66d319277a62c2b6e4bf5
+  RealmSwift: a4fa52d06e946a32ec746b3388374f742e6b8731
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 6614b3fb4aad4a9ee6b7b1506e2d77ef9c528af2
+
+COCOAPODS: 1.1.1
