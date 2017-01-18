@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85450F1E2FD60D004964F5 /* AppDelegate.swift */; };
-		9F8545121E2FD60D004964F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545111E2FD60D004964F5 /* ViewController.swift */; };
 		9F8545151E2FD60D004964F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8545131E2FD60D004964F5 /* Main.storyboard */; };
 		9F8545171E2FD60D004964F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8545161E2FD60D004964F5 /* Assets.xcassets */; };
 		9F85451A1E2FD60D004964F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8545181E2FD60D004964F5 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 /* Begin PBXFileReference section */
 		9F85450C1E2FD60D004964F5 /* CWWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F85450F1E2FD60D004964F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F8545111E2FD60D004964F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9F8545141E2FD60D004964F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F8545161E2FD60D004964F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F8545191E2FD60D004964F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,14 +93,13 @@
 		9F8545221E2FD77A004964F5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9F85450F1E2FD60D004964F5 /* AppDelegate.swift */,
+				9F8545131E2FD60D004964F5 /* Main.storyboard */,
 				9F8545241E2FD7BC004964F5 /* Common */,
 				9F8545251E2FD7CE004964F5 /* Model */,
 				9F8545261E2FD7E3004964F5 /* Controllers */,
 				9F8545231E2FD7B4004964F5 /* ViewControllers */,
 				9F8545271E2FD7F3004964F5 /* Views */,
-				9F85450F1E2FD60D004964F5 /* AppDelegate.swift */,
-				9F8545111E2FD60D004964F5 /* ViewController.swift */,
-				9F8545131E2FD60D004964F5 /* Main.storyboard */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 				9F8545291E2FD82A004964F5 /* SelectLanguageViewController.swift in Sources */,
 				9F8545311E2FD868004964F5 /* MenuViewController.swift in Sources */,
 				9F85453F1E2FD8E4004964F5 /* ObjectsListViewController.swift in Sources */,
-				9F8545121E2FD60D004964F5 /* ViewController.swift in Sources */,
 				9F8545411E2FD8EE004964F5 /* ObjectPreviewViewController.swift in Sources */,
 				9F85452D1E2FD846004964F5 /* NewsPreviewViewController.swift in Sources */,
 				9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */,

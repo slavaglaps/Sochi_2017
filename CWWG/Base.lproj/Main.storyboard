@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="adm-lC-rNU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Новости-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NewsFeedViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +21,301 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Новости" id="VlQ-eS-1vU"/>
+                    <connections>
+                        <segue destination="WGK-1l-DiA" kind="show" identifier="Preview" id="sy5-dA-RnK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="847" y="-645"/>
+        </scene>
+        <!--<Не должно быть>-->
+        <scene sceneID="0Sc-in-iqt">
+            <objects>
+                <viewController id="WGK-1l-DiA" customClass="NewsPreviewViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ut2-oW-KHI"/>
+                        <viewControllerLayoutGuide type="bottom" id="kGy-fl-Tie"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TUo-ja-Za7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="&lt;Не должно быть&gt;" id="bfD-lg-56B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eli-Ic-WwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-645"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8YU-gm-Yda">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jM9-sa-2VN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TcZ-17-mzs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXl-QE-Gcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-644.52773613193403"/>
+        </scene>
+        <!--Select Language View Controller-->
+        <scene sceneID="k7T-v5-yfC">
+            <objects>
+                <viewController id="L0W-BE-c1z" customClass="SelectLanguageViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C4a-fH-OWG"/>
+                        <viewControllerLayoutGuide type="bottom" id="e2d-Og-6EU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nJL-0c-8x6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwO-vW-a2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="118"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="qBt-qX-IOY">
+            <objects>
+                <viewController id="VrM-sJ-i11" customClass="MenuViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lEI-Pa-82q"/>
+                        <viewControllerLayoutGuide type="bottom" id="de6-gl-NvB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gYx-Pv-Ih0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYV-b9-g0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="119"/>
+        </scene>
+        <!--Результаты-->
+        <scene sceneID="Dh5-5m-m9c">
+            <objects>
+                <viewController id="Tox-Gj-HzV" customClass="ResultsSearchViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pDt-Hd-8B4"/>
+                        <viewControllerLayoutGuide type="bottom" id="3nY-TL-UV6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IfH-dm-uTD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Результаты" id="T2H-wC-W4v"/>
+                    <connections>
+                        <segue destination="mL5-2o-CjK" kind="show" identifier="Results" id="dRt-b5-SFd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggr-tk-VeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="116"/>
+        </scene>
+        <!--<Название спорта>-->
+        <scene sceneID="86J-dK-5l1">
+            <objects>
+                <viewController id="mL5-2o-CjK" customClass="ResultsViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vNT-U6-uJp"/>
+                        <viewControllerLayoutGuide type="bottom" id="INr-eD-kcP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rK1-sD-eOS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="&lt;Название спорта&gt;" id="0o1-1V-KMH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xe-o6-YpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2818" y="118"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="dx2-Dz-jEu">
+            <objects>
+                <viewController id="mKw-HA-Sc4" customClass="ScheduleViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hD0-F9-kHX"/>
+                        <viewControllerLayoutGuide type="bottom" id="uAc-Hj-iOS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gwl-Us-cgs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Расписание" id="dMC-eo-cYf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDz-ZU-6rJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="833"/>
+        </scene>
+        <!--Объекты-->
+        <scene sceneID="tU9-kM-Ndc">
+            <objects>
+                <viewController id="2A1-pq-8ld" customClass="ObjectsListViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ie-Vl-H8B"/>
+                        <viewControllerLayoutGuide type="bottom" id="MrG-bP-Jnp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nkl-8B-kPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Объекты" id="Hje-pF-h0y"/>
+                    <connections>
+                        <segue destination="CZp-Bm-c6u" kind="show" identifier="Object" id="cVU-1X-qq9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-47-U14" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="1511"/>
+        </scene>
+        <!--<Не должно быть>-->
+        <scene sceneID="mCb-jd-7TL">
+            <objects>
+                <viewController id="CZp-Bm-c6u" customClass="ObjectPreviewViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YcP-qM-QCM"/>
+                        <viewControllerLayoutGuide type="bottom" id="P8q-L1-svN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CJm-I3-F20">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="&lt;Не должно быть&gt;" id="D03-Ly-FgD"/>
+                    <connections>
+                        <segue destination="Q5s-e0-3oj" kind="show" identifier="Map" id="ZT4-JP-6eU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghO-ex-yav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762" y="1511"/>
+        </scene>
+        <!--Карта-->
+        <scene sceneID="jG3-gC-TRy">
+            <objects>
+                <viewController id="Q5s-e0-3oj" customClass="MapViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nyb-93-9eQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rtp-tf-x1P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ved-mw-Cww">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Карта" id="C08-Kf-yQd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asq-sS-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3521" y="1511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kVL-tX-uhr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddi-5R-46m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddk-Er-y8L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tox-Gj-HzV" kind="relationship" relationship="rootViewController" id="pqM-Q3-zfR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8s-2S-Nm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="115.59220389805098"/>
+        </scene>
+        <!--Трансляция-->
+        <scene sceneID="gtl-K1-Ufv">
+            <objects>
+                <viewController id="7pm-9b-bm2" customClass="BroadcastViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zbv-X1-KBr"/>
+                        <viewControllerLayoutGuide type="bottom" id="chE-7H-gfD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="luf-d3-19U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Трансляция" id="qsk-mz-eCD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dra-Hl-uzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TZj-Vt-QZo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ECR-kh-P84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mKw-HA-Sc4" kind="relationship" relationship="rootViewController" id="5bR-fQ-OIb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GEO-ZK-1Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MTv-IC-a7J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2A1-pq-8ld" kind="relationship" relationship="rootViewController" id="0ZC-cw-PnC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YuV-TC-eRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="1511"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eGH-E3-kp4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCE-TU-jAm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7pm-9b-bm2" kind="relationship" relationship="rootViewController" id="AD7-KY-tAN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIS-ua-f0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-778" y="833"/>
         </scene>
     </scenes>
 </document>
