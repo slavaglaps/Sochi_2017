@@ -1,23 +1,29 @@
 PODS:
-  - Realm (2.2.0):
-    - Realm/Headers (= 2.2.0)
-  - Realm/Headers (2.2.0)
-  - RealmSwift (2.2.0):
-    - Realm (= 2.2.0)
+  - Alamofire (4.3.0)
+  - Nuke (4.1.2)
+  - Realm (2.3.0):
+    - Realm/Headers (= 2.3.0)
+  - Realm/Headers (2.3.0)
+  - RealmSwift (2.3.0):
+    - Realm (= 2.3.0)
   - SVProgressHUD (2.1.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire
+  - Nuke
   - RealmSwift
   - SVProgressHUD
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Realm: d95b8fb34c83f1e764b66d319277a62c2b6e4bf5
-  RealmSwift: a4fa52d06e946a32ec746b3388374f742e6b8731
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
+  Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
+  RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6614b3fb4aad4a9ee6b7b1506e2d77ef9c528af2
+PODFILE CHECKSUM: 20f043d70be5c69b5a2f4cc5551ae69354f1c45a
 
 COCOAPODS: 1.1.1

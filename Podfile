@@ -9,5 +9,7 @@ target 'CWWG' do
   pod 'RealmSwift'
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
+  pod 'Alamofire'
+  pod 'Nuke'
 
 end

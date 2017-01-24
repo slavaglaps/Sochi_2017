@@ -14,20 +14,11 @@ class NewsFeedViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  let tableViewTopView = FashionLineView()
-  let tableViewBottomView = FashionLineView()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableViewTopView.tintColor = UIColor.lightGray
-    tableViewBottomView.tintColor = UIColor.lightGray
-    
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
-    
-        tableView.addSubview(tableViewTopView)
-    tableView.addSubview(tableViewBottomView)
     
     news = NewsRuntimeEntity.testData()
     // Do any additional setup after loading the view.
@@ -35,9 +26,6 @@ class NewsFeedViewController: UIViewController {
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    
-    tableViewTopView.frame = CGRect(x: 0, y: -self.view.frame.height, width: 57, height: self.view.frame.height)
-    tableViewBottomView.frame = CGRect(x: 0, y: self.view.frame.height, width: 57, height: self.view.frame.height)
   }
   
 }
