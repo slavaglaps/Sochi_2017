@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  CWWG
+
+  Created by Alex Zimin on 24/01/2017
+  Copyright © 2016 CWWG Team. All rights reserved.
+*/
+
+// 1.0
+"localization-tag" = "ru";
