@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class NewsFeedViewController: UIViewController {
   
@@ -48,6 +49,8 @@ extension NewsFeedViewController: UITableViewDataSource {
       cell.newsDescriptionLabel.text = currentNews.name
       cell.newsTimeLabel.text = currentNews.timeString
       
+      Nuke.loadImage(with: URL(string: currentNews.imageURL!)!, into: cell.newsImageView)
+      
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedPlainTableViewCell
@@ -77,6 +80,12 @@ extension NewsFeedViewController: UITableViewDataSource {
 }
 
 extension NewsFeedViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if let cell = cell as? NewsFeedImageTableViewCell {
+      Nuke.cancelRequest(for: cell.newsImageView)
+    }
+  }
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     self.performSegue(withIdentifier: "Preview", sender: indexPath)

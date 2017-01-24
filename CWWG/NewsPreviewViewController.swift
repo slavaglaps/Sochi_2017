@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class NewsPreviewViewController: UIViewController {
   
@@ -37,7 +38,7 @@ extension NewsPreviewViewController: UITableViewDataSource {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedImageTableViewCell
       
       if currentNews.isWithImage {
-        // FIXME: - Implement
+        Nuke.loadImage(with: URL(string: currentNews.imageURL!)!, into: cell.newsImageView)
       } else {
         cell.gradientImageView.image = nil
         cell.gradientImageView.backgroundColor = AppColor.emptyHeaderBlue
@@ -53,8 +54,4 @@ extension NewsPreviewViewController: UITableViewDataSource {
       return cell
     }
   }
-}
-
-extension NewsPreviewViewController: UITableViewDelegate {
-  
 }

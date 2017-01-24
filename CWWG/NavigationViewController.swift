@@ -22,19 +22,15 @@ class NavigationViewController: UINavigationController {
     navigationBar.isTranslucent = false
     
     shadowImageView = UIImageView(image: UIImage(named: "img_navigation_bar"))
-    
     view.insertSubview(shadowImageView, belowSubview: navigationBar)
-//    
-//    shadowImageView.leadingAnchor.constraint(equalTo: navigationBar.leadingAnchor).isActive = true
-//    shadowImageView.trailingAnchor.constraint(equalTo: navigationBar.trailingAnchor).isActive = true
-// //   shadowImageView.topAnchor.constraint(equalTo: navigationBar.topAnchor).isActive = true
-//    shadowImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    shadowImageView.frame = CGRect(x: 0, y: navigationBar.frame.origin.y, width: navigationBar.frame.width, height: CGFloat.greatestFiniteMagnitude)
-    shadowImageView.sizeToFit()
+    
+    let image = UIImage(named: "img_navigation_bar")!
+    let height = image.size.height * navigationBar.frame.width / image.size.width
+    shadowImageView.frame = CGRect(x: 0, y: navigationBar.frame.origin.y, width: navigationBar.frame.width, height: height)
   }
   
   override func pushViewController(_ viewController: UIViewController, animated: Bool) {
