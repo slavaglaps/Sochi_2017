@@ -12,6 +12,8 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
+var globalLogs: [String] = []
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,11 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if #available(iOS 10.0, *) {
       UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) {
         (granted, error) in
+        globalLogs.append("\(granted, error)")
       }
       application.registerForRemoteNotifications()
     } else {
-      application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
-      application.registerForRemoteNotifications()
+      UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+      UIApplication.shared.registerForRemoteNotifications()
     }
     
     return true
@@ -42,11 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
     // Print the error to console (you should alert the user that registration failed)
+    globalLogs.append("APNs registration failed: \(error)")
     print("APNs registration failed: \(error)")
   }
   
   func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
     // Print notification payload data
+    globalLogs.append("Push notification received: \(data)")
     print("Push notification received: \(data)")
   }
 

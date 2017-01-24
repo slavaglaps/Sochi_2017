@@ -10,9 +10,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
   
+  @IBOutlet weak var logsLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    logsLabel.text = globalLogs.joined(separator: "\n")
     // Do any additional setup after loading the view.
   }
   
