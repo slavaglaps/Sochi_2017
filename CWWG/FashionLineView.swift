@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class FashionLineView: UIView {
   
-  let circleRadius: CGFloat = 5
+  let circleRadius: CGFloat = 3.5
   let circleMargin: CGFloat = 2
   
   @IBInspectable

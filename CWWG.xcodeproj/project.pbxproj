@@ -52,6 +52,11 @@
 		9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24C1E37870500669B68 /* Lato-Thin.ttf */; };
 		9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */; };
 		9FFFA2611E3787CE00669B68 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2601E3787CE00669B68 /* AppFont.swift */; };
+		9FFFA2631E378D9B00669B68 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2621E378D9B00669B68 /* AppearanceController.swift */; };
+		9FFFA2651E378EBE00669B68 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2641E378EBE00669B68 /* AppColor.swift */; };
+		9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2681E37902200669B68 /* NavigationViewController.swift */; };
+		9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA26A1E37917000669B68 /* Image+Extensions.swift */; };
+		9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,11 @@
 		9FFFA24C1E37870500669B68 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 		9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		9FFFA2601E3787CE00669B68 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		9FFFA2621E378D9B00669B68 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
+		9FFFA2641E378EBE00669B68 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		9FFFA2681E37902200669B68 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		9FFFA26A1E37917000669B68 /* Image+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedImageTableViewCell.swift; sourceTree = "<group>"; };
 		DDAF5E144A82E598DD74817F /* Pods-CWWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.release.xcconfig"; sourceTree = "<group>"; };
 		DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CWWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +145,7 @@
 				9FD765DC1E31723300E1375F /* NibLoadable.swift */,
 				9FD765DD1E31723300E1375F /* Reusable.swift */,
 				9FD765D91E31721700E1375F /* UITableView+Reusable.swift */,
+				9FFFA2661E378EC000669B68 /* Appearance */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 		9F8545231E2FD7B4004964F5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FFFA2671E37900F00669B68 /* NavigationController */,
 				9F85453D1E2FD8D0004964F5 /* Objects */,
 				9F85453A1E2FD8B0004964F5 /* Broadcast */,
 				9F8545351E2FD885004964F5 /* Results */,
@@ -227,6 +239,7 @@
 			children = (
 				9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */,
 				9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */,
+				9FFFA2621E378D9B00669B68 /* AppearanceController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD765D71E3171B100E1375F /* NewsFeedPlainTableViewCell.swift */,
+				9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -320,7 +334,7 @@
 		9FD765DB1E31721900E1375F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9FFFA2601E3787CE00669B68 /* AppFont.swift */,
+				9FFFA26A1E37917000669B68 /* Image+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +378,23 @@
 				9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */,
 			);
 			name = CustomFont;
+			sourceTree = "<group>";
+		};
+		9FFFA2661E378EC000669B68 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA2601E3787CE00669B68 /* AppFont.swift */,
+				9FFFA2641E378EBE00669B68 /* AppColor.swift */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
+		9FFFA2671E37900F00669B68 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA2681E37902200669B68 /* NavigationViewController.swift */,
+			);
+			name = NavigationController;
 			sourceTree = "<group>";
 		};
 		D96E0BAE02BA6FE2881B937B /* Pods */ = {
@@ -523,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8545291E2FD82A004964F5 /* SelectLanguageViewController.swift in Sources */,
+				9FFFA2631E378D9B00669B68 /* AppearanceController.swift in Sources */,
 				9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */,
 				9FFFA2611E3787CE00669B68 /* AppFont.swift in Sources */,
 				9F8545311E2FD868004964F5 /* MenuViewController.swift in Sources */,
@@ -530,18 +562,22 @@
 				9F8545411E2FD8EE004964F5 /* ObjectPreviewViewController.swift in Sources */,
 				9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */,
 				9F85452D1E2FD846004964F5 /* NewsPreviewViewController.swift in Sources */,
+				9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */,
 				9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */,
 				9F8545391E2FD8A7004964F5 /* ResultsSearchViewController.swift in Sources */,
 				9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */,
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
+				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */,
 				9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */,
+				9FFFA2651E378EBE00669B68 /* AppColor.swift in Sources */,
 				9FD765DF1E31723300E1375F /* Reusable.swift in Sources */,
 				9F8545341E2FD87D004964F5 /* ScheduleViewController.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
+				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,
 				9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */,
@@ -665,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3278980790DDB7AE2D20D8E1 /* Pods-CWWG.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEVELOPMENT_TEAM = SGAF76T5DB;
@@ -681,6 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDAF5E144A82E598DD74817F /* Pods-CWWG.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEVELOPMENT_TEAM = SGAF76T5DB;

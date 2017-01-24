@@ -12,7 +12,7 @@
         <!--Новости-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewsFeedViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="News" id="BYZ-38-t0r" customClass="NewsFeedViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,15 +25,76 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsFeedPlainTableViewCell" rowHeight="72" id="lNS-6N-pio" customClass="NewsFeedPlainTableViewCell" customModule="CWWG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsFeedImageTableViewCell" rowHeight="181" id="fUy-ie-IAL" customClass="NewsFeedImageTableViewCell" customModule="CWWG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="181"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUy-ie-IAL" id="Bs4-Mc-pYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tempalte" translatesAutoresizingMaskIntoConstraints="NO" id="FkC-Yn-k4t">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_news_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="TbT-v7-aFd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="181" id="IEh-ir-7Sb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="30 минут назад" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-Tx-GA2">
+                                                    <rect key="frame" x="42" y="147" width="321" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icon_clock" translatesAutoresizingMaskIntoConstraints="NO" id="JNP-az-qsH">
+                                                    <rect key="frame" x="18" y="147" width="14" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="IAD-dc-y9W"/>
+                                                        <constraint firstAttribute="width" constant="14" id="P2t-i5-lT5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-on-j9V">
+                                                    <rect key="frame" x="18" y="112" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hVx-Tx-GA2" secondAttribute="bottom" constant="20" id="7AO-QS-uey"/>
+                                                <constraint firstAttribute="trailing" secondItem="bi4-on-j9V" secondAttribute="trailing" constant="12" id="8sA-1M-lhH"/>
+                                                <constraint firstItem="bi4-on-j9V" firstAttribute="bottom" secondItem="Bs4-Mc-pYe" secondAttribute="bottom" constant="-48" id="HC8-je-mAl"/>
+                                                <constraint firstItem="bi4-on-j9V" firstAttribute="leading" secondItem="Bs4-Mc-pYe" secondAttribute="leadingMargin" constant="10" id="NnT-sv-f8o"/>
+                                                <constraint firstItem="FkC-Yn-k4t" firstAttribute="bottom" secondItem="TbT-v7-aFd" secondAttribute="bottom" id="NtE-De-bvP"/>
+                                                <constraint firstItem="FkC-Yn-k4t" firstAttribute="top" secondItem="TbT-v7-aFd" secondAttribute="top" id="QmQ-Lp-gBP"/>
+                                                <constraint firstAttribute="trailing" secondItem="TbT-v7-aFd" secondAttribute="trailing" id="SBC-RL-Nb1"/>
+                                                <constraint firstItem="JNP-az-qsH" firstAttribute="centerY" secondItem="hVx-Tx-GA2" secondAttribute="centerY" id="Swg-my-yls"/>
+                                                <constraint firstItem="TbT-v7-aFd" firstAttribute="leading" secondItem="Bs4-Mc-pYe" secondAttribute="leading" id="TFA-HO-Hhv"/>
+                                                <constraint firstItem="TbT-v7-aFd" firstAttribute="top" secondItem="Bs4-Mc-pYe" secondAttribute="top" id="UU1-Vh-z4i"/>
+                                                <constraint firstAttribute="bottom" secondItem="TbT-v7-aFd" secondAttribute="bottom" id="aIi-SA-oDL"/>
+                                                <constraint firstItem="hVx-Tx-GA2" firstAttribute="leading" secondItem="JNP-az-qsH" secondAttribute="trailing" constant="10" id="gpO-fG-DLb"/>
+                                                <constraint firstItem="hVx-Tx-GA2" firstAttribute="trailing" secondItem="bi4-on-j9V" secondAttribute="trailing" id="p97-hz-zy6"/>
+                                                <constraint firstItem="JNP-az-qsH" firstAttribute="leading" secondItem="bi4-on-j9V" secondAttribute="leading" id="r52-L4-xhW"/>
+                                                <constraint firstItem="FkC-Yn-k4t" firstAttribute="trailing" secondItem="TbT-v7-aFd" secondAttribute="trailing" id="vQR-pR-z7H"/>
+                                                <constraint firstItem="FkC-Yn-k4t" firstAttribute="leading" secondItem="TbT-v7-aFd" secondAttribute="leading" id="xs6-Da-mxv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDescriptionLabel" destination="bi4-on-j9V" id="iJL-ld-wlZ"/>
+                                            <outlet property="newsImageView" destination="FkC-Yn-k4t" id="K5f-ra-saL"/>
+                                            <outlet property="newsTimeLabel" destination="hVx-Tx-GA2" id="dfN-Fr-jod"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsFeedPlainTableViewCell" rowHeight="75" id="lNS-6N-pio" customClass="NewsFeedPlainTableViewCell" customModule="CWWG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lNS-6N-pio" id="d0y-Jo-ly8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORr-mc-Dr8" customClass="FashionLineView" customModule="CWWG" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="72"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="57" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -44,46 +105,71 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkf-QI-Ga7">
-                                                    <rect key="frame" x="65" y="8" width="298" height="19"/>
+                                                    <rect key="frame" x="65" y="14" width="298" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="30 минут назад" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-ac-Ql1">
-                                                    <rect key="frame" x="65" y="35" width="298" height="21"/>
+                                                    <rect key="frame" x="65" y="38" width="298" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVK-mW-FD7">
-                                                    <rect key="frame" x="65" y="71" width="310" height="1"/>
+                                                    <rect key="frame" x="65" y="74" width="310" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="obX-8j-Gl3"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuB-ZY-iCH">
+                                                    <rect key="frame" x="0.0" y="74" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="CIH-zb-uhK"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5P-ep-Drf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="JpW-qL-Ezf"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vkf-QI-Ga7" firstAttribute="leading" secondItem="ORr-mc-Dr8" secondAttribute="trailing" constant="8" id="0EA-W6-2KC"/>
                                                 <constraint firstAttribute="trailing" secondItem="pVK-mW-FD7" secondAttribute="trailing" id="1cv-sr-H6b"/>
+                                                <constraint firstAttribute="bottom" secondItem="CuB-ZY-iCH" secondAttribute="bottom" id="7nk-kl-gWE"/>
                                                 <constraint firstAttribute="bottom" secondItem="ORr-mc-Dr8" secondAttribute="bottom" id="8Oh-Uf-Rjr"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="leading" secondItem="vkf-QI-Ga7" secondAttribute="leading" id="C3v-Wa-dZo"/>
-                                                <constraint firstItem="I4O-ac-Ql1" firstAttribute="top" secondItem="vkf-QI-Ga7" secondAttribute="bottom" constant="8" id="Egm-Z0-exn"/>
+                                                <constraint firstItem="I4O-ac-Ql1" firstAttribute="top" secondItem="vkf-QI-Ga7" secondAttribute="bottom" constant="13" id="Egm-Z0-exn"/>
                                                 <constraint firstItem="ORr-mc-Dr8" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="FaC-ao-8Pp"/>
                                                 <constraint firstItem="pVK-mW-FD7" firstAttribute="leading" secondItem="vkf-QI-Ga7" secondAttribute="leading" id="Fxe-ux-C2e"/>
                                                 <constraint firstItem="ORr-mc-Dr8" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" id="KEE-wm-lYE"/>
                                                 <constraint firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" constant="12" id="M9E-CC-HAO"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" id="PTH-es-fAl"/>
+                                                <constraint firstAttribute="trailing" secondItem="W5P-ep-Drf" secondAttribute="trailing" id="Sdc-MD-rk0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="I4O-ac-Ql1" secondAttribute="bottom" constant="8" id="ZDG-2r-Smg"/>
+                                                <constraint firstItem="W5P-ep-Drf" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" id="fHq-vm-nk9"/>
+                                                <constraint firstItem="CuB-ZY-iCH" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="o5f-GR-fiy"/>
+                                                <constraint firstItem="W5P-ep-Drf" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="odN-4d-rTT"/>
                                                 <constraint firstAttribute="bottom" secondItem="pVK-mW-FD7" secondAttribute="bottom" id="sPB-nz-vZy"/>
-                                                <constraint firstItem="vkf-QI-Ga7" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" constant="8" id="yqa-Bs-H2s"/>
+                                                <constraint firstAttribute="trailing" secondItem="CuB-ZY-iCH" secondAttribute="trailing" id="xhd-QL-aEi"/>
+                                                <constraint firstItem="vkf-QI-Ga7" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" constant="14" id="yqa-Bs-H2s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bottomSeparatorView" destination="CuB-ZY-iCH" id="scG-So-x6W"/>
+                                            <outlet property="fashionLineView" destination="ORr-mc-Dr8" id="n2t-L2-v9G"/>
                                             <outlet property="newsDescriptionLabel" destination="vkf-QI-Ga7" id="mur-1u-GcX"/>
                                             <outlet property="newsTimeLabel" destination="I4O-ac-Ql1" id="pnF-Ww-Zv4"/>
                                             <outlet property="separatorView" destination="pVK-mW-FD7" id="miO-zZ-rKP"/>
-                                            <outlet property="separatorViewHeightConstraint" destination="obX-8j-Gl3" id="ggm-1j-3C7"/>
+                                            <outlet property="topSeparatorView" destination="W5P-ep-Drf" id="i6n-yz-nD5"/>
+                                            <outletCollection property="separatorsViewHeightConstraints" destination="JpW-qL-Ezf" collectionClass="NSMutableArray" id="I1o-pJ-OOQ"/>
+                                            <outletCollection property="separatorsViewHeightConstraints" destination="CIH-zb-uhK" collectionClass="NSMutableArray" id="hfA-sj-8dn"/>
+                                            <outletCollection property="separatorsViewHeightConstraints" destination="obX-8j-Gl3" collectionClass="NSMutableArray" id="VYd-jB-fev"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845.60000000000002" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="800.79999999999995" y="-645.42728635682158"/>
         </scene>
         <!--<Не должно быть>-->
         <scene sceneID="0Sc-in-iqt">
@@ -128,12 +214,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eli-Ic-WwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="-645"/>
+            <point key="canvasLocation" x="1548" y="-645"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="8YU-gm-Yda">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jM9-sa-2VN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -146,12 +232,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXl-QE-Gcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-644.52773613193403"/>
+            <point key="canvasLocation" x="17" y="-645"/>
         </scene>
         <!--Select Language View Controller-->
         <scene sceneID="k7T-v5-yfC">
             <objects>
-                <viewController id="L0W-BE-c1z" customClass="SelectLanguageViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectLanguage" id="L0W-BE-c1z" customClass="SelectLanguageViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C4a-fH-OWG"/>
                         <viewControllerLayoutGuide type="bottom" id="e2d-Og-6EU"/>
@@ -180,7 +266,7 @@
         <!--Menu View Controller-->
         <scene sceneID="qBt-qX-IOY">
             <objects>
-                <viewController id="VrM-sJ-i11" customClass="MenuViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" id="VrM-sJ-i11" customClass="MenuViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lEI-Pa-82q"/>
                         <viewControllerLayoutGuide type="bottom" id="de6-gl-NvB"/>
@@ -198,7 +284,7 @@
         <!--Результаты-->
         <scene sceneID="Dh5-5m-m9c">
             <objects>
-                <viewController id="Tox-Gj-HzV" customClass="ResultsSearchViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Results" id="Tox-Gj-HzV" customClass="ResultsSearchViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pDt-Hd-8B4"/>
                         <viewControllerLayoutGuide type="bottom" id="3nY-TL-UV6"/>
@@ -239,7 +325,7 @@
         <!--Расписание-->
         <scene sceneID="dx2-Dz-jEu">
             <objects>
-                <viewController id="mKw-HA-Sc4" customClass="ScheduleViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Schedule" id="mKw-HA-Sc4" customClass="ScheduleViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hD0-F9-kHX"/>
                         <viewControllerLayoutGuide type="bottom" id="uAc-Hj-iOS"/>
@@ -258,7 +344,7 @@
         <!--Объекты-->
         <scene sceneID="tU9-kM-Ndc">
             <objects>
-                <viewController id="2A1-pq-8ld" customClass="ObjectsListViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Objects" id="2A1-pq-8ld" customClass="ObjectsListViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Ie-Vl-H8B"/>
                         <viewControllerLayoutGuide type="bottom" id="MrG-bP-Jnp"/>
@@ -275,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-47-U14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2009" y="1511"/>
+            <point key="canvasLocation" x="2020" y="1606"/>
         </scene>
         <!--<Не должно быть>-->
         <scene sceneID="mCb-jd-7TL">
@@ -297,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghO-ex-yav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762" y="1511"/>
+            <point key="canvasLocation" x="2762" y="1606"/>
         </scene>
         <!--Карта-->
         <scene sceneID="jG3-gC-TRy">
@@ -316,12 +402,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asq-sS-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521" y="1511"/>
+            <point key="canvasLocation" x="3526" y="1606"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="kVL-tX-uhr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddi-5R-46m" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ResultsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ddi-5R-46m" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ddk-Er-y8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -339,7 +425,7 @@
         <!--Трансляция-->
         <scene sceneID="gtl-K1-Ufv">
             <objects>
-                <viewController id="7pm-9b-bm2" customClass="BroadcastViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Screencast" id="7pm-9b-bm2" customClass="BroadcastViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zbv-X1-KBr"/>
                         <viewControllerLayoutGuide type="bottom" id="chE-7H-gfD"/>
@@ -355,10 +441,10 @@
             </objects>
             <point key="canvasLocation" x="118" y="833"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="TZj-Vt-QZo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ScheduleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ECR-kh-P84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -373,10 +459,10 @@
             </objects>
             <point key="canvasLocation" x="1204" y="833"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="MTv-IC-a7J">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ObjectsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -389,12 +475,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuV-TC-eRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="1511"/>
+            <point key="canvasLocation" x="1204" y="1606"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="eGH-E3-kp4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ScreencastNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lCE-TU-jAm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -411,6 +497,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="img_icon_clock" width="14" height="14"/>
         <image name="img_language_select_background" width="375" height="667"/>
+        <image name="img_news_gradient" width="375" height="181"/>
+        <image name="img_tempalte" width="375" height="181"/>
     </resources>
 </document>

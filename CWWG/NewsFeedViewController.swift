@@ -38,12 +38,33 @@ extension NewsFeedViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedPlainTableViewCell
-    
     let currentNews = news[indexPath.row]
-    cell.newsDescriptionLabel.text = currentNews.name
-    cell.newsTimeLabel.text = currentNews.timeString
+    let isImage = currentNews.imageURL != nil
     
-    return cell
+    if isImage {
+      let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedImageTableViewCell
+      
+      let currentNews = news[indexPath.row]
+      cell.newsDescriptionLabel.text = currentNews.name
+      cell.newsTimeLabel.text = currentNews.timeString
+      
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedPlainTableViewCell
+      
+      let currentNews = news[indexPath.row]
+      cell.newsDescriptionLabel.text = currentNews.name
+      cell.newsTimeLabel.text = currentNews.timeString
+      
+      if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 { // If last
+        cell.position = .bottom
+      } else if indexPath.row == 0 { // If first
+        cell.position = .top
+      } else {
+        cell.position = .normal
+      }
+      
+      return cell
+    }
   }
 }
