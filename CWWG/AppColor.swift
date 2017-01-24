@@ -30,6 +30,10 @@ struct AppColor {
     return UIColor.black.withAlphaComponent(0.1)
   }
   
+  static var emptyHeaderBlue: UIColor {
+    return UIColor(red: 30.0 / 255.0, green: 95.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0)
+  }
+  
   static var titleColor: UIColor {
     return UIColor(red: 62.0 / 255.0, green: 81.0 / 255.0, blue: 97.0 / 255.0, alpha: 1.0)
   }

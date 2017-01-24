@@ -17,18 +17,19 @@ class NewsFeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
-    
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
     
     news = NewsRuntimeEntity.testData()
-    // Do any additional setup after loading the view.
+    
+    RouterController.shared.baseNavigationController = self.navigationController
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+  @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
+    let menuViewController = ViewControllersFactory.menuViewController
+    self.present(menuViewController, animated: true, completion: nil)
   }
+  
   
 }
 
@@ -39,9 +40,8 @@ extension NewsFeedViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let currentNews = news[indexPath.row]
-    let isImage = currentNews.imageURL != nil
     
-    if isImage {
+    if currentNews.isWithImage {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedImageTableViewCell
       
       let currentNews = news[indexPath.row]
@@ -52,7 +52,6 @@ extension NewsFeedViewController: UITableViewDataSource {
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedPlainTableViewCell
       
-      let currentNews = news[indexPath.row]
       cell.newsDescriptionLabel.text = currentNews.name
       cell.newsTimeLabel.text = currentNews.timeString
       
@@ -66,5 +65,20 @@ extension NewsFeedViewController: UITableViewDataSource {
       
       return cell
     }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? NewsPreviewViewController, let indexPath = sender as? IndexPath {
+      let currentNews = news[indexPath.row]
+      destination.currentNews = currentNews
+    }
+    
+  }
+}
+
+extension NewsFeedViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    self.performSegue(withIdentifier: "Preview", sender: indexPath)
   }
 }

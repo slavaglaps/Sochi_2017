@@ -6,9 +6,9 @@ target 'CWWG' do
   use_frameworks!
 
   # Pods for CWWG
-  pod 'RealmSwift'
-  pod 'SwiftyJSON'
-  pod 'SVProgressHUD'
+  #pod 'RealmSwift'
+  #pod 'SwiftyJSON'
+  #pod 'SVProgressHUD'
   pod 'Alamofire'
   pod 'Nuke'
 

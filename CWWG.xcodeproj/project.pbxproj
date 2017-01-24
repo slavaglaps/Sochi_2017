@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		30F0750E3C9465F93DEA9E12 /* Pods_CWWG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */; };
+		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
+		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
+		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
@@ -59,10 +62,14 @@
 		9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */; };
 		9FFFA2711E37A29000669B68 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFFA26F1E37A29000669B68 /* Fabric.framework */; };
 		9FFFA2721E37A29000669B68 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFFA2701E37A29000669B68 /* Crashlytics.framework */; };
+		9FFFA2751E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2741E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3278980790DDB7AE2D20D8E1 /* Pods-CWWG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.debug.xcconfig"; sourceTree = "<group>"; };
+		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
+		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedImageTableViewCell.swift; sourceTree = "<group>"; };
 		9FFFA26F1E37A29000669B68 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9FFFA2701E37A29000669B68 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		9FFFA2741E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPreviewDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		DDAF5E144A82E598DD74817F /* Pods-CWWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.release.xcconfig"; sourceTree = "<group>"; };
 		DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CWWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -248,6 +256,8 @@
 				9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */,
 				9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */,
 				9FFFA2621E378D9B00669B68 /* AppearanceController.swift */,
+				9F176DD01E37C295006082EA /* ViewControllersFactory.swift */,
+				9F176DD21E37C3B1006082EA /* RouterController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -343,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				9FFFA26A1E37917000669B68 /* Image+Extensions.swift */,
+				9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -350,6 +361,7 @@
 		9FD765E01E31724F00E1375F /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				9FFFA2731E37B0B300669B68 /* Cells */,
 				9F85452C1E2FD846004964F5 /* NewsPreviewViewController.swift */,
 			);
 			name = Preview;
@@ -403,6 +415,14 @@
 				9FFFA2681E37902200669B68 /* NavigationViewController.swift */,
 			);
 			name = NavigationController;
+			sourceTree = "<group>";
+		};
+		9FFFA2731E37B0B300669B68 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA2741E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		D96E0BAE02BA6FE2881B937B /* Pods */ = {
@@ -587,16 +607,20 @@
 				9F85452D1E2FD846004964F5 /* NewsPreviewViewController.swift in Sources */,
 				9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */,
 				9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */,
+				9FFFA2751E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift in Sources */,
 				9F8545391E2FD8A7004964F5 /* ResultsSearchViewController.swift in Sources */,
 				9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */,
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
+				9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */,
 				9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */,
 				9FFFA2651E378EBE00669B68 /* AppColor.swift in Sources */,
 				9FD765DF1E31723300E1375F /* Reusable.swift in Sources */,
+				9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */,
 				9F8545341E2FD87D004964F5 /* ScheduleViewController.swift in Sources */,
+				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,

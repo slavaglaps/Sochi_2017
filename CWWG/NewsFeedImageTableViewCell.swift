@@ -11,6 +11,7 @@ import UIKit
 class NewsFeedImageTableViewCell: UITableViewCell, Reusable {
   
   @IBOutlet weak var newsImageView: UIImageView!
+  @IBOutlet weak var gradientImageView: UIImageView!
   
   @IBOutlet weak var newsDescriptionLabel: UILabel! {
     didSet {

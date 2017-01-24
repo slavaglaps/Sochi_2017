@@ -17,9 +17,5 @@ struct PushNotificationsController {
   static func registerNotification(withTokenString tokenString: String) {
     print(tokenString)
     NetworkRequestsController.sendTokenToServer(tokenString: tokenString)
-//    request(.POST, "http://blazemarquez.com/tokens.json", parameters: ["token":tokenString])
-//      .response { (request, response, data, error) in
-//        println("Token resp: \(response)")
-//    }
   }
 }
