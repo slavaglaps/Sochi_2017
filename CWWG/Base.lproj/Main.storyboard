@@ -135,7 +135,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jM9-sa-2VN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jM9-sa-2VN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -159,12 +159,23 @@
                     <view key="view" contentMode="scaleToFill" id="nJL-0c-8x6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_language_select_background" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-Vy-KEU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cvJ-Vy-KEU" firstAttribute="leading" secondItem="nJL-0c-8x6" secondAttribute="leading" id="YqE-cr-O34"/>
+                            <constraint firstItem="cvJ-Vy-KEU" firstAttribute="top" secondItem="nJL-0c-8x6" secondAttribute="top" id="Zes-QO-SJB"/>
+                            <constraint firstItem="e2d-Og-6EU" firstAttribute="top" secondItem="cvJ-Vy-KEU" secondAttribute="bottom" id="cUk-uS-jIT"/>
+                            <constraint firstAttribute="trailing" secondItem="cvJ-Vy-KEU" secondAttribute="trailing" id="fnd-rR-fQF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwO-vW-a2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-778" y="118"/>
+            <point key="canvasLocation" x="-778.39999999999998" y="117.39130434782609"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="qBt-qX-IOY">
@@ -312,7 +323,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddi-5R-46m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddk-Er-y8L">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ddk-Er-y8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -349,7 +360,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ECR-kh-P84">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ECR-kh-P84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -367,7 +378,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -385,7 +396,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCE-TU-jAm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lCE-TU-jAm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -399,4 +410,7 @@
             <point key="canvasLocation" x="-778" y="833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_language_select_background" width="375" height="667"/>
+    </resources>
 </document>

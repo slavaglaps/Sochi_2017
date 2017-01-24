@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		30F0750E3C9465F93DEA9E12 /* Pods_CWWG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */; };
+		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
+		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
+		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
 		9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85450F1E2FD60D004964F5 /* AppDelegate.swift */; };
 		9F8545151E2FD60D004964F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8545131E2FD60D004964F5 /* Main.storyboard */; };
 		9F8545171E2FD60D004964F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8545161E2FD60D004964F5 /* Assets.xcassets */; };
@@ -29,11 +32,34 @@
 		9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D91E31721700E1375F /* UITableView+Reusable.swift */; };
 		9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DC1E31723300E1375F /* NibLoadable.swift */; };
 		9FD765DF1E31723300E1375F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DD1E31723300E1375F /* Reusable.swift */; };
+		9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */; };
+		9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23C1E37870500669B68 /* Lato-Black.ttf */; };
+		9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */; };
+		9FFFA2501E37871B00669B68 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23E1E37870500669B68 /* Lato-Bold.ttf */; };
+		9FFFA2511E37871B00669B68 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23F1E37870500669B68 /* Lato-BoldItalic.ttf */; };
+		9FFFA2521E37871B00669B68 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2401E37870500669B68 /* Lato-Hairline.ttf */; };
+		9FFFA2531E37871B00669B68 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2411E37870500669B68 /* Lato-HairlineItalic.ttf */; };
+		9FFFA2541E37871B00669B68 /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2421E37870500669B68 /* Lato-Heavy.ttf */; };
+		9FFFA2551E37871B00669B68 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2431E37870500669B68 /* Lato-HeavyItalic.ttf */; };
+		9FFFA2561E37871B00669B68 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2441E37870500669B68 /* Lato-Italic.ttf */; };
+		9FFFA2571E37871B00669B68 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2451E37870500669B68 /* Lato-Light.ttf */; };
+		9FFFA2581E37871B00669B68 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2461E37870500669B68 /* Lato-LightItalic.ttf */; };
+		9FFFA2591E37871B00669B68 /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2471E37870500669B68 /* Lato-Medium.ttf */; };
+		9FFFA25A1E37871B00669B68 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2481E37870500669B68 /* Lato-MediumItalic.ttf */; };
+		9FFFA25B1E37871B00669B68 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA2491E37870500669B68 /* Lato-Regular.ttf */; };
+		9FFFA25C1E37871B00669B68 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24A1E37870500669B68 /* Lato-Semibold.ttf */; };
+		9FFFA25D1E37871B00669B68 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24B1E37870500669B68 /* Lato-SemiboldItalic.ttf */; };
+		9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24C1E37870500669B68 /* Lato-Thin.ttf */; };
+		9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */; };
+		9FFFA2611E3787CE00669B68 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2601E3787CE00669B68 /* AppFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3278980790DDB7AE2D20D8E1 /* Pods-CWWG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.debug.xcconfig"; sourceTree = "<group>"; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
+		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
+		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
+		9F64CB961E377DA80038FB29 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		9F85450C1E2FD60D004964F5 /* CWWG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CWWG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F85450F1E2FD60D004964F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8545141E2FD60D004964F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +83,26 @@
 		9FD765D91E31721700E1375F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		9FD765DC1E31723300E1375F /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		9FD765DD1E31723300E1375F /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalTransition.swift; sourceTree = "<group>"; };
+		9FFFA23C1E37870500669B68 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA23E1E37870500669B68 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		9FFFA23F1E37870500669B68 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2401E37870500669B68 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hairline.ttf"; sourceTree = "<group>"; };
+		9FFFA2411E37870500669B68 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2421E37870500669B68 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		9FFFA2431E37870500669B68 /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2441E37870500669B68 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		9FFFA2451E37870500669B68 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		9FFFA2461E37870500669B68 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2471E37870500669B68 /* Lato-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Medium.ttf"; sourceTree = "<group>"; };
+		9FFFA2481E37870500669B68 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2491E37870500669B68 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		9FFFA24A1E37870500669B68 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		9FFFA24B1E37870500669B68 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA24C1E37870500669B68 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		9FFFA2601E3787CE00669B68 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		DDAF5E144A82E598DD74817F /* Pods-CWWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.release.xcconfig"; sourceTree = "<group>"; };
 		DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CWWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +125,18 @@
 				DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F64CB951E377D830038FB29 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA2361E3785D100669B68 /* Transitions */,
+				9F64CB961E377DA80038FB29 /* AppConfiguration.swift */,
+				9FD765DC1E31723300E1375F /* NibLoadable.swift */,
+				9FD765DD1E31723300E1375F /* Reusable.swift */,
+				9FD765D91E31721700E1375F /* UITableView+Reusable.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		9F8545031E2FD60D004964F5 = {
@@ -111,6 +169,7 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9FFFA23B1E3786EB00669B68 /* CustomFont */,
 				9F64CB901E37783A0038FB29 /* CWWG.entitlements */,
 				9F8545161E2FD60D004964F5 /* Assets.xcassets */,
 				9F8545181E2FD60D004964F5 /* LaunchScreen.storyboard */,
@@ -149,6 +208,7 @@
 		9F8545241E2FD7BC004964F5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9F64CB951E377D830038FB29 /* Classes */,
 				9FD765DB1E31721900E1375F /* Extensions */,
 			);
 			name = Common;
@@ -165,6 +225,8 @@
 		9F8545261E2FD7E3004964F5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */,
+				9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,9 +320,7 @@
 		9FD765DB1E31721900E1375F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9FD765DC1E31723300E1375F /* NibLoadable.swift */,
-				9FD765DD1E31723300E1375F /* Reusable.swift */,
-				9FD765D91E31721700E1375F /* UITableView+Reusable.swift */,
+				9FFFA2601E3787CE00669B68 /* AppFont.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -271,6 +331,39 @@
 				9F85452C1E2FD846004964F5 /* NewsPreviewViewController.swift */,
 			);
 			name = Preview;
+			sourceTree = "<group>";
+		};
+		9FFFA2361E3785D100669B68 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		9FFFA23B1E3786EB00669B68 /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				9FFFA23C1E37870500669B68 /* Lato-Black.ttf */,
+				9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */,
+				9FFFA23E1E37870500669B68 /* Lato-Bold.ttf */,
+				9FFFA23F1E37870500669B68 /* Lato-BoldItalic.ttf */,
+				9FFFA2401E37870500669B68 /* Lato-Hairline.ttf */,
+				9FFFA2411E37870500669B68 /* Lato-HairlineItalic.ttf */,
+				9FFFA2421E37870500669B68 /* Lato-Heavy.ttf */,
+				9FFFA2431E37870500669B68 /* Lato-HeavyItalic.ttf */,
+				9FFFA2441E37870500669B68 /* Lato-Italic.ttf */,
+				9FFFA2451E37870500669B68 /* Lato-Light.ttf */,
+				9FFFA2461E37870500669B68 /* Lato-LightItalic.ttf */,
+				9FFFA2471E37870500669B68 /* Lato-Medium.ttf */,
+				9FFFA2481E37870500669B68 /* Lato-MediumItalic.ttf */,
+				9FFFA2491E37870500669B68 /* Lato-Regular.ttf */,
+				9FFFA24A1E37870500669B68 /* Lato-Semibold.ttf */,
+				9FFFA24B1E37870500669B68 /* Lato-SemiboldItalic.ttf */,
+				9FFFA24C1E37870500669B68 /* Lato-Thin.ttf */,
+				9FFFA24D1E37870500669B68 /* Lato-ThinItalic.ttf */,
+			);
+			name = CustomFont;
 			sourceTree = "<group>";
 		};
 		D96E0BAE02BA6FE2881B937B /* Pods */ = {
@@ -350,6 +443,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */,
+				9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */,
+				9FFFA2501E37871B00669B68 /* Lato-Bold.ttf in Resources */,
+				9FFFA2511E37871B00669B68 /* Lato-BoldItalic.ttf in Resources */,
+				9FFFA2521E37871B00669B68 /* Lato-Hairline.ttf in Resources */,
+				9FFFA2531E37871B00669B68 /* Lato-HairlineItalic.ttf in Resources */,
+				9FFFA2541E37871B00669B68 /* Lato-Heavy.ttf in Resources */,
+				9FFFA2551E37871B00669B68 /* Lato-HeavyItalic.ttf in Resources */,
+				9FFFA2561E37871B00669B68 /* Lato-Italic.ttf in Resources */,
+				9FFFA2571E37871B00669B68 /* Lato-Light.ttf in Resources */,
+				9FFFA2581E37871B00669B68 /* Lato-LightItalic.ttf in Resources */,
+				9FFFA2591E37871B00669B68 /* Lato-Medium.ttf in Resources */,
+				9FFFA25A1E37871B00669B68 /* Lato-MediumItalic.ttf in Resources */,
+				9FFFA25B1E37871B00669B68 /* Lato-Regular.ttf in Resources */,
+				9FFFA25C1E37871B00669B68 /* Lato-Semibold.ttf in Resources */,
+				9FFFA25D1E37871B00669B68 /* Lato-SemiboldItalic.ttf in Resources */,
+				9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */,
+				9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */,
 				9F85451A1E2FD60D004964F5 /* LaunchScreen.storyboard in Resources */,
 				9F8545171E2FD60D004964F5 /* Assets.xcassets in Resources */,
 				9F8545151E2FD60D004964F5 /* Main.storyboard in Resources */,
@@ -413,6 +524,7 @@
 			files = (
 				9F8545291E2FD82A004964F5 /* SelectLanguageViewController.swift in Sources */,
 				9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */,
+				9FFFA2611E3787CE00669B68 /* AppFont.swift in Sources */,
 				9F8545311E2FD868004964F5 /* MenuViewController.swift in Sources */,
 				9F85453F1E2FD8E4004964F5 /* ObjectsListViewController.swift in Sources */,
 				9F8545411E2FD8EE004964F5 /* ObjectPreviewViewController.swift in Sources */,
@@ -423,12 +535,16 @@
 				9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */,
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
+				9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */,
+				9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */,
 				9FD765DF1E31723300E1375F /* Reusable.swift in Sources */,
 				9F8545341E2FD87D004964F5 /* ScheduleViewController.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
+				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,
+				9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
