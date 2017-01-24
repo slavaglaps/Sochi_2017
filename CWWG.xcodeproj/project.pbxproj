@@ -57,6 +57,8 @@
 		9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2681E37902200669B68 /* NavigationViewController.swift */; };
 		9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA26A1E37917000669B68 /* Image+Extensions.swift */; };
 		9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */; };
+		9FFFA2711E37A29000669B68 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFFA26F1E37A29000669B68 /* Fabric.framework */; };
+		9FFFA2721E37A29000669B68 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FFFA2701E37A29000669B68 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,8 @@
 		9FFFA2681E37902200669B68 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		9FFFA26A1E37917000669B68 /* Image+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		9FFFA26C1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedImageTableViewCell.swift; sourceTree = "<group>"; };
+		9FFFA26F1E37A29000669B68 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		9FFFA2701E37A29000669B68 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DDAF5E144A82E598DD74817F /* Pods-CWWG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CWWG.release.xcconfig"; path = "Pods/Target Support Files/Pods-CWWG/Pods-CWWG.release.xcconfig"; sourceTree = "<group>"; };
 		DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CWWG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F0750E3C9465F93DEA9E12 /* Pods_CWWG.framework in Frameworks */,
+				9FFFA2721E37A29000669B68 /* Crashlytics.framework in Frameworks */,
+				9FFFA2711E37A29000669B68 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +138,8 @@
 		457C04A816D03D9B5129D9B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FFFA26F1E37A29000669B68 /* Fabric.framework */,
+				9FFFA2701E37A29000669B68 /* Crashlytics.framework */,
 				DE3F2CC19E58B427B9550D9D /* Pods_CWWG.framework */,
 			);
 			name = Frameworks;
@@ -419,6 +427,7 @@
 				9F85450A1E2FD60D004964F5 /* Resources */,
 				47271029EFF950324C241770 /* [CP] Embed Pods Frameworks */,
 				4A8A44445C9D43A274DDCD65 /* [CP] Copy Pods Resources */,
+				9FFFA26E1E37A27700669B68 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -545,6 +554,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		9FFFA26E1E37A27700669B68 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 7e2194e450c77748f79da925e267e9d2e94ceaa0 c73e75e4f429984f548904cb18fcd165a00a94837bf5ca1177749174d9de8645";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -705,6 +728,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEVELOPMENT_TEAM = SGAF76T5DB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CWWG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -722,6 +749,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEVELOPMENT_TEAM = SGAF76T5DB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CWWG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
