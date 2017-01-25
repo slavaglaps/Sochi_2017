@@ -23,6 +23,8 @@ struct NetworkRequestsController {
     }
   }
   
+  // MARK: - Helpers
+  
   private static func stringURLFromPostfix(string: String) -> String {
     return currentURL + string
   }

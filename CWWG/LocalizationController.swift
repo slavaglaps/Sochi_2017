@@ -24,6 +24,15 @@ struct LocalizationController {
   enum Localization: String {
     case russian = "ru-RU"
     case english = "en-EN"
+    
+    var serverString: String {
+      switch self {
+      case .russian:
+        return "ru"
+      case .english:
+        return "en"
+      }
+    }
   }
   
   static func loadLocalization() {

@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func showNewsViewControllerAsRootViewController() {
     let newsViewControllerWithNavigation = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
-    UIView.transition(with: self.window!, duration: 0.35, options: UIViewAnimationOptions.transitionFlipFromTop, animations: { 
+    UIView.transition(with: self.window!, duration: 0.35, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
       self.window?.rootViewController = newsViewControllerWithNavigation
     }, completion: nil)
   }
