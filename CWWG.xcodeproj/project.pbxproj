@@ -17,6 +17,9 @@
 		9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */; };
 		9F54928E1E392D1E004FC272 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54928C1E392D1E004FC272 /* Alamofire.framework */; };
 		9F54928F1E392D1E004FC272 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54928D1E392D1E004FC272 /* Nuke.framework */; };
+		9F5492951E392F27004FC272 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5492921E392F27004FC272 /* Realm.framework */; };
+		9F5492961E392F27004FC272 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5492931E392F27004FC272 /* RealmSwift.framework */; };
+		9F5492971E392F27004FC272 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5492941E392F27004FC272 /* SwiftyJSON.framework */; };
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
@@ -84,6 +87,9 @@
 		9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		9F54928C1E392D1E004FC272 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9F54928D1E392D1E004FC272 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		9F5492921E392F27004FC272 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9F5492931E392F27004FC272 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9F5492941E392F27004FC272 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
@@ -153,6 +159,9 @@
 				9FFFA2711E37A29000669B68 /* Fabric.framework in Frameworks */,
 				9F54928E1E392D1E004FC272 /* Alamofire.framework in Frameworks */,
 				9F54928F1E392D1E004FC272 /* Nuke.framework in Frameworks */,
+				9F5492951E392F27004FC272 /* Realm.framework in Frameworks */,
+				9F5492961E392F27004FC272 /* RealmSwift.framework in Frameworks */,
+				9F5492971E392F27004FC272 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +171,9 @@
 		457C04A816D03D9B5129D9B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F5492921E392F27004FC272 /* Realm.framework */,
+				9F5492931E392F27004FC272 /* RealmSwift.framework */,
+				9F5492941E392F27004FC272 /* SwiftyJSON.framework */,
 				9F54928C1E392D1E004FC272 /* Alamofire.framework */,
 				9F54928D1E392D1E004FC272 /* Nuke.framework */,
 				9FFFA26F1E37A29000669B68 /* Fabric.framework */,
@@ -570,6 +582,9 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
