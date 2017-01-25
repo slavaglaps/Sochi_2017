@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class NewsFeedViewController: UIViewController, UpdateUINotificationObserver {
+class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   var news: [NewsRuntimeEntity] = []
   
@@ -25,7 +25,7 @@ class NewsFeedViewController: UIViewController, UpdateUINotificationObserver {
     
     RouterController.shared.baseNavigationController = self.navigationController
     
-    NotificationCenter.default.addUIObserver(observer: self)
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
@@ -36,7 +36,7 @@ class NewsFeedViewController: UIViewController, UpdateUINotificationObserver {
     self.present(menuViewController, animated: true, completion: nil)
   }
   
-  func updateUI() {
+  func updateLanguage() {
     title = Localizations.News.Title
     tableView.reloadData()
   }

@@ -9,21 +9,21 @@
 import Foundation
 
 @objc
-protocol UpdateUINotificationObserver {
-  func updateUI()
+protocol UpdateLanguageNotificationObserver {
+  func updateLanguage()
 }
 
 extension Notification.Name {
-  static let UpdateUINotification = Notification.Name("UpdateUINotification")
+  static let UpdateLanguageNotification = Notification.Name("UpdateLanguageNotification")
 }
 
 extension NotificationCenter {
-  func addUIObserver(observer: UpdateUINotificationObserver) {
-    self.addObserver(observer, selector: #selector(observer.updateUI), name: NSNotification.Name.UpdateUINotification, object: nil)
-    observer.updateUI()
+  func addLanguageChangeObserver(observer: UpdateLanguageNotificationObserver) {
+    self.addObserver(observer, selector: #selector(observer.updateLanguage), name: NSNotification.Name.UpdateLanguageNotification, object: nil)
+    observer.updateLanguage()
   }
   
-  func postUpdateUINotification() {
-    self.post(name: NSNotification.Name.UpdateUINotification, object: nil)
+  func postUpdateLanguageChangedNotification() {
+    self.post(name: NSNotification.Name.UpdateLanguageNotification, object: nil)
   }
 }

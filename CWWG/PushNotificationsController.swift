@@ -16,7 +16,6 @@ struct PushNotificationsController {
   
   static func registerNotification(withTokenString tokenString: String) {
     print(tokenString)
-    globalLogs.append("Registering token: \(tokenString)")
     NetworkRequestsController.sendTokenToServer(tokenString: tokenString)
   }
 }

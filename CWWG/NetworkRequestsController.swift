@@ -18,7 +18,6 @@ struct NetworkRequestsController {
     let body = baseBodyPrametrs(withParametrs: ["pushToken": tokenString])
     
     request(url, method: .post, parameters: body).responseJSON { (data) in
-      globalLogs.append("\(data)")
       print(data)
     }
   }

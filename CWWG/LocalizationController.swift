@@ -52,7 +52,7 @@ struct LocalizationController {
   static func select(localization: Localization) {
     currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
-    NotificationCenter.default.postUpdateUINotification()
+    NotificationCenter.default.postUpdateLanguageChangedNotification()
   }
   
   private static func loadLocalizationInMemory(localization: Localization) {

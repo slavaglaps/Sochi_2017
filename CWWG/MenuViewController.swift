@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
-  @IBOutlet weak var logsLabel: UILabel!
+  @IBOutlet weak var newsButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    logsLabel.text = globalLogs.joined(separator: "\n")
     
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
     // Do any additional setup after loading the view.
   }
   
@@ -27,6 +27,18 @@ class MenuViewController: UIViewController {
   @IBAction func selectNewsButtonAction(_ sender: UIButton) {
     RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.newsViewController]
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func selectRussianLanguageAction(_ sender: UIButton) {
+    LocalizationController.select(localization: .russian)
+  }
+  
+  @IBAction func selectEnglishLanguageAction(_ sender: UIButton) {
+    LocalizationController.select(localization: .english)
+  }
+  
+  func updateLanguage() {
+    newsButton.setTitle(Localizations.News.Title, for: .normal)
   }
   
   /*
