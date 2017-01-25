@@ -9,7 +9,7 @@
 import UIKit
 
 struct AppearanceController {
-  static func setupAppearance() {
+  static func setup() {
     setupNavigationBarAppearance()
   }
   

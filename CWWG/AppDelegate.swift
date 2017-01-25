@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     Fabric.with([Crashlytics.self])
     
     LocalizationController.loadLocalization()
-    AppearanceController.setupAppearance()
+    
+    AppearanceController.setup()
+    DataModelController.setup()
     
     if #available(iOS 10.0, *) {
       UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) {

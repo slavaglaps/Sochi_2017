@@ -88,16 +88,18 @@ struct LocalizationController {
   // TODO: - Migrate to realm
   
   static var isLocalizationWasSelected: Bool {
-    return UserDefaults.standard.value(forKey: "Localization") != nil
+    return SettingsEntity.value?.selectedLocalizationString != nil
   }
   
   private(set) static var currentLocalization: Localization {
     set {
-      UserDefaults.standard.setValue(newValue.rawValue, forKey: "Localization")
+      writeFunction { 
+        SettingsEntity.value?.selectedLocalizationString = currentLocalization.rawValue
+      }
     }
     get {
-      let currentLocalization = UserDefaults.standard.value(forKey: "Localization")
-      if let currentLocalizationString = currentLocalization as? String, let localization = Localization(rawValue: currentLocalizationString) {
+      let currentLocalization = SettingsEntity.value?.selectedLocalizationString
+      if let currentLocalizationString = currentLocalization, let localization = Localization(rawValue: currentLocalizationString) {
         return localization
       }
       
