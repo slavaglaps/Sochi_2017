@@ -29,9 +29,11 @@ class NewsFeedViewController: UIViewController, UpdateUINotificationObserver {
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
-    LocalizationController.change(localization: .russian)
-    // let menuViewController = ViewControllersFactory.menuViewController
-    // self.present(menuViewController, animated: true, completion: nil)
+//    LocalizationController.currentLocalization = LocalizationController.currentLocalization == .english ? .russian : .english
+//    LocalizationController.change(localization: LocalizationController.currentLocalization)
+    
+    let menuViewController = ViewControllersFactory.menuViewController
+    self.present(menuViewController, animated: true, completion: nil)
   }
   
   func updateUI() {

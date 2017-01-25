@@ -27,7 +27,7 @@ struct LocalizationController {
   }
   
   static func loadLocalization() {
-    loadLocalizationInMemory(localization: .english)
+    loadLocalizationInMemory(localization: currentLocalization)
   }
   
   private static var localizations: [String: String] = [:]
@@ -72,6 +72,25 @@ struct LocalizationController {
       } else {
         assertionFailure("Wrong row represintation: \(row)")
       }
+    }
+  }
+  
+  static var currentLocalization: Localization {
+    set {
+      UserDefaults.standard.setValue(newValue.rawValue, forKey: "Localization")
+    }
+    get {
+      let currentLocalization = UserDefaults.standard.value(forKey: "Localization")
+      if let currentLocalizationString = currentLocalization as? String, let localization = Localization(rawValue: currentLocalizationString) {
+        return localization
+      }
+      
+      let deviceLocalizationString = NSLocalizedString("localization-tag", comment: "")
+      if let deviceLocalization = Localization(rawValue: deviceLocalizationString) {
+        return deviceLocalization
+      }
+      
+      return .english
     }
   }
 }
