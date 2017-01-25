@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class NewsFeedViewController: UIViewController {
+class NewsFeedViewController: UIViewController, UpdateUINotificationObserver {
   
   var news: [NewsRuntimeEntity] = []
   
@@ -24,13 +24,20 @@ class NewsFeedViewController: UIViewController {
     news = NewsRuntimeEntity.testData()
     
     RouterController.shared.baseNavigationController = self.navigationController
+    
+    NotificationCenter.default.addUIObserver(observer: self)
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
-    let menuViewController = ViewControllersFactory.menuViewController
-    self.present(menuViewController, animated: true, completion: nil)
+    LocalizationController.change(localization: .russian)
+    // let menuViewController = ViewControllersFactory.menuViewController
+    // self.present(menuViewController, animated: true, completion: nil)
   }
   
+  func updateUI() {
+    title = Localizations.News.Title
+    tableView.reloadData()
+  }
   
 }
 

@@ -22,7 +22,7 @@ class NewsRuntimeEntity {
   }
   
   var timeString: String {
-    return "30 минут назад".uppercased()
+    return Localizations.News.TimeTitle(value1: 30).uppercased()
   }
   
   var isWithImage: Bool {

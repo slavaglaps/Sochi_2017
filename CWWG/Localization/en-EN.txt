@@ -1,0 +1,2 @@
+"news.title" = "News";
+"news.time-title" = "%i minutes ago";

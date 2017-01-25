@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     Fabric.with([Crashlytics.self])
     
+    LocalizationController.loadLocalization()
     AppearanceController.setupAppearance()
     
     if #available(iOS 10.0, *) {

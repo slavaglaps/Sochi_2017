@@ -15,6 +15,7 @@ class MenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     logsLabel.text = globalLogs.joined(separator: "\n")
+    
     // Do any additional setup after loading the view.
   }
   

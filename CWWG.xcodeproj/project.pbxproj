@@ -11,6 +11,11 @@
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
+		9F1907B21E388CEE0056FAFD /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907B11E388CEE0056FAFD /* NotificationCenter+Extensions.swift */; };
+		9F1907BA1E3893110056FAFD /* en-EN.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F1907B81E3893110056FAFD /* en-EN.txt */; };
+		9F1907BB1E3893110056FAFD /* ru-RU.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F1907B91E3893110056FAFD /* ru-RU.txt */; };
+		9F1907BD1E38942E0056FAFD /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907BC1E38942E0056FAFD /* Localizations.swift */; };
+		9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */; };
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
@@ -72,11 +77,15 @@
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
+		9F1907B11E388CEE0056FAFD /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
+		9F1907B81E3893110056FAFD /* en-EN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "en-EN.txt"; path = "Localization/en-EN.txt"; sourceTree = "<group>"; };
+		9F1907B91E3893110056FAFD /* ru-RU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ru-RU.txt"; path = "Localization/ru-RU.txt"; sourceTree = "<group>"; };
+		9F1907BC1E38942E0056FAFD /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizations.swift; path = Localization/Localizations.swift; sourceTree = "<group>"; };
+		9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
 		9F64CB961E377DA80038FB29 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		9F7FBEC51E37FFBA0004BF69 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9F7FBEC91E38007F0004BF69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F7FBECA1E3800800004BF69 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9F7FBECB1E38017B0004BF69 /* LocalizationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationController.swift; sourceTree = "<group>"; };
@@ -159,6 +168,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F1907B31E3892F10056FAFD /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				9F1907B81E3893110056FAFD /* en-EN.txt */,
+				9F1907B91E3893110056FAFD /* ru-RU.txt */,
+			);
+			name = Localizations;
+			sourceTree = "<group>";
+		};
+		9F1907BE1E3894310056FAFD /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				9F7FBECB1E38017B0004BF69 /* LocalizationController.swift */,
+				9F1907BC1E38942E0056FAFD /* Localizations.swift */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		9F64CB951E377D830038FB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +229,7 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F1907B31E3892F10056FAFD /* Localizations */,
 				9F7FBEC81E38007E0004BF69 /* Localizable.strings */,
 				9FFFA23B1E3786EB00669B68 /* CustomFont */,
 				9F64CB901E37783A0038FB29 /* CWWG.entitlements */,
@@ -265,7 +293,7 @@
 				9FFFA2621E378D9B00669B68 /* AppearanceController.swift */,
 				9F176DD01E37C295006082EA /* ViewControllersFactory.swift */,
 				9F176DD21E37C3B1006082EA /* RouterController.swift */,
-				9F7FBECB1E38017B0004BF69 /* LocalizationController.swift */,
+				9F1907BE1E3894310056FAFD /* Localization */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -362,6 +390,8 @@
 			children = (
 				9FFFA26A1E37917000669B68 /* Image+Extensions.swift */,
 				9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */,
+				9F1907B11E388CEE0056FAFD /* NotificationCenter+Extensions.swift */,
+				9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +550,7 @@
 				9FFFA2531E37871B00669B68 /* Lato-HairlineItalic.ttf in Resources */,
 				9FFFA2541E37871B00669B68 /* Lato-Heavy.ttf in Resources */,
 				9FFFA2551E37871B00669B68 /* Lato-HeavyItalic.ttf in Resources */,
+				9F1907BB1E3893110056FAFD /* ru-RU.txt in Resources */,
 				9FFFA2561E37871B00669B68 /* Lato-Italic.ttf in Resources */,
 				9FFFA2571E37871B00669B68 /* Lato-Light.ttf in Resources */,
 				9FFFA2581E37871B00669B68 /* Lato-LightItalic.ttf in Resources */,
@@ -529,6 +560,7 @@
 				9FFFA25B1E37871B00669B68 /* Lato-Regular.ttf in Resources */,
 				9FFFA25C1E37871B00669B68 /* Lato-Semibold.ttf in Resources */,
 				9FFFA25D1E37871B00669B68 /* Lato-SemiboldItalic.ttf in Resources */,
+				9F1907BA1E3893110056FAFD /* en-EN.txt in Resources */,
 				9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */,
 				9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */,
 				9F85451A1E2FD60D004964F5 /* LaunchScreen.storyboard in Resources */,
@@ -623,6 +655,7 @@
 				9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */,
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
 				9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */,
+				9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */,
@@ -631,6 +664,8 @@
 				9FD765DF1E31723300E1375F /* Reusable.swift in Sources */,
 				9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */,
 				9F8545341E2FD87D004964F5 /* ScheduleViewController.swift in Sources */,
+				9F1907BD1E38942E0056FAFD /* Localizations.swift in Sources */,
+				9F1907B21E388CEE0056FAFD /* NotificationCenter+Extensions.swift in Sources */,
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
@@ -666,7 +701,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9F8545191E2FD60D004964F5 /* Base */,
-				9F7FBEC51E37FFBA0004BF69 /* ru-RU */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -774,6 +808,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SGAF76T5DB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
