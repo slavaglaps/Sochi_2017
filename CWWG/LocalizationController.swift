@@ -40,7 +40,8 @@ struct LocalizationController {
     return ""
   }
   
-  static func change(localization: Localization) {
+  static func select(localization: Localization) {
+    currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
     NotificationCenter.default.postUpdateUINotification()
   }
@@ -75,7 +76,13 @@ struct LocalizationController {
     }
   }
   
-  static var currentLocalization: Localization {
+  // TODO: - Migrate to realm
+  
+  static var isLocalizationWasSelected: Bool {
+    return UserDefaults.standard.value(forKey: "Localization") != nil
+  }
+  
+  private(set) static var currentLocalization: Localization {
     set {
       UserDefaults.standard.setValue(newValue.rawValue, forKey: "Localization")
     }

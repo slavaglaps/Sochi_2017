@@ -37,6 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       UIApplication.shared.registerForRemoteNotifications()
     }
     
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.makeKeyAndVisible()
+    
+    if LocalizationController.isLocalizationWasSelected {
+      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
+    } else {
+      window?.rootViewController = ViewControllersFactory.selectLanguageController
+    }
+    
     return true
   }
   
@@ -56,5 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     print("Push notification received: \(data)")
   }
 
+  func showNewsViewControllerAsRootViewController() {
+    let newsViewControllerWithNavigation = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
+    UIView.transition(with: self.window!, duration: 0.35, options: UIViewAnimationOptions.transitionFlipFromTop, animations: { 
+      self.window?.rootViewController = newsViewControllerWithNavigation
+    }, completion: nil)
+  }
 }
 

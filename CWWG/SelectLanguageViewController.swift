@@ -9,27 +9,41 @@
 import UIKit
 
 class SelectLanguageViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+  
+  @IBOutlet weak var selectLanguageLabel: UILabel! {
+    didSet {
+      selectLanguageLabel.text = Localizations.SelectLanguage.Title
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  }
+  
+  @IBOutlet weak var languagesBackgroundView: UIView! {
+    didSet {
+      languagesBackgroundView.layer.cornerRadius = 4
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  }
+  
+  @IBAction func selectRussianButtonAction(_ sender: UIButton) {
+    LocalizationController.select(localization: .russian)
+    exit()
+  }
+  
+  @IBAction func selectEnglishButtonAction(_ sender: UIButton) {
+    LocalizationController.select(localization: .english)
+    exit()
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  func exit() {
+    if let delegate = UIApplication.shared.delegate as? AppDelegate {
+      delegate.showNewsViewControllerAsRootViewController()
     }
-    */
-
+  }
+  
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return UIStatusBarStyle.lightContent
+  }
+  
 }

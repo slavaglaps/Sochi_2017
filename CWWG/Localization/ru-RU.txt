@@ -1,2 +1,4 @@
+"select-language.title" = "Выберите язык";
+
 "news.title" = "Новости";
 "news.time-title" = "%i минут назад";

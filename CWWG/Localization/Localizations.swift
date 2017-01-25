@@ -17,6 +17,13 @@ import Foundation
 public struct Localizations {
 
 
+  public struct SelectLanguage {
+
+    /// Base translation: Select language
+    public static var Title : String { return localized(string: "select-language.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+  }
+
   public struct News {
 
     /// Base translation: News
