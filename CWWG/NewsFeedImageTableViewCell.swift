@@ -10,6 +10,11 @@ import UIKit
 
 class NewsFeedImageTableViewCell: UITableViewCell, Reusable {
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    self.newsImageView.image = UIImage(named: "img_tempalte")
+  }
+  
   @IBOutlet weak var newsImageView: UIImageView!
   @IBOutlet weak var gradientImageView: UIImageView!
   

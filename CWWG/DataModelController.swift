@@ -19,6 +19,9 @@ class DataModelController {
     Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
+      writeFunction(block: { 
+        defaultRealm!.delete(defaultRealm!.objects(NewsEntity.self))
+      })
     }
     catch {
       assertionFailure("Default realm init error: \(error)")

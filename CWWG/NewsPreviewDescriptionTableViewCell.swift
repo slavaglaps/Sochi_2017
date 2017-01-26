@@ -10,6 +10,11 @@ import UIKit
 
 class NewsPreviewDescriptionTableViewCell: UITableViewCell, Reusable {
   
+  override func layoutIfNeeded() {
+    super.layoutIfNeeded()
+    fashionLineView.setNeedsDisplay()
+  }
+  
   @IBOutlet weak var newsDescriptionLabel: UILabel! {
     didSet {
       newsDescriptionLabel.textColor = AppColor.black

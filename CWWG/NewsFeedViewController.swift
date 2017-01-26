@@ -28,7 +28,7 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     
     RouterController.shared.baseNavigationController = self.navigationController
     
-    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation))
+    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
     notificationToken = news?.addTableObserver(tableView: tableView)
     
     NetworkRequestsController.requstNews(lastId: 0, limit: 10) {
