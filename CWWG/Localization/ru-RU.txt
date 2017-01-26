@@ -1,34 +1,33 @@
 "select-language.title" = "Выберите язык";
 
 "news.title" = "Новости";
-"news.time-title" = "%i минут назад";
 
 // Date
 
-"time.weekday.monday" = "Friday";
-"time.weekday.tuesday" = "Tuesday";
-"time.weekday.wednesday" = "Wednesday";
-"time.weekday.thursday" = "Thursday";
-"time.weekday.friday" = "Friday";
-"time.weekday.saturday" = "Saturday";
-"time.weekday.sunday" = "Sunday";
+"time.weekday.monday" = "Понедельник";
+"time.weekday.tuesday" = "Вторник";
+"time.weekday.wednesday" = "Среда";
+"time.weekday.thursday" = "Четверг";
+"time.weekday.friday" = "Пятница";
+"time.weekday.saturday" = "Суббота";
+"time.weekday.sunday" = "Воскресенье";
 
-"time.month.january" = "January";
-"time.month.february" = "February";
-"time.month.march" = "March";
-"time.month.april" = "April";
-"time.month.may" = "May";
-"time.month.june" = "June";
-"time.month.july" = "July";
-"time.month.august" = "August";
-"time.month.september" = "September";
-"time.month.october" = "October";
-"time.month.november" = "November";
-"time.month.december" = "December";
+"time.month.january" = "Январь";
+"time.month.february" = "Февраль";
+"time.month.march" = "Март";
+"time.month.april" = "Апрель";
+"time.month.may" = "Май";
+"time.month.june" = "Июнь";
+"time.month.july" = "Июль";
+"time.month.august" = "Август";
+"time.month.september" = "Сентябрь";
+"time.month.october" = "Октябрь";
+"time.month.november" = "Ноябрь";
+"time.month.december" = "Декабрь";
 
-"time-managment.future" = "In future";
-"time-managment.now" = "Just now";
-"time-managment.in-hour" = "%i minutes ago";
-"time-managment.today" = "Today";
-"time-managment.yersteday" = "Yersterday at %@";
-"time-managment.at" = "at";
+"time-managment.future" = "В будущем";
+"time-managment.now" = "Только что";
+"time-managment.in-hour" = "%i минут назад";
+"time-managment.today" = "Сегодня";
+"time-managment.yersteday" = "Вчера в %@";
+"time-managment.at" = "в";

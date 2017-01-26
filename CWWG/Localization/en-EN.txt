@@ -1,11 +1,10 @@
 "select-language.title" = "Select language";
 
 "news.title" = "News";
-"news.time-title" = "%i minutes ago";
 
 // Date
 
-"time.weekday.monday" = "Friday";
+"time.weekday.monday" = "Monday";
 "time.weekday.tuesday" = "Tuesday";
 "time.weekday.wednesday" = "Wednesday";
 "time.weekday.thursday" = "Thursday";

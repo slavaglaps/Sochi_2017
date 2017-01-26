@@ -47,7 +47,8 @@ struct DateRepresentation {
         dateFormatter.dateFormat = "hh:mm a"
         time = dateFormatter.string(from: date)
       } else {
-        time = "\(dateRepresentation.hour):\(dateRepresentation.minute)"
+        dateFormatter.dateFormat = "HH:mm"
+        time = dateFormatter.string(from: date)
       }
       
       if todayRepresentation.year != dateRepresentation.year {
