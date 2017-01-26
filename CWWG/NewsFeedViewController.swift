@@ -8,12 +8,17 @@
 
 import UIKit
 import Nuke
+import RealmSwift
 
 class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserver {
   
-  var news: [NewsRuntimeEntity] = []
+  var news: Results<NewsEntity>?
+  var notificationToken: NotificationToken? = nil
   
   @IBOutlet weak var tableView: UITableView!
+  
+  var bottomCell: UITableViewCell?
+  var topCell: UITableViewCell?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,17 +26,20 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
     
-    news = NewsRuntimeEntity.testData()
-    
     RouterController.shared.baseNavigationController = self.navigationController
+    
+    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation))
+    notificationToken = news?.addTableObserver(tableView: tableView)
+    
+    NetworkRequestsController.requstNews(lastId: 0, limit: 10) {
+      success in
+      print("Request news, success: \(success)")
+    }
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
-//    LocalizationController.currentLocalization = LocalizationController.currentLocalization == .english ? .russian : .english
-//    LocalizationController.change(localization: LocalizationController.currentLocalization)
-    
     let menuViewController = ViewControllersFactory.menuViewController
     self.present(menuViewController, animated: true, completion: nil)
   }
@@ -45,17 +53,16 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
 
 extension NewsFeedViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return news.count
+    return news?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let currentNews = news[indexPath.row]
+    let currentNews = news![indexPath.row]
     
     if currentNews.isWithImage {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedImageTableViewCell
       
-      let currentNews = news[indexPath.row]
-      cell.newsDescriptionLabel.text = currentNews.name
+      cell.newsDescriptionLabel.text = currentNews.title
       cell.newsTimeLabel.text = currentNews.timeString
       
       Nuke.loadImage(with: URL(string: currentNews.imageURL!)!, into: cell.newsImageView)
@@ -64,13 +71,17 @@ extension NewsFeedViewController: UITableViewDataSource {
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsFeedPlainTableViewCell
       
-      cell.newsDescriptionLabel.text = currentNews.name
+      cell.newsDescriptionLabel.text = currentNews.title
       cell.newsTimeLabel.text = currentNews.timeString
       
       if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 { // If last
+        (bottomCell as? NewsFeedPlainTableViewCell)?.position = .normal
         cell.position = .bottom
+        bottomCell = cell
       } else if indexPath.row == 0 { // If first
+        (topCell as? NewsFeedPlainTableViewCell)?.position = .normal
         cell.position = .top
+        topCell = cell
       } else {
         cell.position = .normal
       }
@@ -81,10 +92,9 @@ extension NewsFeedViewController: UITableViewDataSource {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? NewsPreviewViewController, let indexPath = sender as? IndexPath {
-      let currentNews = news[indexPath.row]
+      let currentNews = news![indexPath.row]
       destination.currentNews = currentNews
     }
-    
   }
 }
 

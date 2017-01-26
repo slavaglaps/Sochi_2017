@@ -12,13 +12,19 @@ import Nuke
 class NewsPreviewViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
-  var currentNews: NewsRuntimeEntity!
+  var currentNews: NewsEntity!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
+    
+    NetworkRequestsController.requestNewsInfo(id: currentNews.id) { [weak self] (success) in
+      if success {
+        self?.tableView.reloadData()
+      }
+    }
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
@@ -44,13 +50,13 @@ extension NewsPreviewViewController: UITableViewDataSource {
         cell.gradientImageView.backgroundColor = AppColor.emptyHeaderBlue
       }
       
-      cell.newsDescriptionLabel.text = currentNews.name
+      cell.newsDescriptionLabel.text = currentNews.title
       cell.newsTimeLabel.text = currentNews.timeString
       
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as NewsPreviewDescriptionTableViewCell
-      cell.newsDescriptionLabel.text = currentNews.desctiption
+      cell.newsDescriptionLabel.text = currentNews.text
       return cell
     }
   }
