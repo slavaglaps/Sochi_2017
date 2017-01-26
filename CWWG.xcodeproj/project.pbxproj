@@ -49,6 +49,7 @@
 		9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545481E2FDEDA004964F5 /* FashionLineView.swift */; };
 		9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */; };
 		9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */; };
+		9FC1D9841E3A409C00EDDA13 /* DateRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */; };
 		9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D71E3171B100E1375F /* NewsFeedPlainTableViewCell.swift */; };
 		9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D91E31721700E1375F /* UITableView+Reusable.swift */; };
 		9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DC1E31723300E1375F /* NibLoadable.swift */; };
@@ -130,6 +131,8 @@
 		9F8545481E2FDEDA004964F5 /* FashionLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FashionLineView.swift; sourceTree = "<group>"; };
 		9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+Extensions.swift"; sourceTree = "<group>"; };
 		9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensisons.swift"; sourceTree = "<group>"; };
+		9FC1D97C1E3A3D4800EDDA13 /* CWWG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWWG-Bridging-Header.h"; sourceTree = "<group>"; };
+		9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRepresentation.swift; sourceTree = "<group>"; };
 		9FD765D71E3171B100E1375F /* NewsFeedPlainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedPlainTableViewCell.swift; sourceTree = "<group>"; };
 		9FD765D91E31721700E1375F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		9FD765DC1E31723300E1375F /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 		9F64CB951E377D830038FB29 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */,
 				9FFFA2361E3785D100669B68 /* Transitions */,
 				9F64CB961E377DA80038FB29 /* AppConfiguration.swift */,
 				9FD765DC1E31723300E1375F /* NibLoadable.swift */,
@@ -279,6 +283,7 @@
 				9F1907B31E3892F10056FAFD /* Localizations */,
 				9F7FBEC81E38007E0004BF69 /* Localizable.strings */,
 				9FFFA23B1E3786EB00669B68 /* CustomFont */,
+				9FC1D97C1E3A3D4800EDDA13 /* CWWG-Bridging-Header.h */,
 				9F64CB901E37783A0038FB29 /* CWWG.entitlements */,
 				9F8545161E2FD60D004964F5 /* Assets.xcassets */,
 				9F8545181E2FD60D004964F5 /* LaunchScreen.storyboard */,
@@ -548,6 +553,7 @@
 					9F85450B1E2FD60D004964F5 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = SGAF76T5DB;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -680,6 +686,7 @@
 				9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */,
 				9F5492A31E3937C0004FC272 /* SettingsEntity.swift in Sources */,
 				9F8545341E2FD87D004964F5 /* ScheduleViewController.swift in Sources */,
+				9FC1D9841E3A409C00EDDA13 /* DateRepresentation.swift in Sources */,
 				9F1907BD1E38942E0056FAFD /* Localizations.swift in Sources */,
 				9F1907B21E388CEE0056FAFD /* NotificationCenter+Extensions.swift in Sources */,
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
@@ -825,6 +832,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = SGAF76T5DB;
@@ -838,6 +846,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team.CWWG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWWG/CWWG-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -847,6 +857,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEVELOPMENT_TEAM = SGAF76T5DB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -859,6 +870,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team.CWWG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWWG/CWWG-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

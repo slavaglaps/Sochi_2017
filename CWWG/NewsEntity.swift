@@ -30,6 +30,6 @@ class NewsEntity: Object {
   }
   
   var timeString: String {
-    return Localizations.News.TimeTitle(value1: 30).uppercased()
+    return DateRepresentation(date: dateOfCreation).representationString
   }
 }

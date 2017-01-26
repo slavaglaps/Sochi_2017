@@ -2,3 +2,33 @@
 
 "news.title" = "News";
 "news.time-title" = "%i minutes ago";
+
+// Date
+
+"time.weekday.monday" = "Friday";
+"time.weekday.tuesday" = "Tuesday";
+"time.weekday.wednesday" = "Wednesday";
+"time.weekday.thursday" = "Thursday";
+"time.weekday.friday" = "Friday";
+"time.weekday.saturday" = "Saturday";
+"time.weekday.sunday" = "Sunday";
+
+"time.month.january" = "January";
+"time.month.february" = "February";
+"time.month.march" = "March";
+"time.month.april" = "April";
+"time.month.may" = "May";
+"time.month.june" = "June";
+"time.month.july" = "July";
+"time.month.august" = "August";
+"time.month.september" = "September";
+"time.month.october" = "October";
+"time.month.november" = "November";
+"time.month.december" = "December";
+
+"time-managment.future" = "In future";
+"time-managment.now" = "Just now";
+"time-managment.in-hour" = "%i minutes ago";
+"time-managment.today" = "Today";
+"time-managment.yersteday" = "Yersterday at %@";
+"time-managment.at" = "at";

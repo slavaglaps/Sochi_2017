@@ -19,6 +19,24 @@ func localized(string: String, tableName: String?, bundle: Bundle, value: String
   return LocalizationController.localized(string: string, comment: comment)
 }
 
+func localized(monthAtIndex index: Int) -> String {
+  if let month = LocalizationController.months.safeObject(atIndex: index - 1) {
+    return month
+  } else {
+    assertionFailure("No such month")
+    return ""
+  }
+}
+
+func localized(dayOfWeekAtIndex index: Int) -> String {
+  if let dayOfWeek = LocalizationController.daysOfWeek.safeObject(atIndex: index - 1) {
+    return dayOfWeek
+  } else {
+    assertionFailure("No such day of week")
+    return ""
+  }
+}
+
 struct LocalizationController {
   
   enum Localization: String {
@@ -39,6 +57,8 @@ struct LocalizationController {
     loadLocalizationInMemory(localization: currentLocalization)
   }
   
+  private(set) static var months: [String] = []
+  private(set) static var daysOfWeek: [String] = []
   private static var localizations: [String: String] = [:]
   
   static func localized(string: String, comment: String = "") -> String {
@@ -71,7 +91,7 @@ struct LocalizationController {
     localizations = [:]
     let rows = result.components(separatedBy: "\n")
     for row in rows {
-      if row.characters.count == 0 {
+      if row.characters.count == 0 || row.hasPrefix("//") {
         continue
       }
       
@@ -83,6 +103,27 @@ struct LocalizationController {
         assertionFailure("Wrong row represintation: \(row)")
       }
     }
+    
+    months = [Localizations.Time.Month.January,
+              Localizations.Time.Month.February,
+              Localizations.Time.Month.March,
+              Localizations.Time.Month.April,
+              Localizations.Time.Month.May,
+              Localizations.Time.Month.June,
+              Localizations.Time.Month.July,
+              Localizations.Time.Month.August,
+              Localizations.Time.Month.September,
+              Localizations.Time.Month.October,
+              Localizations.Time.Month.November,
+              Localizations.Time.Month.December]
+    
+    daysOfWeek = [Localizations.Time.Weekday.Monday,
+                  Localizations.Time.Weekday.Tuesday,
+                  Localizations.Time.Weekday.Wednesday,
+                  Localizations.Time.Weekday.Thursday,
+                  Localizations.Time.Weekday.Friday,
+                  Localizations.Time.Weekday.Saturday,
+                  Localizations.Time.Weekday.Sunday]
   }
   
   // TODO: - Migrate to realm
@@ -93,7 +134,7 @@ struct LocalizationController {
   
   private(set) static var currentLocalization: Localization {
     set {
-      writeFunction { 
+      writeFunction {
         SettingsEntity.value?.selectedLocalizationString = currentLocalization.rawValue
       }
     }
