@@ -12,6 +12,9 @@ class NewsPreviewDescriptionTableViewCell: UITableViewCell, Reusable {
   
   override func layoutIfNeeded() {
     super.layoutIfNeeded()
+    
+    fashionLineView.specificMargin = min(40, frame.height / 2)
+    
     fashionLineView.setNeedsDisplay()
   }
   

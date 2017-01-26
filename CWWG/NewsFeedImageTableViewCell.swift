@@ -29,7 +29,7 @@ class NewsFeedImageTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var newsTimeLabel: UILabel! {
     didSet {
       newsTimeLabel.textColor = AppColor.white.withAlphaComponent(0.6)
-      newsTimeLabel.font = AppFont.latoRegularFont(ofSize: 11)
+      newsTimeLabel.font = AppFont.latoRegularFont(ofSize: 12)
     }
   }
   

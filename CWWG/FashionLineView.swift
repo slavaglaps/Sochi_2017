@@ -14,6 +14,12 @@ class FashionLineView: UIView {
   let circleRadius: CGFloat = 3.5
   let circleMargin: CGFloat = 2
   
+  var specificMargin: CGFloat? {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  
   @IBInspectable
   var needToShowCircle: Bool = true {
     didSet {
@@ -27,7 +33,7 @@ class FashionLineView: UIView {
   }
   
   override func draw(_ rect: CGRect) {
-    let center = CGPoint(x: frame.width / 2, y: frame.height / 2)
+    let center = CGPoint(x: frame.width / 2, y: specificMargin ?? frame.height / 2)
     let space = circleRadius * circleMargin
     
     tintColor.setStroke()

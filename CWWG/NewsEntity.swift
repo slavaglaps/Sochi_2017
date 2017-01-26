@@ -30,6 +30,6 @@ class NewsEntity: Object {
   }
   
   var timeString: String {
-    return DateRepresentation(date: dateOfCreation).representationString
+    return DateRepresentation(date: dateOfCreation).representationString.uppercased()
   }
 }

@@ -26,7 +26,7 @@ class NewsFeedPlainTableViewCell: UITableViewCell, Reusable {
   @IBOutlet weak var newsTimeLabel: UILabel! {
     didSet {
       newsTimeLabel.textColor = AppColor.gray
-      newsTimeLabel.font = AppFont.latoRegularFont(ofSize: 11)
+      newsTimeLabel.font = AppFont.latoRegularFont(ofSize: 12)
     }
   }
   

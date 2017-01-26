@@ -105,13 +105,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkf-QI-Ga7">
-                                                    <rect key="frame" x="57" y="14" width="306" height="11"/>
+                                                    <rect key="frame" x="57" y="14" width="306" height="9"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="30 минут назад" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4O-ac-Ql1">
-                                                    <rect key="frame" x="57" y="38" width="306" height="21"/>
+                                                    <rect key="frame" x="57" y="36" width="306" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -151,7 +151,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" constant="12" id="M9E-CC-HAO"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" id="PTH-es-fAl"/>
                                                 <constraint firstAttribute="trailing" secondItem="W5P-ep-Drf" secondAttribute="trailing" id="Sdc-MD-rk0"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="I4O-ac-Ql1" secondAttribute="bottom" constant="8" id="ZDG-2r-Smg"/>
+                                                <constraint firstAttribute="bottom" secondItem="I4O-ac-Ql1" secondAttribute="bottom" constant="18" id="ZDG-2r-Smg"/>
                                                 <constraint firstItem="W5P-ep-Drf" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" id="fHq-vm-nk9"/>
                                                 <constraint firstItem="CuB-ZY-iCH" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="o5f-GR-fiy"/>
                                                 <constraint firstItem="W5P-ep-Drf" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="odN-4d-rTT"/>

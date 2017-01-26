@@ -12,8 +12,15 @@ import RealmSwift
 
 class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserver {
   
+  enum UpdateDirection {
+    case toNew
+    case toOld
+  }
+  
   var news: Results<NewsEntity>?
   var notificationToken: NotificationToken? = nil
+  
+  var refreshControl: UIRefreshControl!
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -23,7 +30,7 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.estimatedRowHeight = 44.0
+    tableView.estimatedRowHeight = 181
     tableView.rowHeight = UITableViewAutomaticDimension
     
     RouterController.shared.baseNavigationController = self.navigationController
@@ -36,7 +43,19 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
       print("Request news, success: \(success)")
     }
     
+    refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(NewsFeedViewController.refreshFeed), for: .valueChanged)
+    tableView.addSubview(refreshControl)
+    
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
+  }
+  
+  deinit {
+    print("Deinit")
+  }
+  
+  func refreshFeed() {
+    updateFeed(inDirection: .toNew)
   }
   
   @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
@@ -47,6 +66,24 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   func updateLanguage() {
     title = Localizations.News.Title
     tableView.reloadData()
+  }
+  
+  var isUpdateStarted = false
+  
+  func updateFeed(inDirection: UpdateDirection) {
+    if isUpdateStarted {
+      return
+    }
+    
+    let id = inDirection == .toNew ? news?.first?.id : news?.last?.id
+    
+    isUpdateStarted = true
+    NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10) {
+      success in
+      self.isUpdateStarted = false
+      self.refreshControl.endRefreshing()
+      print("Request news, success: \(success)")
+    }
   }
   
 }
@@ -108,5 +145,12 @@ extension NewsFeedViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     self.performSegue(withIdentifier: "Preview", sender: indexPath)
+  }
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let percent = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height)
+    if percent > 0.8 {
+      // updateFeed(inDirection: .toNew)
+    }
   }
 }
