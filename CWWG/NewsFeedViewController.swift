@@ -36,12 +36,13 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     RouterController.shared.baseNavigationController = self.navigationController
     
     news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
-    notificationToken = news?.addTableObserver(tableView: tableView)
-    
-    NetworkRequestsController.requstNews(lastId: 0, limit: 10) {
-      success in
-      print("Request news, success: \(success)")
+    notificationToken = news?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+      OperationQueue.main.addOperation({ 
+        self?.tableView.reloadData()
+      })
     }
+    
+    updateFeed(inDirection: .toNew)
     
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(NewsFeedViewController.refreshFeed), for: .valueChanged)
@@ -69,19 +70,22 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   }
   
   var isUpdateStarted = false
+  var isUpdateOfUIStarted = false
   
   func updateFeed(inDirection: UpdateDirection) {
-    if isUpdateStarted {
+    if isUpdateStarted || isUpdateOfUIStarted {
       return
     }
     
     let id = inDirection == .toNew ? news?.first?.id : news?.last?.id
     
     isUpdateStarted = true
-    NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10) {
+    NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10, ascending: inDirection == .toOld) {
       success in
       self.isUpdateStarted = false
-      self.refreshControl.endRefreshing()
+      if self.refreshControl.isRefreshing {
+        self.refreshControl.endRefreshing()
+      }
       print("Request news, success: \(success)")
     }
   }
@@ -150,7 +154,7 @@ extension NewsFeedViewController: UITableViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let percent = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height)
     if percent > 0.8 {
-      // updateFeed(inDirection: .toNew)
+       updateFeed(inDirection: .toOld)
     }
   }
 }

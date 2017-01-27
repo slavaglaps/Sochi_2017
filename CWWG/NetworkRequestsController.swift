@@ -23,11 +23,13 @@ struct NetworkRequestsController {
     }
   }
   
-  static func requstNews(lastId: Int = 0, limit: Int = 20, completionBlock: @escaping CompletionBlock) {
+  static func requstNews(lastId: Int = 0, limit: Int = 20, ascending: Bool, completionBlock: @escaping CompletionBlock) {
     
     let url = stringURLFromPostfix(string: "news")
     let body = ["last_id": lastId,
+                "pivot": lastId,
                 "limit": limit,
+                "ascending": 0,
                 "lang": LocalizationController.currentLocalization.serverString] as [String: Any]
     
     request(url, method: .get, parameters: body).responseJSON { (data) in
