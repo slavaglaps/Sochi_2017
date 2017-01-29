@@ -41,6 +41,10 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     newsButton.setTitle(Localizations.News.Title, for: .normal)
   }
   
+  override var prefersStatusBarHidden: Bool {
+    return true
+  }
+  
   /*
    // MARK: - Navigation
    
