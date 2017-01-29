@@ -21,10 +21,6 @@ class NewsRuntimeEntity {
     self.data = data
   }
   
-  var timeString: String {
-    return Localizations.News.TimeTitle(value1: 30).uppercased()
-  }
-  
   var isWithImage: Bool {
     return imageURL != nil
   }

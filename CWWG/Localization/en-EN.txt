@@ -31,3 +31,13 @@
 "time-managment.today" = "Today";
 "time-managment.yersteday" = "Yersterday at %@";
 "time-managment.at" = "at";
+
+// Menu Items
+
+"menu-item.news" = "News";
+"menu-item.schedule" = "Schedule";
+"menu-item.objects" = "Objects";
+"menu-item.results" = "Results";
+"menu-item.broadcast" = "Broadcast";
+"menu-item.accreditation" = "Accreditation";
+"menu-item.quiz" = "Quiz";

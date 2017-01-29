@@ -54,6 +54,8 @@
 		9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D91E31721700E1375F /* UITableView+Reusable.swift */; };
 		9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DC1E31723300E1375F /* NibLoadable.swift */; };
 		9FD765DF1E31723300E1375F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DD1E31723300E1375F /* Reusable.swift */; };
+		9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEEC781E3E15A600A2C368 /* MenuListView.swift */; };
+		9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */; };
 		9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */; };
 		9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23C1E37870500669B68 /* Lato-Black.ttf */; };
 		9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */; };
@@ -137,6 +139,8 @@
 		9FD765D91E31721700E1375F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		9FD765DC1E31723300E1375F /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		9FD765DD1E31723300E1375F /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		9FDEEC781E3E15A600A2C368 /* MenuListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalTransition.swift; sourceTree = "<group>"; };
 		9FFFA23C1E37870500669B68 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				9F8545481E2FDEDA004964F5 /* FashionLineView.swift */,
+				9FDEEC781E3E15A600A2C368 /* MenuListView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */,
+				9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -678,6 +684,7 @@
 				9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
+				9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */,
 				9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */,
 				9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */,
 				9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */,
@@ -692,6 +699,7 @@
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
+				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
 				9F54929D1E392FD8004FC272 /* ObjectExtension.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
 				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,

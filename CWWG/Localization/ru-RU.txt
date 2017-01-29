@@ -31,3 +31,13 @@
 "time-managment.today" = "Сегодня";
 "time-managment.yersteday" = "Вчера в %@";
 "time-managment.at" = "в";
+
+// Menu Items
+
+"menu-item.news" = "Новости";
+"menu-item.schedule" = "Расписание";
+"menu-item.objects" = "Объекты";
+"menu-item.results" = "Результаты";
+"menu-item.broadcast" = "Трансляция";
+"menu-item.accreditation" = "Аккредитацию";
+"menu-item.quiz" = "Викторина";

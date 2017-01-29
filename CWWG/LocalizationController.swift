@@ -135,7 +135,7 @@ struct LocalizationController {
   private(set) static var currentLocalization: Localization {
     set {
       writeFunction {
-        SettingsEntity.value?.selectedLocalizationString = currentLocalization.rawValue
+        SettingsEntity.value?.selectedLocalizationString = newValue.rawValue
       }
     }
     get {

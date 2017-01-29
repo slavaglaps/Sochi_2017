@@ -10,10 +10,18 @@ import UIKit
 
 class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
-  @IBOutlet weak var newsButton: UIButton!
+  @IBOutlet weak var englishLabel: UILabel!
+  @IBOutlet weak var russianLabel: UILabel!
+  
+  @IBOutlet weak var menuListItem: MenuListView!
+  
+  var menuItems: [MenuListItem] = [.news, .schedule, .objects, .results, .broadcast, .accreditation, .quiz]
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    menuListItem.dataSource = self
+    menuListItem.delegate = self
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
     // Do any additional setup after loading the view.
@@ -25,7 +33,6 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   }
   
   @IBAction func selectNewsButtonAction(_ sender: UIButton) {
-    RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.newsViewController]
     self.dismiss(animated: true, completion: nil)
   }
   
@@ -38,21 +45,47 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   }
   
   func updateLanguage() {
-    newsButton.setTitle(Localizations.News.Title, for: .normal)
+    menuListItem.updateContent()
+    
+    if LocalizationController.currentLocalization == .russian {
+      englishLabel.alpha = 0.5
+      russianLabel.alpha = 1
+    } else {
+      englishLabel.alpha = 1
+      russianLabel.alpha = 0.5
+    }
   }
   
-  override var prefersStatusBarHidden: Bool {
-    return true
+  override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+}
+
+extension MenuViewController: MenuListViewDataSource {
+  func numberOfButtons(in list: MenuListView) -> Int {
+    return menuItems.count
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  func buttonStringAtIndex(in list: MenuListView, at index: Int) -> String {
+    return menuItems[index].title.uppercased()
+  }
+}
+
+extension MenuViewController: MenuListViewDelegate {
+  func buttonWasTouched(in list: MenuListView, at index: Int) {
+    let menuItem = menuItems[index]
+    switch menuItem {
+    case .news:
+      showNews()
+    default:
+      print(index)
+    }
+  }
+}
+
+extension MenuViewController {
+  func showNews() {
+    RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.newsViewController]
+    self.dismiss(animated: true, completion: nil)
+  }
 }
