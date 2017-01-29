@@ -48,6 +48,9 @@ public struct Localizations {
     /// Base translation: News
     public static var News : String { return localized(string: "menu-item.news", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
+    /// Base translation: Messenger
+    public static var Messenger : String { return localized(string: "menu-item.messenger", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
     /// Base translation: Quiz
     public static var Quiz : String { return localized(string: "menu-item.quiz", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 

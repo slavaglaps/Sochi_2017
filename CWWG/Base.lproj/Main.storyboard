@@ -561,22 +561,37 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-lP-xXe">
                                         <rect key="frame" x="0.0" y="0.0" width="9" height="22"/>
                                         <state key="normal" image="img_menu_facebook"/>
+                                        <connections>
+                                            <action selector="openSocialNetworkAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="FEg-pJ-1tX"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlu-XP-cz5">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlu-XP-cz5">
                                         <rect key="frame" x="36" y="0.0" width="22" height="22"/>
                                         <state key="normal" image="img_menu_vk"/>
+                                        <connections>
+                                            <action selector="openSocialNetworkAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="xgi-Vk-Bwb"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbS-kg-Wpr">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbS-kg-Wpr">
                                         <rect key="frame" x="85" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="img_menu_twitter"/>
+                                        <connections>
+                                            <action selector="openSocialNetworkAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="xWR-Sp-arH"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98C-8N-EQx">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98C-8N-EQx">
                                         <rect key="frame" x="128" y="0.0" width="17" height="22"/>
                                         <state key="normal" image="img_menu_instagram"/>
+                                        <connections>
+                                            <action selector="openSocialNetworkAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="cR8-8d-ph7"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmD-6h-rUd">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmD-6h-rUd">
                                         <rect key="frame" x="172" y="0.0" width="14" height="22"/>
                                         <state key="normal" image="img_menu_youtube"/>
+                                        <connections>
+                                            <action selector="openSocialNetworkAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="v2M-qh-5Ca"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -82,11 +82,11 @@ class MenuListView: UIView {
     let elementsSpace = fontHeight * CGFloat(numberOfComponents) + separatorSize.height * CGFloat(numberOfComponents - 1)
     let space = (size.height - elementsSpace) / CGFloat(numberOfComponents * 2)
     
-    var currentY: CGFloat = space
+    var currentY: CGFloat = 0
     for i in 0..<numberOfComponents {
       let title = dataSource?.buttonStringAtIndex(in: self, at: i) ?? ""
       let button = UIButton(type: UIButtonType.system)
-      button.frame = CGRect(x: 0, y: currentY, width: size.width, height: fontHeight)
+      button.frame = CGRect(x: 0, y: currentY, width: size.width, height: fontHeight + space * 2)
       button.setTitle(title, for: .normal)
       button.setTitleColor(AppColor.white, for: .normal)
       button.tag = i
@@ -94,7 +94,7 @@ class MenuListView: UIView {
       button.titleLabel?.font = font
       buttons.append(button)
       
-      currentY += (fontHeight + space)
+      currentY += (fontHeight + space * 2)
       
       // If not the last
       if i != (numberOfComponents - 1) {
@@ -105,7 +105,7 @@ class MenuListView: UIView {
         separatorFrame.origin.x = (size.width - separatorSize.width) / 2
         separator.frame = separatorFrame
         
-        currentY += (separatorSize.height + space)
+        currentY += (separatorSize.height)
          separators.append(separator)
       }
     }

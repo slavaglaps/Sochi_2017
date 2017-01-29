@@ -38,6 +38,6 @@
 "menu-item.schedule" = "Schedule";
 "menu-item.objects" = "Objects";
 "menu-item.results" = "Results";
+"menu-item.messenger" = "Messenger";
 "menu-item.broadcast" = "Broadcast";
 "menu-item.accreditation" = "Accreditation";
-"menu-item.quiz" = "Quiz";

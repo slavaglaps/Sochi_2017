@@ -15,7 +15,7 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var menuListItem: MenuListView!
   
-  var menuItems: [MenuListItem] = [.news, .schedule, .objects, .results, .broadcast, .accreditation, .quiz]
+  var menuItems: [MenuListItem] = [.news, .schedule, .objects, .results, .messenger, .broadcast, .accreditation]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,6 +43,34 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   @IBAction func selectEnglishLanguageAction(_ sender: UIButton) {
     LocalizationController.select(localization: .english)
   }
+  
+  enum SocialNetwork {
+    case facebook
+    case vk
+    case twitter
+    case instagram
+    case youtube
+    
+    var url: URL {
+      let urlString: String
+      switch self {
+      case .twitter:
+        urlString = "https://twitter.com/2017Cism"
+      case .instagram:
+        urlString = "https://www.instagram.com/cism_sochi2017/"
+      default:
+        fatalError("No such url")
+      }
+      return URL(string: urlString)!
+    }
+  }
+  
+  @IBAction func openSocialNetworkAction(_ sender: UIButton) {
+    let networks: [SocialNetwork] = [SocialNetwork.facebook, SocialNetwork.vk, SocialNetwork.twitter, SocialNetwork.instagram, SocialNetwork.youtube]
+    let network = networks[sender.tag]
+    UIApplication.shared.openURL(network.url)
+  }
+  
   
   func updateLanguage() {
     menuListItem.updateContent()
@@ -77,6 +105,8 @@ extension MenuViewController: MenuListViewDelegate {
     switch menuItem {
     case .news:
       showNews()
+    case .accreditation:
+      openAccreditation()
     default:
       print(index)
     }
@@ -87,5 +117,10 @@ extension MenuViewController {
   func showNews() {
     RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.newsViewController]
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  func openAccreditation() {
+    let url = URL(string: "http://cismsochi2017.ru/accreditation/")!
+    UIApplication.shared.openURL(url)
   }
 }

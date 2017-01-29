@@ -13,9 +13,9 @@ enum MenuListItem {
   case schedule
   case objects
   case results
+  case messenger
   case broadcast
   case accreditation
-  case quiz
   
   var title: String {
     switch self {
@@ -29,10 +29,10 @@ enum MenuListItem {
       return Localizations.MenuItem.Results
     case .broadcast:
       return Localizations.MenuItem.Broadcast
+    case .messenger:
+      return Localizations.MenuItem.Messenger
     case .accreditation:
       return Localizations.MenuItem.Accreditation
-    case .quiz:
-      return Localizations.MenuItem.Quiz
     }
   }
 }
