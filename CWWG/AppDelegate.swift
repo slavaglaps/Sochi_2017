@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.makeKeyAndVisible()
     
     if LocalizationController.isLocalizationWasSelected {
-      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
+      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.objectsListViewController)
+      RouterController.shared.baseNavigationController = window?.rootViewController as! UINavigationController
     } else {
       window?.rootViewController = ViewControllersFactory.selectLanguageController
     }
@@ -63,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func showNewsViewControllerAsRootViewController() {
     let newsViewControllerWithNavigation = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
+    RouterController.shared.baseNavigationController = newsViewControllerWithNavigation
     UIView.transition(with: self.window!, duration: 0.35, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
       self.window?.rootViewController = newsViewControllerWithNavigation
     }, completion: nil)

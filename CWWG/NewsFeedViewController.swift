@@ -30,10 +30,10 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    addMenuButton()
+    
     tableView.estimatedRowHeight = 181
     tableView.rowHeight = UITableViewAutomaticDimension
-    
-    RouterController.shared.baseNavigationController = self.navigationController
     
     news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
     notificationToken = news?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
@@ -57,11 +57,6 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   
   func refreshFeed() {
     updateFeed(inDirection: .toNew)
-  }
-  
-  @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
-    let menuViewController = ViewControllersFactory.menuViewController
-    self.present(menuViewController, animated: true, completion: nil)
   }
   
   func updateLanguage() {

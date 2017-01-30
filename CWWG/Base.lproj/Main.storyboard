@@ -187,13 +187,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OjL-l2-Kb1" secondAttribute="bottom" id="w3X-Ev-hqk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Новости" id="VlQ-eS-1vU">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="3Pb-bR-BHK">
-                            <connections>
-                                <action selector="openMenuButtonAction:" destination="BYZ-38-t0r" id="x4j-5a-dkY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Новости" id="VlQ-eS-1vU"/>
                     <connections>
                         <outlet property="tableView" destination="OjL-l2-Kb1" id="B1q-DK-g5c"/>
                         <segue destination="WGK-1l-DiA" kind="show" identifier="Preview" id="sy5-dA-RnK"/>
@@ -349,13 +343,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="bfD-lg-56B">
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="if0-lM-H96">
-                            <connections>
-                                <action selector="openMenuButtonAction:" destination="WGK-1l-DiA" id="du5-sc-eah"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="bfD-lg-56B"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="pi7-Fs-i13" id="DQO-2R-pl8"/>
@@ -793,16 +781,88 @@
                     <view key="view" contentMode="scaleToFill" id="Nkl-8B-kPQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uem-ul-Utg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ObjectTableViewCell" rowHeight="127" id="SKA-T2-EKy" customClass="ObjectTableViewCell" customModule="CWWG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="127"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKA-T2-EKy" id="nZY-ZU-kDD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="img_tempalte" translatesAutoresizingMaskIntoConstraints="NO" id="ZzQ-Q2-Vsa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_object_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jAT-5j-z7Z">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQB-bu-wPW">
+                                                    <rect key="frame" x="20" y="34" width="335" height="29"/>
+                                                    <string key="text">Многофункциональная арена«ледяной куб»</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что проходит: Церемония открытия / закрытия Игр" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-TC-vjI">
+                                                    <rect key="frame" x="20" y="80" width="335" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jAT-5j-z7Z" firstAttribute="leading" secondItem="ZzQ-Q2-Vsa" secondAttribute="leading" id="29a-Vi-GiJ"/>
+                                                <constraint firstItem="wiS-TC-vjI" firstAttribute="centerX" secondItem="nZY-ZU-kDD" secondAttribute="centerX" id="5mt-xT-VhT"/>
+                                                <constraint firstItem="wiS-TC-vjI" firstAttribute="top" secondItem="pQB-bu-wPW" secondAttribute="bottom" constant="17" id="8Af-l3-Hbf"/>
+                                                <constraint firstItem="ZzQ-Q2-Vsa" firstAttribute="top" secondItem="nZY-ZU-kDD" secondAttribute="top" id="ABV-v9-dIv"/>
+                                                <constraint firstItem="pQB-bu-wPW" firstAttribute="centerX" secondItem="nZY-ZU-kDD" secondAttribute="centerX" id="FHd-lJ-Sfo"/>
+                                                <constraint firstItem="jAT-5j-z7Z" firstAttribute="top" secondItem="ZzQ-Q2-Vsa" secondAttribute="top" id="Kul-hC-If8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wiS-TC-vjI" secondAttribute="bottom" constant="25.5" id="L1V-F1-LgG"/>
+                                                <constraint firstItem="ZzQ-Q2-Vsa" firstAttribute="leading" secondItem="nZY-ZU-kDD" secondAttribute="leading" id="Ll8-dX-mCT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wiS-TC-vjI" secondAttribute="trailing" constant="12" id="TtC-25-81Y"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pQB-bu-wPW" secondAttribute="trailing" constant="12" id="dLE-T8-LId"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZzQ-Q2-Vsa" secondAttribute="bottom" id="fAq-vK-U0T"/>
+                                                <constraint firstItem="jAT-5j-z7Z" firstAttribute="trailing" secondItem="ZzQ-Q2-Vsa" secondAttribute="trailing" id="l5a-SJ-BCU"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZzQ-Q2-Vsa" secondAttribute="trailing" id="oca-SH-0oM"/>
+                                                <constraint firstItem="pQB-bu-wPW" firstAttribute="leading" secondItem="nZY-ZU-kDD" secondAttribute="leadingMargin" constant="12" id="rpR-IC-ysV"/>
+                                                <constraint firstItem="pQB-bu-wPW" firstAttribute="top" secondItem="nZY-ZU-kDD" secondAttribute="topMargin" constant="26" id="sYi-b4-sF2"/>
+                                                <constraint firstItem="wiS-TC-vjI" firstAttribute="leading" secondItem="nZY-ZU-kDD" secondAttribute="leadingMargin" constant="12" id="tWs-Qb-bI4"/>
+                                                <constraint firstItem="jAT-5j-z7Z" firstAttribute="bottom" secondItem="ZzQ-Q2-Vsa" secondAttribute="bottom" id="vk0-FY-njE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventLabel" destination="wiS-TC-vjI" id="lIB-2m-gil"/>
+                                            <outlet property="nameLabel" destination="pQB-bu-wPW" id="S5a-xz-MmZ"/>
+                                            <outlet property="objectImageView" destination="ZzQ-Q2-Vsa" id="1mN-wU-f6Y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2A1-pq-8ld" id="lfW-41-kIJ"/>
+                                    <outlet property="delegate" destination="2A1-pq-8ld" id="fv8-wm-g2a"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uem-ul-Utg" firstAttribute="top" secondItem="Nkl-8B-kPQ" secondAttribute="top" id="Kqj-tq-jnl"/>
+                            <constraint firstItem="Uem-ul-Utg" firstAttribute="leading" secondItem="Nkl-8B-kPQ" secondAttribute="leading" id="kfF-CK-xMb"/>
+                            <constraint firstAttribute="trailing" secondItem="Uem-ul-Utg" secondAttribute="trailing" id="mwC-an-rjw"/>
+                            <constraint firstItem="MrG-bP-Jnp" firstAttribute="top" secondItem="Uem-ul-Utg" secondAttribute="bottom" id="vww-YX-MXv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Объекты" id="Hje-pF-h0y"/>
                     <connections>
+                        <outlet property="tableView" destination="Uem-ul-Utg" id="BvC-Oz-tuF"/>
                         <segue destination="CZp-Bm-c6u" kind="show" identifier="Object" id="cVU-1X-qq9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-47-U14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="1606"/>
+            <point key="canvasLocation" x="2020" y="1605.2473763118442"/>
         </scene>
         <!--<Не должно быть>-->
         <scene sceneID="mCb-jd-7TL">
@@ -815,7 +875,19 @@
                     <view key="view" contentMode="scaleToFill" id="CJm-I3-F20">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iGT-eJ-11I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iGT-eJ-11I" secondAttribute="trailing" id="Q8t-U6-jRP"/>
+                            <constraint firstItem="P8q-L1-svN" firstAttribute="top" secondItem="iGT-eJ-11I" secondAttribute="bottom" id="Wtg-ld-zVS"/>
+                            <constraint firstItem="iGT-eJ-11I" firstAttribute="leading" secondItem="CJm-I3-F20" secondAttribute="leading" id="XMl-pG-JDl"/>
+                            <constraint firstItem="iGT-eJ-11I" firstAttribute="top" secondItem="CJm-I3-F20" secondAttribute="top" id="gZ7-IQ-ySz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="&lt;Не должно быть&gt;" id="D03-Ly-FgD"/>
                     <connections>
@@ -824,7 +896,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghO-ex-yav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762" y="1606"/>
+            <point key="canvasLocation" x="2760.8000000000002" y="1605.2473763118442"/>
         </scene>
         <!--Карта-->
         <scene sceneID="jG3-gC-TRy">
@@ -963,6 +1035,7 @@
         <image name="img_menu_vk" width="22" height="12"/>
         <image name="img_menu_youtube" width="14" height="17"/>
         <image name="img_news_gradient" width="375" height="181"/>
+        <image name="img_object_gradient" width="375" height="120"/>
         <image name="img_tempalte" width="375" height="181"/>
     </resources>
 </document>

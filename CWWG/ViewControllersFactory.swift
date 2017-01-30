@@ -23,6 +23,10 @@ struct ViewControllersFactory {
     return newsViewController
   }
   
+  static var objectsListViewController: ObjectsListViewController {
+    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Objects") as! ObjectsListViewController
+  }
+  
   static var selectLanguageController: SelectLanguageViewController {
     let newsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectLanguage") as! SelectLanguageViewController
     return newsViewController

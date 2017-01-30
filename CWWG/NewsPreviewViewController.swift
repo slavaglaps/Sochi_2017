@@ -27,11 +27,6 @@ class NewsPreviewViewController: UIViewController {
     }
   }
   
-  @IBAction func openMenuButtonAction(_ sender: UIBarButtonItem) {
-    let menuViewController = ViewControllersFactory.menuViewController
-    self.present(menuViewController, animated: true, completion: nil)
-  }
-  
 }
 
 extension NewsPreviewViewController: UITableViewDataSource {

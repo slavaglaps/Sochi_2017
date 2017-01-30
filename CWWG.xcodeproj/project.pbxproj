@@ -25,6 +25,9 @@
 		9F54929E1E392FD8004FC272 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54929B1E392FD8004FC272 /* RealmExtension.swift */; };
 		9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A01E3937AC004FC272 /* NewsEntity.swift */; };
 		9F5492A31E3937C0004FC272 /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A21E3937C0004FC272 /* SettingsEntity.swift */; };
+		9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */; };
+		9F5CF60E1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */; };
+		9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */; };
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
@@ -105,6 +108,9 @@
 		9F54929B1E392FD8004FC272 /* RealmExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		9F5492A01E3937AC004FC272 /* NewsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		9F5492A21E3937C0004FC272 /* SettingsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
+		9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectRuntimeEntity.swift; sourceTree = "<group>"; };
+		9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
@@ -239,6 +245,47 @@
 				9F5492A21E3937C0004FC272 /* SettingsEntity.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		9F5CF6051E3F4EEA001EECB9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9F5CF6081E3F4EFB001EECB9 /* Cells */,
+				9F85453E1E2FD8E4004964F5 /* ObjectsListViewController.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		9F5CF6061E3F4EEF001EECB9 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				9F5CF6111E3F5AB7001EECB9 /* Cells */,
+				9F8545401E2FD8EE004964F5 /* ObjectPreviewViewController.swift */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		9F5CF6071E3F4EF4001EECB9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				9F8545421E2FD8F9004964F5 /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		9F5CF6081E3F4EFB001EECB9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9F5CF6111E3F5AB7001EECB9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		9F64CB951E377D830038FB29 /* Classes */ = {
@@ -411,9 +458,9 @@
 		9F85453D1E2FD8D0004964F5 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				9F85453E1E2FD8E4004964F5 /* ObjectsListViewController.swift */,
-				9F8545401E2FD8EE004964F5 /* ObjectPreviewViewController.swift */,
-				9F8545421E2FD8F9004964F5 /* MapViewController.swift */,
+				9F5CF6051E3F4EEA001EECB9 /* Objects */,
+				9F5CF6061E3F4EEF001EECB9 /* Object */,
+				9F5CF6071E3F4EF4001EECB9 /* Map */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -423,6 +470,7 @@
 			children = (
 				9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */,
 				9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */,
+				9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -453,6 +501,7 @@
 				9F1907B11E388CEE0056FAFD /* NotificationCenter+Extensions.swift */,
 				9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */,
 				9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */,
+				9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -674,6 +723,7 @@
 				9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */,
 				9F7FBECC1E38017B0004BF69 /* LocalizationController.swift in Sources */,
 				9F54929C1E392FD8004FC272 /* DataModelController.swift in Sources */,
+				9F5CF60E1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift in Sources */,
 				9F54929E1E392FD8004FC272 /* RealmExtension.swift in Sources */,
 				9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */,
 				9FFFA2751E37B0C100669B68 /* NewsPreviewDescriptionTableViewCell.swift in Sources */,
@@ -682,6 +732,7 @@
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
 				9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */,
 				9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */,
+				9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */,
@@ -696,6 +747,7 @@
 				9FC1D9841E3A409C00EDDA13 /* DateRepresentation.swift in Sources */,
 				9F1907BD1E38942E0056FAFD /* Localizations.swift in Sources */,
 				9F1907B21E388CEE0056FAFD /* NotificationCenter+Extensions.swift in Sources */,
+				9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */,
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,

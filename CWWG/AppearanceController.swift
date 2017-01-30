@@ -16,8 +16,6 @@ struct AppearanceController {
   private static func setupNavigationBarAppearance() {
     UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: AppFont.latoRegularFont(ofSize: 17), NSForegroundColorAttributeName: AppColor.titleColor]
     UINavigationBar.appearance().tintColor = AppColor.navigationBarTintColor
-//    UINavigationBar.appearance().shadowImage = UIImage()
-//    UINavigationBar.appearance().setBackgroundImage(UIImage(named: "header-background"), for: .default)
   }
   
 }

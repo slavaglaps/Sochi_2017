@@ -59,7 +59,8 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
       case .instagram:
         urlString = "https://www.instagram.com/cism_sochi2017/"
       default:
-        fatalError("No such url")
+        assertionFailure("No such URL")
+        urlString = "https://nothing"
       }
       return URL(string: urlString)!
     }
@@ -105,6 +106,8 @@ extension MenuViewController: MenuListViewDelegate {
     switch menuItem {
     case .news:
       showNews()
+    case .objects:
+      showObjects()
     case .accreditation:
       openAccreditation()
     default:
@@ -116,6 +119,11 @@ extension MenuViewController: MenuListViewDelegate {
 extension MenuViewController {
   func showNews() {
     RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.newsViewController]
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  func showObjects() {
+    RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.objectsListViewController]
     self.dismiss(animated: true, completion: nil)
   }
   

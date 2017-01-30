@@ -40,4 +40,4 @@
 "menu-item.results" = "Результаты";
 "menu-item.messenger" = "Мессенджер";
 "menu-item.broadcast" = "Трансляция";
-"menu-item.accreditation" = "Аккредитацию";
+"menu-item.accreditation" = "Аккредитация";

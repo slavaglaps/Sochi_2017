@@ -12,4 +12,13 @@ extension UIViewController {
   func makeBackButtonEmpty() {
     self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
   }
+  
+  func addMenuButton() {
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "img_icon_menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.openMenuButtonAction(_:)))
+  }
+  
+  func openMenuButtonAction(_ sender: UIBarButtonItem) {
+    let menuViewController = ViewControllersFactory.menuViewController
+    self.present(menuViewController, animated: true, completion: nil)
+  }
 }
