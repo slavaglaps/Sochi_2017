@@ -22,6 +22,10 @@ struct AppColor {
     return UIColor.black
   }
   
+  static var blue: UIColor {
+    return UIColor(hexString: "1E5FA7")
+  }
+  
   static var gray: UIColor {
     return AppColor.black.withAlphaComponent(0.5)
   }

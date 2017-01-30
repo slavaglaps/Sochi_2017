@@ -27,7 +27,7 @@ class ObjectInfoTableViewCell: UITableViewCell, Reusable {
   
   @IBOutlet weak var mapButton: UIButton! {
     didSet {
-      mapButton.backgroundColor = UIColor.blue
+      mapButton.backgroundColor = AppColor.blue
     }
   }
   

@@ -943,10 +943,10 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDG-1D-0Qn">
-                                                    <rect key="frame" x="255" y="23" width="120" height="50"/>
+                                                    <rect key="frame" x="275" y="23" width="100" height="50"/>
                                                     <color key="backgroundColor" red="0.73838114310000003" green="0.3221125427" blue="0.24385972289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="aJs-5t-TyD"/>
+                                                        <constraint firstAttribute="width" constant="100" id="aJs-5t-TyD"/>
                                                         <constraint firstAttribute="height" constant="50" id="n6W-fX-R6G"/>
                                                     </constraints>
                                                     <connections>
@@ -954,7 +954,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-sz-c2C">
-                                                    <rect key="frame" x="57" y="17.5" width="186" height="61"/>
+                                                    <rect key="frame" x="57" y="17.5" width="206" height="61"/>
                                                     <string key="text">Многофункциональная арена«ледяной куб»</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -967,7 +967,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Ae-tRa">
-                                                    <rect key="frame" x="292" y="38" width="46.5" height="21"/>
+                                                    <rect key="frame" x="302" y="38" width="46.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
