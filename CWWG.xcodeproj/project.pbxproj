@@ -28,6 +28,9 @@
 		9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */; };
 		9F5CF60E1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */; };
 		9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */; };
+		9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6121E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift */; };
+		9F5CF6151E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6141E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift */; };
+		9F5CF6171E3F6435001EECB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5CF6161E3F6435001EECB9 /* MapKit.framework */; };
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
@@ -111,6 +114,9 @@
 		9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 		9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		9F5CF6121E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		9F5CF6141E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectInfoTableViewCell.swift; sourceTree = "<group>"; };
+		9F5CF6161E3F6435001EECB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9F64CB901E37783A0038FB29 /* CWWG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CWWG.entitlements; sourceTree = "<group>"; };
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5CF6171E3F6435001EECB9 /* MapKit.framework in Frameworks */,
 				9FFFA2721E37A29000669B68 /* Crashlytics.framework in Frameworks */,
 				9FFFA2711E37A29000669B68 /* Fabric.framework in Frameworks */,
 				9F54928E1E392D1E004FC272 /* Alamofire.framework in Frameworks */,
@@ -198,6 +205,7 @@
 		457C04A816D03D9B5129D9B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F5CF6161E3F6435001EECB9 /* MapKit.framework */,
 				9F5492921E392F27004FC272 /* Realm.framework */,
 				9F5492931E392F27004FC272 /* RealmSwift.framework */,
 				9F5492941E392F27004FC272 /* SwiftyJSON.framework */,
@@ -284,6 +292,8 @@
 		9F5CF6111E3F5AB7001EECB9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9F5CF6121E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift */,
+				9F5CF6141E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -754,12 +764,14 @@
 				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
 				9F54929D1E392FD8004FC272 /* ObjectExtension.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
+				9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */,
 				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,
 				9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */,
 				9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */,
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,
 				9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */,
+				9F5CF6151E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

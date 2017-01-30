@@ -22,6 +22,13 @@ class ObjectsListViewController: UIViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     // Do any additional setup after loading the view.
   }
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let destination = segue.destination as? ObjectPreviewViewController, let indexPath = sender as? IndexPath {
+        let object = objects[indexPath.row]
+        destination.object = object
+      }
+    }
 }
 
 extension ObjectsListViewController: UITableViewDataSource {
@@ -39,18 +46,11 @@ extension ObjectsListViewController: UITableViewDataSource {
     
     return cell
   }
-  
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    if let destination = segue.destination as? NewsPreviewViewController, let indexPath = sender as? IndexPath {
-//      let currentNews = news![indexPath.row]
-//      destination.currentNews = currentNews
-//    }
-//  }
 }
 
 extension ObjectsListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-   // self.performSegue(withIdentifier: "Preview", sender: indexPath)
+    self.performSegue(withIdentifier: "Object", sender: indexPath)
   }
 }

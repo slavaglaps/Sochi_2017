@@ -9,27 +9,58 @@
 import UIKit
 
 class ObjectPreviewViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
+  @IBOutlet weak var tableView: UITableView!
+  var object: ObjectRuntimeEntity!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    tableView.estimatedRowHeight = 44.0
+    tableView.rowHeight = UITableViewAutomaticDimension
+    // Do any additional setup after loading the view.
+  }
+  
+  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  //    if let destination = segue.destination as? NewsPreviewViewController, let indexPath = sender as? IndexPath {
+  //      let currentNews = news![indexPath.row]
+  //      destination.currentNews = currentNews
+  //    }
+  //  }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ObjectPreviewViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 2
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if indexPath.row == 0 {
+      let cell = tableView.dequeueReusableCell(for: indexPath) as ObjectHeaderTableViewCell
+      
+      cell.objectImageView.image = object.imageName.image
+      
+      return cell
+    } else {
+      let cell = tableView.dequeueReusableCell(for: indexPath) as ObjectInfoTableViewCell
+      
+      cell.setup(with: object.title, subtitle: object.subtitle)
+      cell.sizeLabel.text = object.sizeString
+      cell.objectDescriptionLabel.text = object.description
+      
+      cell.mapButtonPressed = {
+        [weak self] in
+        self?.performSegue(withIdentifier: "Map", sender: nil)
+      }
+      
+      return cell
     }
-    */
+  }
+}
 
+extension ObjectPreviewViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    // self.performSegue(withIdentifier: "Object", sender: indexPath)
+  }
 }
