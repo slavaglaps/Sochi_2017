@@ -72,6 +72,9 @@ struct LocalizationController {
   static func select(localization: Localization) {
     currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
+    
+    ObjectRuntimeEntityContainer.resetEntities()
+    
     NotificationCenter.default.postUpdateLanguageChangedNotification()
   }
   

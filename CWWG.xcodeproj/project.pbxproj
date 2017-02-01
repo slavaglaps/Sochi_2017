@@ -26,6 +26,8 @@
 		9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A01E3937AC004FC272 /* NewsEntity.swift */; };
 		9F5492A31E3937C0004FC272 /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A21E3937C0004FC272 /* SettingsEntity.swift */; };
 		9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */; };
+		9F5BB9531E41EDB4007CBE28 /* Objects-ru-RU.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F5BB9521E41EDB4007CBE28 /* Objects-ru-RU.json */; };
+		9F5BB95C1E422A8D007CBE28 /* Objects-en-EN.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F5BB95B1E422A8D007CBE28 /* Objects-en-EN.json */; };
 		9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */; };
 		9F5CF60E1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */; };
 		9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */; };
@@ -114,6 +116,8 @@
 		9F5492A01E3937AC004FC272 /* NewsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		9F5492A21E3937C0004FC272 /* SettingsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
 		9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInButtonsView.swift; sourceTree = "<group>"; };
+		9F5BB9521E41EDB4007CBE28 /* Objects-ru-RU.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Objects-ru-RU.json"; sourceTree = "<group>"; };
+		9F5BB95B1E422A8D007CBE28 /* Objects-en-EN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Objects-en-EN.json"; sourceTree = "<group>"; };
 		9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 		9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -259,6 +263,15 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		9F5BB9511E41E9FC007CBE28 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9F5BB9521E41EDB4007CBE28 /* Objects-ru-RU.json */,
+				9F5BB95B1E422A8D007CBE28 /* Objects-en-EN.json */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		9F5CF6051E3F4EEA001EECB9 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +358,7 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F5BB9511E41E9FC007CBE28 /* Objects */,
 				9F1907B31E3892F10056FAFD /* Localizations */,
 				9F7FBEC81E38007E0004BF69 /* Localizable.strings */,
 				9FFFA23B1E3786EB00669B68 /* CustomFont */,
@@ -658,6 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5BB95C1E422A8D007CBE28 /* Objects-en-EN.json in Resources */,
 				9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */,
 				9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */,
 				9FFFA2501E37871B00669B68 /* Lato-Bold.ttf in Resources */,
@@ -669,6 +684,7 @@
 				9F1907BB1E3893110056FAFD /* ru-RU.txt in Resources */,
 				9FFFA2561E37871B00669B68 /* Lato-Italic.ttf in Resources */,
 				9FFFA2571E37871B00669B68 /* Lato-Light.ttf in Resources */,
+				9F5BB9531E41EDB4007CBE28 /* Objects-ru-RU.json in Resources */,
 				9FFFA2581E37871B00669B68 /* Lato-LightItalic.ttf in Resources */,
 				9FFFA2591E37871B00669B68 /* Lato-Medium.ttf in Resources */,
 				9FFFA25A1E37871B00669B68 /* Lato-MediumItalic.ttf in Resources */,

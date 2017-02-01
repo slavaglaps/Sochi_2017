@@ -7,6 +7,51 @@
 //
 
 import Foundation
+import CoreLocation
+import SwiftyJSON
+
+struct ObjectRuntimeEntityContainer {
+  private static var _entities: [ObjectRuntimeEntity]? = nil
+  static var entities: [ObjectRuntimeEntity] {
+    if _entities == nil {
+      loadEntities()
+    }
+    return _entities!
+  }
+  
+  static func resetEntities() {
+    _entities = nil
+  }
+  
+  private static func loadEntities() {
+    let path = Bundle.main.path(forResource: "Objects-\(LocalizationController.currentLocalization.rawValue)", ofType: "json")!
+    let contentData = FileManager.default.contents(atPath: path)!
+    let json = JSON(data: contentData)
+    
+    _entities = []
+    
+    for objectInfo in json.arrayValue {
+      let title = objectInfo["title"].stringValue
+      let subtitle = objectInfo["subtitle"].stringValue
+      let size = objectInfo["size"].intValue
+      let event = objectInfo["event"].stringValue
+      let description = objectInfo["description"].stringValue
+      let imageName = objectInfo["image_name"].stringValue
+      
+      let coordinatesComponents = objectInfo["location"].stringValue.components(separatedBy: ",")
+      let coordinatesPair: (latitude: Double, longitude: Double)
+      if let latitude = Double(coordinatesComponents.safeObject(atIndex: 0) ?? ""), let longitude = Double(coordinatesComponents.safeObject(atIndex: 1) ?? "") {
+        coordinatesPair = (latitude, longitude)
+      } else {
+        assertionFailure("No coordinates info")
+        coordinatesPair = (0, 0)
+      }
+      
+      let entity = ObjectRuntimeEntity(title: title, subtitle: subtitle, description: description, size: size, event: event, imageName: imageName, latitude: coordinatesPair.latitude, longitude: coordinatesPair.longitude)
+      _entities?.append(entity)
+    }
+  }
+}
 
 class ObjectRuntimeEntity {
   var title: String
@@ -14,21 +59,20 @@ class ObjectRuntimeEntity {
   var description: String
   var size: Int
   var imageName: String
+  var event: String
+  var coordinates: CLLocation
   
   var sizeString: String {
     return "Вместимость: \(size) человек"
   }
   
-  init(title: String, subtitle: String, description: String, size: Int, imageName: String) {
+  init(title: String, subtitle: String, description: String, size: Int, event: String, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
     self.title = title
     self.subtitle = subtitle
     self.description = description
     self.size = size
+    self.event = event
     self.imageName = imageName
-  }
-  
-  static var objects: [ObjectRuntimeEntity] {
-    let firstObject = ObjectRuntimeEntity(title: "ледяной куб", subtitle: "Многофункциональная арена", description: "Частные историки биографические и историки отдельных народов понимают эту силу как власть, присущую героям и владыкам. По их описаниям, события производятся исключительно волей Наполеонов, Александров или вообще тех лиц, которые описывает частный историк. Ответы, даваемые этого рода историками на вопрос о той силе, которая движет событиями, удовлетворительны, но только до тех пор, пока существует один историк по каждому событию. Но как скоро историки различных национальностей и воззрений начинают описывать одно и то же событие, то ответы, ими даваемые, тотчас же теряют весь смысл, ибо сила эта понимается каждым из них не только различно, но часто совершенно противоположно. Один историк утверждает, что событие произведено властью Наполеона; другой утверждает, что оно произведено властью Александра; третий — что властью какого-нибудь третьего лица. Кроме того, историки этого рода противоречат один другому даже и в объяснениях той силы, на которой основана власть одного и того же лица. Тьер, бонапартист, говорит, что власть Наполеона была основана на его добродетели и гениальности, Lanfrey, республиканец, говорит, что она была основана на его мошенничестве и на обмане народа. Так что историки этого рода, взаимно уничтожая положения друг друга, тем самым уничтожают понятие о силе, производящей события, и не дают никакого ответа на существенный вопрос истории.", size: 2500, imageName: "img_tempalte")
-    return [firstObject, firstObject, firstObject]
+    self.coordinates = CLLocation(latitude: latitude, longitude: longitude)
   }
 }

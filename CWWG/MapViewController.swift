@@ -46,9 +46,9 @@ enum MapAppType {
     let schemeString: String
     switch self {
     case .googleMaps:
-      schemeString = "comgooglemaps://?center=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+      schemeString = "comgooglemaps://?q=\(location.coordinate.latitude),\(location.coordinate.longitude)"
     case .yandexMaps:
-      schemeString = "yandexmaps://maps.yandex.ru/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+      schemeString = "yandexmaps://maps.yandex.ru/?pt=\(location.coordinate.latitude),\(location.coordinate.longitude)"
     default:
       schemeString = "yandexnavi://build_route_on_map?lat_to=\(location.coordinate.latitude)&lon_to=\(location.coordinate.longitude)"
     }
@@ -67,6 +67,8 @@ class MapViewController: UIViewController, UpdateLanguageNotificationObserver {
   @IBOutlet weak var openInView: OpenInButtonsView!
   var maps: [MapAppType] = []
   
+  var object: ObjectRuntimeEntity!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -80,10 +82,12 @@ class MapViewController: UIViewController, UpdateLanguageNotificationObserver {
     
     openInView.buttonDidTapAt = {
       [weak self] index in
-      guard let map = self?.maps[index] else {
+      guard let stongSelf = self else {
         return
       }
-      let scheme = map.scheme(with: CLLocation(latitude: 20, longitude: 30))
+      let map = stongSelf.maps[index]
+      let coordinates = stongSelf.object.coordinates.coordinate
+      let scheme = map.scheme(with: CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude))
       UIApplication.shared.openURL(scheme)
     }
     

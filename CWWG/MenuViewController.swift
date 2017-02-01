@@ -54,6 +54,10 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     var url: URL {
       let urlString: String
       switch self {
+      case .facebook:
+        urlString = "https://www.facebook.com/sochi2017/"
+      case .vk:
+        urlString = "https://vk.com/cismsochi2017"
       case .twitter:
         urlString = "https://twitter.com/2017Cism"
       case .instagram:

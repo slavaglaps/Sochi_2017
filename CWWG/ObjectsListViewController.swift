@@ -11,7 +11,7 @@ import UIKit
 class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var tableView: UITableView!
-  var objects: [ObjectRuntimeEntity] = ObjectRuntimeEntity.objects
+  var objects: [ObjectRuntimeEntity] = ObjectRuntimeEntityContainer.entities
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,6 +33,8 @@ class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObs
   
   func updateLanguage() {
     self.title = Localizations.MenuItem.Objects
+    
+    objects = ObjectRuntimeEntityContainer.entities
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

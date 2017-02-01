@@ -27,12 +27,11 @@ class ObjectPreviewViewController: UIViewController, UpdateLanguageNotificationO
     tableView.reloadData()
   }
   
-  //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  //    if let destination = segue.destination as? NewsPreviewViewController, let indexPath = sender as? IndexPath {
-  //      let currentNews = news![indexPath.row]
-  //      destination.currentNews = currentNews
-  //    }
-  //  }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let destination = segue.destination as? MapViewController {
+        destination.object = object
+      }
+    }
 }
 
 extension ObjectPreviewViewController: UITableViewDataSource {
