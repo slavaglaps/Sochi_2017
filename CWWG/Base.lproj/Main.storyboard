@@ -883,18 +883,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ObjectHeaderTableViewCell" rowHeight="107" id="C6D-yd-7rI" customClass="ObjectHeaderTableViewCell" customModule="CWWG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="107"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ObjectHeaderTableViewCell" rowHeight="150" id="C6D-yd-7rI" customClass="ObjectHeaderTableViewCell" customModule="CWWG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C6D-yd-7rI" id="gCQ-gr-Erz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tempalte" translatesAutoresizingMaskIntoConstraints="NO" id="eCW-TF-L8g">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tempalte" translatesAutoresizingMaskIntoConstraints="NO" id="eCW-TF-L8g">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="VoK-4F-lpj"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_object_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="0Do-gq-9Ac">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -913,7 +916,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ObjectInfoTableViewCell" rowHeight="200" id="AWI-E5-Rxc" customClass="ObjectInfoTableViewCell" customModule="CWWG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="178" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWI-E5-Rxc" id="II1-UJ-rgK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
@@ -1087,6 +1090,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="C08-Kf-yQd"/>
                     <connections>
+                        <outlet property="mapView" destination="B5F-M5-8P6" id="8MQ-F3-Qni"/>
                         <outlet property="openInView" destination="Tdq-2q-OXO" id="QrR-ND-6jH"/>
                     </connections>
                 </viewController>

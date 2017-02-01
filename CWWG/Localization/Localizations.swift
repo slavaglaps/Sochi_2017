@@ -89,6 +89,9 @@ public struct Localizations {
 
   public struct ObjectPreview {
 
+    /// Base translation: What is going on:
+    public static var WhatIsGoingOn : String { return localized(string: "object-preview.what-is-going-on", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
     /// Base translation: Сapacity: %i viewers
     public static func Size(value1 : Int) -> String {
       return String(format: localized(string: "object-preview.size", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)

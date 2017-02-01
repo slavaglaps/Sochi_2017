@@ -43,6 +43,7 @@
 // Objects
 
 "object-preview.size" = "Вместимость: %i зрителей";
+"object-preview.what-is-going-on" = "Что происходит:";
 
 // Map
 

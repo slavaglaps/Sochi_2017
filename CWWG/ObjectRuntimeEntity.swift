@@ -63,7 +63,7 @@ class ObjectRuntimeEntity {
   var coordinates: CLLocation
   
   var sizeString: String {
-    return "Вместимость: \(size) человек"
+    return Localizations.ObjectPreview.Size(value1: size)
   }
   
   init(title: String, subtitle: String, description: String, size: Int, event: String, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {

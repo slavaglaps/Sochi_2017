@@ -27,9 +27,6 @@ enum MapAppType {
   }
   
   var scheme: URL {
-    // UIApplication.shared.openURL(URL(string: "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!)
-    // yandexmaps://maps.yandex.ru/?ll=37.5959049,55.7390474&z=12
-    // yandexnavi://build_route_on_map?lat_to=55.758192&lon_to=37.642817
     let schemeString: String
     switch self {
     case .googleMaps:
@@ -65,8 +62,9 @@ enum MapAppType {
 class MapViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var openInView: OpenInButtonsView!
-  var maps: [MapAppType] = []
+  @IBOutlet weak var mapView: MKMapView!
   
+  var maps: [MapAppType] = []
   var object: ObjectRuntimeEntity!
   
   override func viewDidLoad() {
@@ -94,6 +92,12 @@ class MapViewController: UIViewController, UpdateLanguageNotificationObserver {
     if maps.count == 0 {
       openInView.isHidden = true
     }
+    
+    let coordinates = object.coordinates.coordinate
+    let center = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+    let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+    
+    mapView.setRegion(region, animated: true)
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
     

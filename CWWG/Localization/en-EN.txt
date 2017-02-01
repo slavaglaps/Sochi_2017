@@ -43,6 +43,7 @@
 // Objects
 
 "object-preview.size" = "Сapacity: %i viewers";
+"object-preview.what-is-going-on" = "What is going on:";
 
 // Map
 

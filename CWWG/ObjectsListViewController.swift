@@ -33,7 +33,6 @@ class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObs
   
   func updateLanguage() {
     self.title = Localizations.MenuItem.Objects
-    
     objects = ObjectRuntimeEntityContainer.entities
   }
   
@@ -55,7 +54,7 @@ extension ObjectsListViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath) as ObjectTableViewCell
     
     cell.setup(with: object.title, subtitle: object.subtitle)
-    cell.setupWhatIsGoingOn(text: "Церемония открытия / закрытия Игр")
+    cell.setupWhatIsGoingOn(text: object.event)
     cell.objectImageView.image = object.imageName.image
     
     return cell

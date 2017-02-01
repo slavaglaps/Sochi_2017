@@ -35,7 +35,7 @@ class ObjectTableViewCell: UITableViewCell, Reusable {
   }
   
   func setupWhatIsGoingOn(text: String) {
-    let subtitle = "Что происходит:"
+    let subtitle = Localizations.ObjectPreview.WhatIsGoingOn
     let attributedString = NSMutableAttributedString(string: "\(subtitle) \(text)")
     
     let fullRange = NSMakeRange(0, attributedString.string.characters.count)
