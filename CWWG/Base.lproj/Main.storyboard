@@ -803,7 +803,8 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQB-bu-wPW">
                                                     <rect key="frame" x="20" y="34" width="335" height="29"/>
-                                                    <string key="text">Многофункциональная арена«ледяной куб»</string>
+                                                    <string key="text">Многофункциональная арена
+«ледяной куб»</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -942,12 +943,13 @@
                                                         <constraint firstAttribute="height" constant="1" id="6Uu-U3-ajc"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDG-1D-0Qn">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDG-1D-0Qn">
                                                     <rect key="frame" x="275" y="23" width="100" height="50"/>
                                                     <color key="backgroundColor" red="0.73838114310000003" green="0.3221125427" blue="0.24385972289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="aJs-5t-TyD"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="aJs-5t-TyD"/>
                                                         <constraint firstAttribute="height" constant="50" id="n6W-fX-R6G"/>
+                                                        <constraint firstAttribute="width" priority="750" constant="100" id="v6d-6f-0Io"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="mapButtonAction:" destination="AWI-E5-Rxc" eventType="touchUpInside" id="2n2-SU-aoS"/>
@@ -955,7 +957,8 @@
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-sz-c2C">
                                                     <rect key="frame" x="57" y="17.5" width="206" height="61"/>
-                                                    <string key="text">Многофункциональная арена«ледяной куб»</string>
+                                                    <string key="text">Многофункциональная арена
+«ледяной куб»</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -966,12 +969,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Ae-tRa">
-                                                    <rect key="frame" x="302" y="38" width="46.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHL-LL-9FV">
+                                                    <rect key="frame" x="287.5" y="37.5" width="76.5" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Ae-tRa">
+                                                            <rect key="frame" x="30" y="0.0" width="46.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_map_logo" translatesAutoresizingMaskIntoConstraints="NO" id="4OE-Lp-qk1">
+                                                            <rect key="frame" x="0.0" y="2" width="17" height="17"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="HEF-Ae-tRa" firstAttribute="leading" secondItem="4OE-Lp-qk1" secondAttribute="trailing" constant="13" id="21u-cL-vbP"/>
+                                                        <constraint firstItem="HEF-Ae-tRa" firstAttribute="top" secondItem="EHL-LL-9FV" secondAttribute="top" id="42V-f0-qUo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HEF-Ae-tRa" secondAttribute="trailing" id="CsH-pk-awB"/>
+                                                        <constraint firstItem="4OE-Lp-qk1" firstAttribute="leading" secondItem="EHL-LL-9FV" secondAttribute="leading" id="bOP-Fh-zcA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HEF-Ae-tRa" secondAttribute="bottom" id="jyq-12-Ktk"/>
+                                                        <constraint firstItem="4OE-Lp-qk1" firstAttribute="centerY" secondItem="HEF-Ae-tRa" secondAttribute="centerY" id="vat-9s-OhC"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="HCc-nT-j0q" secondAttribute="bottom" id="4bL-vO-Psc"/>
@@ -985,11 +1005,12 @@
                                                 <constraint firstItem="bQt-f4-Rfg" firstAttribute="top" secondItem="Zw5-f0-wja" secondAttribute="bottom" constant="25" id="Uql-TT-q4V"/>
                                                 <constraint firstAttribute="bottom" secondItem="bQt-f4-Rfg" secondAttribute="bottom" id="Uyc-Fy-MXF"/>
                                                 <constraint firstItem="kTV-sz-c2C" firstAttribute="firstBaseline" secondItem="II1-UJ-rgK" secondAttribute="top" constant="34" id="XCz-Pd-EXN"/>
-                                                <constraint firstItem="HEF-Ae-tRa" firstAttribute="centerX" secondItem="jDG-1D-0Qn" secondAttribute="centerX" id="Xb5-2l-pRD"/>
                                                 <constraint firstAttribute="trailing" secondItem="jDG-1D-0Qn" secondAttribute="trailing" id="ZC0-Ns-Lsj"/>
                                                 <constraint firstItem="jDG-1D-0Qn" firstAttribute="centerY" secondItem="kTV-sz-c2C" secondAttribute="centerY" id="fyc-Hx-Go9"/>
+                                                <constraint firstItem="EHL-LL-9FV" firstAttribute="centerX" secondItem="jDG-1D-0Qn" secondAttribute="centerX" id="iim-Ml-8kX"/>
                                                 <constraint firstItem="Pot-iJ-DW4" firstAttribute="leading" secondItem="kTV-sz-c2C" secondAttribute="leading" id="n6c-3x-g4T"/>
-                                                <constraint firstItem="HEF-Ae-tRa" firstAttribute="centerY" secondItem="jDG-1D-0Qn" secondAttribute="centerY" id="oUd-I6-jkM"/>
+                                                <constraint firstItem="EHL-LL-9FV" firstAttribute="centerY" secondItem="jDG-1D-0Qn" secondAttribute="centerY" id="p23-qK-0dl"/>
+                                                <constraint firstItem="EHL-LL-9FV" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jDG-1D-0Qn" secondAttribute="trailing" constant="-6" id="pq6-P3-fLC"/>
                                                 <constraint firstItem="Zw5-f0-wja" firstAttribute="leading" secondItem="HCc-nT-j0q" secondAttribute="trailing" id="psz-yG-B7A"/>
                                                 <constraint firstItem="jDG-1D-0Qn" firstAttribute="leading" secondItem="kTV-sz-c2C" secondAttribute="trailing" constant="12" id="qIp-1z-PHN"/>
                                                 <constraint firstItem="HCc-nT-j0q" firstAttribute="top" secondItem="II1-UJ-rgK" secondAttribute="top" id="tmv-87-Fg1"/>
@@ -1045,9 +1066,19 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="B5F-M5-8P6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdq-2q-OXO" customClass="OpenInButtonsView" customModule="CWWG" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="582" width="240" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="8QD-g5-RM1"/>
+                                    <constraint firstAttribute="height" priority="750" constant="10" id="VEV-2E-5AG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Tdq-2q-OXO" firstAttribute="centerX" secondItem="Ved-mw-Cww" secondAttribute="centerX" id="2QM-ce-V6k"/>
+                            <constraint firstItem="rtp-tf-x1P" firstAttribute="top" secondItem="Tdq-2q-OXO" secondAttribute="bottom" constant="75" id="Ayi-x8-J33"/>
                             <constraint firstItem="B5F-M5-8P6" firstAttribute="top" secondItem="Ved-mw-Cww" secondAttribute="top" id="Pzm-XA-bSy"/>
                             <constraint firstAttribute="trailing" secondItem="B5F-M5-8P6" secondAttribute="trailing" id="Zdf-VY-I4F"/>
                             <constraint firstItem="B5F-M5-8P6" firstAttribute="leading" secondItem="Ved-mw-Cww" secondAttribute="leading" id="tmd-N8-lK9"/>
@@ -1055,6 +1086,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="C08-Kf-yQd"/>
+                    <connections>
+                        <outlet property="openInView" destination="Tdq-2q-OXO" id="QrR-ND-6jH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asq-sS-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1158,6 +1192,7 @@
         <image name="img_icon_english" width="10" height="10"/>
         <image name="img_icon_russian" width="10" height="10"/>
         <image name="img_language_select_background" width="375" height="667"/>
+        <image name="img_map_logo" width="17" height="17"/>
         <image name="img_menu_bg" width="375" height="667"/>
         <image name="img_menu_close" width="22" height="22"/>
         <image name="img_menu_facebook" width="9" height="18"/>

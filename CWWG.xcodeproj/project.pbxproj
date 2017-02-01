@@ -25,6 +25,7 @@
 		9F54929E1E392FD8004FC272 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54929B1E392FD8004FC272 /* RealmExtension.swift */; };
 		9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A01E3937AC004FC272 /* NewsEntity.swift */; };
 		9F5492A31E3937C0004FC272 /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A21E3937C0004FC272 /* SettingsEntity.swift */; };
+		9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */; };
 		9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */; };
 		9F5CF60E1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */; };
 		9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */; };
@@ -112,6 +113,7 @@
 		9F54929B1E392FD8004FC272 /* RealmExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		9F5492A01E3937AC004FC272 /* NewsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		9F5492A21E3937C0004FC272 /* SettingsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInButtonsView.swift; sourceTree = "<group>"; };
 		9F5CF6091E3F4F4B001EECB9 /* ObjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectTableViewCell.swift; sourceTree = "<group>"; };
 		9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			children = (
 				9F8545481E2FDEDA004964F5 /* FashionLineView.swift */,
 				9FDEEC781E3E15A600A2C368 /* MenuListView.swift */,
+				9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
+				9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */,
 				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
 				9F54929D1E392FD8004FC272 /* ObjectExtension.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,

@@ -26,6 +26,10 @@ struct AppColor {
     return UIColor(hexString: "1E5FA7")
   }
   
+  static var darkBlueGrey: UIColor {
+    return UIColor(red: 32.0 / 255.0, green: 52.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
+  }
+  
   static var gray: UIColor {
     return AppColor.black.withAlphaComponent(0.5)
   }

@@ -1,7 +1,5 @@
 "select-language.title" = "Выберите язык";
 
-"news.title" = "Новости";
-
 // Date
 
 "time.weekday.monday" = "Понедельник";
@@ -41,3 +39,12 @@
 "menu-item.messenger" = "Мессенджер";
 "menu-item.broadcast" = "Трансляция";
 "menu-item.accreditation" = "Аккредитация";
+
+// Objects
+
+"object-preview.size" = "Вместимость: %i зрителей";
+
+// Map
+
+"map.title" = "Карта";
+"map.open-in" = "Открыть в %@";

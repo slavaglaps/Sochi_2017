@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectPreviewViewController: UIViewController {
+class ObjectPreviewViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var tableView: UITableView!
   var object: ObjectRuntimeEntity!
@@ -18,7 +18,13 @@ class ObjectPreviewViewController: UIViewController {
     
     tableView.estimatedRowHeight = 44.0
     tableView.rowHeight = UITableViewAutomaticDimension
+    
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
     // Do any additional setup after loading the view.
+  }
+  
+  func updateLanguage() {
+    tableView.reloadData()
   }
   
   //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

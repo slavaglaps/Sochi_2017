@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectInfoTableViewCell: UITableViewCell, Reusable {
+class ObjectInfoTableViewCell: UITableViewCell, Reusable, UpdateLanguageNotificationObserver {
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -77,8 +77,14 @@ class ObjectInfoTableViewCell: UITableViewCell, Reusable {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
     // Initialization code
   }
+  
+  func updateLanguage() {
+    mapLabel.text = Localizations.Map.Title
+  }
+  
   
   @IBAction func mapButtonAction(_ sender: UIButton) {
     mapButtonPressed?()

@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.makeKeyAndVisible()
     
     if LocalizationController.isLocalizationWasSelected {
-      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
+      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.objectsListViewController)
       RouterController.shared.baseNavigationController = window?.rootViewController as! UINavigationController
     } else {
       window?.rootViewController = ViewControllersFactory.selectLanguageController

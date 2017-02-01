@@ -1,7 +1,5 @@
 "select-language.title" = "Select language";
 
-"news.title" = "News";
-
 // Date
 
 "time.weekday.monday" = "Monday";
@@ -41,3 +39,12 @@
 "menu-item.messenger" = "Messenger";
 "menu-item.broadcast" = "Broadcast";
 "menu-item.accreditation" = "Accreditation";
+
+// Objects
+
+"object-preview.size" = "Сapacity: %i viewers";
+
+// Map
+
+"map.title" = "Map";
+"map.open-in" = "Open in %@";

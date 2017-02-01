@@ -60,7 +60,7 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   }
   
   func updateLanguage() {
-    title = Localizations.News.Title
+    title = Localizations.MenuItem.News
     tableView.reloadData()
   }
   

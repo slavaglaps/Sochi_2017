@@ -51,9 +51,6 @@ public struct Localizations {
     /// Base translation: Messenger
     public static var Messenger : String { return localized(string: "menu-item.messenger", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Quiz
-    public static var Quiz : String { return localized(string: "menu-item.quiz", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
     /// Base translation: Results
     public static var Results : String { return localized(string: "menu-item.results", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
@@ -71,10 +68,31 @@ public struct Localizations {
 
   }
 
+  public struct Map {
+
+    /// Base translation: Map
+    public static var Title : String { return localized(string: "map.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Open in %@
+    public static func OpenIn(value1 : String) -> String {
+      return String(format: localized(string: "map.open-in", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
+
+  }
+
   public struct SelectLanguage {
 
     /// Base translation: Select language
     public static var Title : String { return localized(string: "select-language.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+  }
+
+  public struct ObjectPreview {
+
+    /// Base translation: Сapacity: %i viewers
+    public static func Size(value1 : Int) -> String {
+      return String(format: localized(string: "object-preview.size", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
 
   }
 
@@ -145,12 +163,5 @@ public struct Localizations {
       public static var May : String { return localized(string: "time.month.may", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     }
-  }
-
-  public struct News {
-
-    /// Base translation: News
-    public static var Title : String { return localized(string: "news.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
   }
 }

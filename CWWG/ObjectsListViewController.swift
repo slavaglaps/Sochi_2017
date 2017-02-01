@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectsListViewController: UIViewController {
+class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var tableView: UITableView!
   var objects: [ObjectRuntimeEntity] = ObjectRuntimeEntity.objects
@@ -20,15 +20,27 @@ class ObjectsListViewController: UIViewController {
     
     tableView.estimatedRowHeight = 120
     tableView.rowHeight = UITableViewAutomaticDimension
+    
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
+    
     // Do any additional setup after loading the view.
   }
   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let destination = segue.destination as? ObjectPreviewViewController, let indexPath = sender as? IndexPath {
-        let object = objects[indexPath.row]
-        destination.object = object
-      }
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+  }
+  
+  func updateLanguage() {
+    self.title = Localizations.MenuItem.Objects
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? ObjectPreviewViewController, let indexPath = sender as? IndexPath {
+      let object = objects[indexPath.row]
+      destination.object = object
     }
+  }
 }
 
 extension ObjectsListViewController: UITableViewDataSource {
