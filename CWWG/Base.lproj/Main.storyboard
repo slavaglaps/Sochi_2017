@@ -536,7 +536,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyX-QX-u7i">
-                                <rect key="frame" x="338" y="36" width="22" height="22"/>
+                                <rect key="frame" x="317" y="14.5" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="FXc-Cg-QTr"/>
+                                    <constraint firstAttribute="height" constant="64" id="z4X-ms-3KV"/>
+                                </constraints>
                                 <state key="normal" image="img_menu_close"/>
                                 <connections>
                                     <action selector="selectNewsButtonAction:" destination="VrM-sJ-i11" eventType="touchUpInside" id="g6W-Hh-IEo"/>
@@ -688,7 +692,7 @@
                             <constraint firstItem="Iic-C6-mCD" firstAttribute="top" secondItem="lEI-Pa-82q" secondAttribute="bottom" id="CR8-QN-Ur9"/>
                             <constraint firstItem="de6-gl-NvB" firstAttribute="top" secondItem="FlR-dP-ieP" secondAttribute="bottom" constant="25" id="GFV-WH-aCw"/>
                             <constraint firstItem="FlR-dP-ieP" firstAttribute="top" secondItem="pe8-jW-nzz" secondAttribute="bottom" constant="25" id="KgM-RD-a5f"/>
-                            <constraint firstAttribute="trailing" secondItem="xyX-QX-u7i" secondAttribute="trailing" constant="15" id="MNh-FM-efV"/>
+                            <constraint firstAttribute="trailing" secondItem="xyX-QX-u7i" secondAttribute="trailing" constant="-6" id="MNh-FM-efV"/>
                             <constraint firstItem="FlR-dP-ieP" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="NKf-Zd-3gT"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="top" secondItem="E2a-rf-ANN" secondAttribute="bottom" constant="8" id="SVj-mW-x6c"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="WgR-qi-TbR"/>
@@ -1140,7 +1144,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ScheduleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ECR-kh-P84">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ECR-kh-P84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1158,7 +1162,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ObjectsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
