@@ -31,4 +31,8 @@ struct ViewControllersFactory {
     let newsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectLanguage") as! SelectLanguageViewController
     return newsViewController
   }
+  
+  static var scheduleViewController: ScheduleViewController {
+    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Schedule") as! ScheduleViewController
+  }
 }
