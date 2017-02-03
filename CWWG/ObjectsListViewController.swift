@@ -34,6 +34,7 @@ class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObs
   func updateLanguage() {
     self.title = Localizations.MenuItem.Objects
     objects = ObjectRuntimeEntityContainer.entities
+    tableView.reloadData()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
