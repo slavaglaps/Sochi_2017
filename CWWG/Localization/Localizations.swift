@@ -119,12 +119,37 @@ public struct Localizations {
       /// Base translation: Thursday
       public static var Thursday : String { return localized(string: "time.weekday.thursday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-      /// Base translation: Saturday
-      public static var Saturday : String { return localized(string: "time.weekday.saturday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
       /// Base translation: Wednesday
       public static var Wednesday : String { return localized(string: "time.weekday.wednesday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
+      /// Base translation: Saturday
+      public static var Saturday : String { return localized(string: "time.weekday.saturday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+
+      public struct Short {
+
+        /// Base translation: Mon
+        public static var Monday : String { return localized(string: "time.weekday.short.monday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Fri
+        public static var Friday : String { return localized(string: "time.weekday.short.friday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Sun
+        public static var Sunday : String { return localized(string: "time.weekday.short.sunday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Tue
+        public static var Tuesday : String { return localized(string: "time.weekday.short.tuesday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Thu
+        public static var Thursday : String { return localized(string: "time.weekday.short.thursday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Sat
+        public static var Saturday : String { return localized(string: "time.weekday.short.saturday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Wed
+        public static var Wednesday : String { return localized(string: "time.weekday.short.wednesday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+      }
     }
 
     public struct Month {

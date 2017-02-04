@@ -44,12 +44,22 @@
                         <constraint firstItem="FWi-lL-hAf" firstAttribute="centerY" secondItem="55v-Hb-XNX" secondAttribute="centerY" id="i9h-Ka-6SN"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jp7-5E-Spa">
+                    <rect key="frame" x="0.0" y="0.0" width="65" height="93"/>
+                    <connections>
+                        <action selector="buttonTouchUpInsideAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="afY-Ko-AuP"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="55v-Hb-XNX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5iT-iS-CHX"/>
+                <constraint firstItem="jp7-5E-Spa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8zc-Ab-eHK"/>
+                <constraint firstItem="jp7-5E-Spa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AO4-eO-KLN"/>
                 <constraint firstItem="Kse-eP-aEf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EGQ-W4-Hrn"/>
+                <constraint firstAttribute="trailing" secondItem="jp7-5E-Spa" secondAttribute="trailing" id="IOl-Pe-Rom"/>
                 <constraint firstItem="55v-Hb-XNX" firstAttribute="top" secondItem="Kse-eP-aEf" secondAttribute="bottom" constant="8" id="Kh0-bC-mZN"/>
+                <constraint firstAttribute="bottom" secondItem="jp7-5E-Spa" secondAttribute="bottom" id="erR-vQ-cvs"/>
                 <constraint firstItem="x5j-6V-tCT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fIw-ub-L22"/>
                 <constraint firstAttribute="bottom" secondItem="55v-Hb-XNX" secondAttribute="bottom" id="gTB-XA-CP7"/>
                 <constraint firstItem="Kse-eP-aEf" firstAttribute="top" secondItem="x5j-6V-tCT" secondAttribute="bottom" constant="12" id="jr8-Db-Mhy"/>

@@ -8,13 +8,30 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var tableView: UITableView!
   var events: [EventEntity] = []
   
+  @IBOutlet weak var monthLabel: UILabel!
   @IBOutlet weak var calendarStackView: UIStackView!
   
+  var selectedCell: CalendarCellView? {
+    didSet {
+      oldValue?.isSelected = false
+      selectedCell?.isSelected = true
+    }
+  }
+  var selectedIndex: Int = 0 {
+    didSet {
+      updateCellSelection()
+    }
+  }
+  
+  func updateCellSelection() {
+    let cell = calendarStackView.arrangedSubviews[selectedIndex] as? CalendarCellView
+    selectedCell = cell
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,12 +42,41 @@ class ScheduleViewController: UIViewController {
     
     tableView.rowHeight = 120
     
+    NotificationCenter.default.addLanguageChangeObserver(observer: self)
+  }
+  
+  func updateLanguage() {
+    monthLabel.text = "\(localized(monthAtIndex: 2)) 2017"
+    title = Localizations.MenuItem.Schedule
+    fillCalendar()
+  }
+  
+  func fillCalendar() {
+    
+    _ = calendarStackView.arrangedSubviews.map({ $0.removeFromSuperview() })
+    
     for i in 0..<7 {
-      let cell = CalendarCellView.createCell(dayOfWeekString: "5", date: 27)
+      let dayOfWeek = localized(shortDayOfWeekAtIndex: i + 1)
+      let day = 22 + i
+      
+      var image: UIImage? = nil
+      if i == 0 {
+        image = UIImage(named: "img_icon_flag")
+      } else if i == 6 {
+        image = UIImage(named: "img_icon_plane")
+      }
+      
+      let cell = CalendarCellView.createCell(dayOfWeekString: dayOfWeek, date: day, image: image)
       calendarStackView.addArrangedSubview(cell)
+      
+      cell.tag = i
+      cell.buttonDidTouchAction = {
+        [weak self] cell in
+        self?.selectedIndex = cell.tag
+      }
     }
     
-    // Do any additional setup after loading the view.
+    updateCellSelection()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

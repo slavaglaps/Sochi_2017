@@ -37,6 +37,15 @@ func localized(dayOfWeekAtIndex index: Int) -> String {
   }
 }
 
+func localized(shortDayOfWeekAtIndex index: Int) -> String {
+  if let dayOfWeek = LocalizationController.shortDaysOfWeek.safeObject(atIndex: index - 1) {
+    return dayOfWeek
+  } else {
+    assertionFailure("No such day of week")
+    return ""
+  }
+}
+
 struct LocalizationController {
   
   enum Localization: String {
@@ -59,6 +68,7 @@ struct LocalizationController {
   
   private(set) static var months: [String] = []
   private(set) static var daysOfWeek: [String] = []
+  private(set) static var shortDaysOfWeek: [String] = []
   private static var localizations: [String: String] = [:]
   
   static func localized(string: String, comment: String = "") -> String {
@@ -127,6 +137,14 @@ struct LocalizationController {
                   Localizations.Time.Weekday.Friday,
                   Localizations.Time.Weekday.Saturday,
                   Localizations.Time.Weekday.Sunday]
+    
+    shortDaysOfWeek = [Localizations.Time.Weekday.Short.Monday,
+                       Localizations.Time.Weekday.Short.Tuesday,
+                       Localizations.Time.Weekday.Short.Wednesday,
+                       Localizations.Time.Weekday.Short.Thursday,
+                       Localizations.Time.Weekday.Short.Friday,
+                       Localizations.Time.Weekday.Short.Saturday,
+                       Localizations.Time.Weekday.Short.Sunday]
   }
   
   static var isLocalizationWasSelected: Bool {

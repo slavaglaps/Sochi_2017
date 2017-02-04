@@ -10,6 +10,14 @@
 "time.weekday.saturday" = "Saturday";
 "time.weekday.sunday" = "Sunday";
 
+"time.weekday.short.monday" = "Mon";
+"time.weekday.short.tuesday" = "Tue";
+"time.weekday.short.wednesday" = "Wed";
+"time.weekday.short.thursday" = "Thu";
+"time.weekday.short.friday" = "Fri";
+"time.weekday.short.saturday" = "Sat";
+"time.weekday.short.sunday" = "Sun";
+
 "time.month.january" = "January";
 "time.month.february" = "February";
 "time.month.march" = "March";

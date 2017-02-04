@@ -9,11 +9,14 @@
 import UIKit
 
 class CalendarCellView: UIView {
-  static func createCell(dayOfWeekString: String, date: Int) -> CalendarCellView {
+  var buttonDidTouchAction: ((_ cell: CalendarCellView) -> ())?
+  
+  static func createCell(dayOfWeekString: String, date: Int, image: UIImage?) -> CalendarCellView {
     let cell = CalendarCellView.az_viewFromNib()
     
-    cell.weekDateLabel.text = "Пн"
-    cell.dateLabel.text = "22"
+    cell.weekDateLabel.text = dayOfWeekString
+    cell.dateLabel.text = "\(date)"
+    cell.iconImageView.image = image
     
     return cell
   }
@@ -21,6 +24,7 @@ class CalendarCellView: UIView {
   override func awakeFromNib() {
     super.awakeFromNib()
     backgroundColor = AppColor.clear
+    isSelected = false
   }
   
   @IBOutlet weak var iconImageView: UIImageView!
@@ -55,4 +59,9 @@ class CalendarCellView: UIView {
       }
     }
   }
+  
+  @IBAction func buttonTouchUpInsideAction(_ sender: UIButton) {
+    buttonDidTouchAction?(self)
+  }
+  
 }

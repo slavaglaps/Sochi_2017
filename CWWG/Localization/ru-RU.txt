@@ -10,6 +10,14 @@
 "time.weekday.saturday" = "Суббота";
 "time.weekday.sunday" = "Воскресенье";
 
+"time.weekday.short.monday" = "Пн";
+"time.weekday.short.tuesday" = "Вт";
+"time.weekday.short.wednesday" = "Ср";
+"time.weekday.short.thursday" = "Чт";
+"time.weekday.short.friday" = "Пт";
+"time.weekday.short.saturday" = "Сб";
+"time.weekday.short.sunday" = "Вс";
+
 "time.month.january" = "Январь";
 "time.month.february" = "Февраль";
 "time.month.march" = "Март";
