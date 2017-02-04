@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F028B811E46257D000FFB11 /* SeparatorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */; };
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
@@ -97,6 +98,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorsTableViewCell.swift; sourceTree = "<group>"; };
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				9F8545481E2FDEDA004964F5 /* FashionLineView.swift */,
 				9FDEEC781E3E15A600A2C368 /* MenuListView.swift */,
 				9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */,
+				9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
 				9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */,
 				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
+				9F028B811E46257D000FFB11 /* SeparatorsTableViewCell.swift in Sources */,
 				9F54929D1E392FD8004FC272 /* ObjectExtension.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
 				9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */,

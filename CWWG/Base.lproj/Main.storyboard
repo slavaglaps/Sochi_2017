@@ -118,60 +118,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVK-mW-FD7">
-                                                    <rect key="frame" x="57" y="74" width="318" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="obX-8j-Gl3"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuB-ZY-iCH">
-                                                    <rect key="frame" x="0.0" y="74" width="375" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="CIH-zb-uhK"/>
-                                                    </constraints>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5P-ep-Drf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="JpW-qL-Ezf"/>
-                                                    </constraints>
-                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vkf-QI-Ga7" firstAttribute="leading" secondItem="ORr-mc-Dr8" secondAttribute="trailing" id="0EA-W6-2KC"/>
-                                                <constraint firstAttribute="trailing" secondItem="pVK-mW-FD7" secondAttribute="trailing" id="1cv-sr-H6b"/>
-                                                <constraint firstAttribute="bottom" secondItem="CuB-ZY-iCH" secondAttribute="bottom" id="7nk-kl-gWE"/>
                                                 <constraint firstAttribute="bottom" secondItem="ORr-mc-Dr8" secondAttribute="bottom" id="8Oh-Uf-Rjr"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="leading" secondItem="vkf-QI-Ga7" secondAttribute="leading" id="C3v-Wa-dZo"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="top" secondItem="vkf-QI-Ga7" secondAttribute="bottom" constant="13" id="Egm-Z0-exn"/>
                                                 <constraint firstItem="ORr-mc-Dr8" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="FaC-ao-8Pp"/>
-                                                <constraint firstItem="pVK-mW-FD7" firstAttribute="leading" secondItem="vkf-QI-Ga7" secondAttribute="leading" id="Fxe-ux-C2e"/>
                                                 <constraint firstItem="ORr-mc-Dr8" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" id="KEE-wm-lYE"/>
                                                 <constraint firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" constant="12" id="M9E-CC-HAO"/>
                                                 <constraint firstItem="I4O-ac-Ql1" firstAttribute="trailing" secondItem="vkf-QI-Ga7" secondAttribute="trailing" id="PTH-es-fAl"/>
-                                                <constraint firstAttribute="trailing" secondItem="W5P-ep-Drf" secondAttribute="trailing" id="Sdc-MD-rk0"/>
                                                 <constraint firstAttribute="bottom" secondItem="I4O-ac-Ql1" secondAttribute="bottom" constant="18" id="ZDG-2r-Smg"/>
-                                                <constraint firstItem="W5P-ep-Drf" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" id="fHq-vm-nk9"/>
-                                                <constraint firstItem="CuB-ZY-iCH" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="o5f-GR-fiy"/>
-                                                <constraint firstItem="W5P-ep-Drf" firstAttribute="leading" secondItem="d0y-Jo-ly8" secondAttribute="leading" id="odN-4d-rTT"/>
-                                                <constraint firstAttribute="bottom" secondItem="pVK-mW-FD7" secondAttribute="bottom" id="sPB-nz-vZy"/>
-                                                <constraint firstAttribute="trailing" secondItem="CuB-ZY-iCH" secondAttribute="trailing" id="xhd-QL-aEi"/>
                                                 <constraint firstItem="vkf-QI-Ga7" firstAttribute="top" secondItem="d0y-Jo-ly8" secondAttribute="top" constant="14" id="yqa-Bs-H2s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bottomSeparatorView" destination="CuB-ZY-iCH" id="scG-So-x6W"/>
                                             <outlet property="fashionLineView" destination="ORr-mc-Dr8" id="n2t-L2-v9G"/>
                                             <outlet property="newsDescriptionLabel" destination="vkf-QI-Ga7" id="mur-1u-GcX"/>
                                             <outlet property="newsTimeLabel" destination="I4O-ac-Ql1" id="pnF-Ww-Zv4"/>
-                                            <outlet property="separatorView" destination="pVK-mW-FD7" id="miO-zZ-rKP"/>
-                                            <outlet property="topSeparatorView" destination="W5P-ep-Drf" id="i6n-yz-nD5"/>
-                                            <outletCollection property="separatorsViewHeightConstraints" destination="JpW-qL-Ezf" collectionClass="NSMutableArray" id="I1o-pJ-OOQ"/>
-                                            <outletCollection property="separatorsViewHeightConstraints" destination="CIH-zb-uhK" collectionClass="NSMutableArray" id="hfA-sj-8dn"/>
-                                            <outletCollection property="separatorsViewHeightConstraints" destination="obX-8j-Gl3" collectionClass="NSMutableArray" id="VYd-jB-fev"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -854,7 +818,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84E-aa-DQK" userLabel="Separator">
-                                                    <rect key="frame" x="57" y="118" width="318" height="1"/>
+                                                    <rect key="frame" x="57" y="119" width="318" height="1"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="nv8-EZ-cTj"/>
@@ -862,11 +826,11 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Yxp-IY-zrd" firstAttribute="top" secondItem="84E-aa-DQK" secondAttribute="bottom" id="1jn-kc-0Ja"/>
                                                 <constraint firstAttribute="trailing" secondItem="b1Y-d6-6mg" secondAttribute="trailing" constant="8" id="Bw9-Ev-ODf"/>
                                                 <constraint firstItem="KdL-qV-yX1" firstAttribute="leading" secondItem="ycq-pm-h2Z" secondAttribute="leading" id="CV6-Gh-uhV"/>
                                                 <constraint firstItem="84E-aa-DQK" firstAttribute="leading" secondItem="hoC-f5-bKQ" secondAttribute="trailing" id="D7W-Ev-9kD"/>
                                                 <constraint firstAttribute="bottom" secondItem="hoC-f5-bKQ" secondAttribute="bottom" id="FCO-gz-b0R"/>
+                                                <constraint firstAttribute="bottom" secondItem="84E-aa-DQK" secondAttribute="bottom" id="JxH-IK-uE3"/>
                                                 <constraint firstAttribute="bottom" secondItem="Yxp-IY-zrd" secondAttribute="bottom" id="PSX-rX-Vqf"/>
                                                 <constraint firstItem="hoC-f5-bKQ" firstAttribute="leading" secondItem="ycq-pm-h2Z" secondAttribute="leading" id="R9M-SU-kEf"/>
                                                 <constraint firstAttribute="trailing" secondItem="84E-aa-DQK" secondAttribute="trailing" id="U0U-Ir-4Ip"/>
