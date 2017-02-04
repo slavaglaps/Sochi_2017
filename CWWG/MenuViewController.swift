@@ -49,7 +49,6 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     case vk
     case twitter
     case instagram
-    case youtube
     
     var url: URL {
       let urlString: String
@@ -62,16 +61,13 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
         urlString = "https://twitter.com/2017Cism"
       case .instagram:
         urlString = "https://www.instagram.com/cism_sochi2017/"
-      default:
-        assertionFailure("No such URL")
-        urlString = "https://nothing"
       }
       return URL(string: urlString)!
     }
   }
   
   @IBAction func openSocialNetworkAction(_ sender: UIButton) {
-    let networks: [SocialNetwork] = [SocialNetwork.facebook, SocialNetwork.vk, SocialNetwork.twitter, SocialNetwork.instagram, SocialNetwork.youtube]
+    let networks: [SocialNetwork] = [SocialNetwork.facebook, SocialNetwork.vk, SocialNetwork.twitter, SocialNetwork.instagram]
     let network = networks[sender.tag]
     UIApplication.shared.openURL(network.url)
   }
@@ -110,6 +106,8 @@ extension MenuViewController: MenuListViewDelegate {
     switch menuItem {
     case .news:
       showNews()
+    case .schedule:
+      showSchedule()
     case .objects:
       showObjects()
     case .accreditation:
@@ -128,6 +126,11 @@ extension MenuViewController {
   
   func showObjects() {
     RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.objectsListViewController]
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  func showSchedule() {
+    RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.scheduleViewController]
     self.dismiss(animated: true, completion: nil)
   }
   

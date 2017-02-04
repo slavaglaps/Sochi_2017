@@ -29,7 +29,7 @@ class FashionLineView: UIView {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    self.backgroundColor = UIColor.clear
+    self.backgroundColor = AppColor.clear
   }
   
   override func draw(_ rect: CGRect) {

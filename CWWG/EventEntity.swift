@@ -6,7 +6,7 @@
 //  Copyright © 2017 CWWG Team. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import RealmSwift
 
 class EventEntity: Object {
@@ -17,4 +17,19 @@ class EventEntity: Object {
   dynamic var isEvent: Bool = false
   dynamic var name: String = ""
   dynamic var dayString: String = ""
+  
+  var image: UIImage {
+    return UIImage(named: "img_sport_1")!
+  }
+  
+  var timeIntervalString: String {
+    return "11:00 - 14:00"
+  }
+  
+  static func fakeData() -> [EventEntity] {
+    let event = EventEntity()
+    event.name = "Биатлон"
+    event.objectId = 1
+    return [event, event, event]
+  }
 }

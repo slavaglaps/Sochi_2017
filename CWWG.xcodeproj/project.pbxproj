@@ -10,6 +10,9 @@
 		9F028B811E46257D000FFB11 /* SeparatorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */; };
 		9F028B841E462B3C000FFB11 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */; };
 		9F028B861E46336E000FFB11 /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B851E46336E000FFB11 /* EventEntity.swift */; };
+		9F028B881E4643EE000FFB11 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B871E4643EE000FFB11 /* CalendarCellView.swift */; };
+		9F028B8A1E464423000FFB11 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B891E464423000FFB11 /* UIView+Extensions.swift */; };
+		9F028B8D1E46445D000FFB11 /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */; };
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
@@ -103,6 +106,9 @@
 		9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorsTableViewCell.swift; sourceTree = "<group>"; };
 		9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9F028B851E46336E000FFB11 /* EventEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
+		9F028B871E4643EE000FFB11 /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
+		9F028B891E464423000FFB11 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
@@ -235,8 +241,18 @@
 			isa = PBXGroup;
 			children = (
 				9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */,
+				9F028B8B1E46444E000FFB11 /* CalendarCellView */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		9F028B8B1E46444E000FFB11 /* CalendarCellView */ = {
+			isa = PBXGroup;
+			children = (
+				9F028B871E4643EE000FFB11 /* CalendarCellView.swift */,
+				9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */,
+			);
+			name = CalendarCellView;
 			sourceTree = "<group>";
 		};
 		9F1907B31E3892F10056FAFD /* Localizations */ = {
@@ -549,6 +565,7 @@
 				9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */,
 				9F5CF60F1E3F51EF001EECB9 /* String+Extensions.swift */,
 				9F5CF6181E3F6584001EECB9 /* Color+Extensions.swift */,
+				9F028B891E464423000FFB11 /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -713,6 +730,7 @@
 				9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */,
 				9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */,
 				9F85451A1E2FD60D004964F5 /* LaunchScreen.storyboard in Resources */,
+				9F028B8D1E46445D000FFB11 /* CalendarCellView.xib in Resources */,
 				9F8545171E2FD60D004964F5 /* Assets.xcassets in Resources */,
 				9F8545151E2FD60D004964F5 /* Main.storyboard in Resources */,
 			);
@@ -784,6 +802,7 @@
 				9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */,
 				9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
+				9F028B881E4643EE000FFB11 /* CalendarCellView.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */,
 				9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */,
@@ -811,6 +830,7 @@
 				9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */,
 				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,
+				9F028B8A1E464423000FFB11 /* UIView+Extensions.swift in Sources */,
 				9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */,
 				9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */,
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,

@@ -10,6 +10,28 @@ import UIKit
 
 class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
   
+  @IBOutlet weak var timeLabelBackgroundView: UIView! {
+    didSet {
+      timeLabelBackgroundView.backgroundColor = AppColor.blue
+    }
+  }
+  
+  @IBOutlet weak var timeLabel: UILabel! {
+    didSet {
+      timeLabel.font = AppFont.latoBoldFont(ofSize: 15)
+      timeLabel.textColor = AppColor.white
+    }
+  }
+  
+  @IBOutlet weak var eventNameLabel: UILabel! {
+    didSet {
+      eventNameLabel.font = AppFont.latoRegularFont(ofSize: 17)
+      eventNameLabel.textColor = AppColor.black
+    }
+  }
+  
+  @IBOutlet weak var placeNameLabel: UILabel!
+  
   @IBOutlet weak var fashionLineView: FashionLineView! {
     didSet {
       fashionLineView.tintColor = AppColor.seperatorColor
@@ -18,15 +40,22 @@ class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    
     separatorLeadingConstraint.constant = fashionLineView.frame.width
-    // Initialization code
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
+  func setupWithPlace(nameString: String) {
+    let subtitle = Localizations.ObjectPreview.WhatIsGoingOn + " "
+    let attributedString = NSMutableAttributedString(string: "\(subtitle)\(nameString)")
     
-    // Configure the view for the selected state
+    let subtitleRange = NSMakeRange(0, subtitle.characters.count)
+    let titleRange = NSMakeRange(subtitle.characters.count, nameString.characters.count)
+    
+    attributedString.addAttribute(NSForegroundColorAttributeName, value: AppColor.gray, range: subtitleRange)
+    attributedString.addAttribute(NSForegroundColorAttributeName, value: AppColor.blue, range: titleRange)
+    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoRegularFont(ofSize: 12), range: subtitleRange)
+    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: 12), range: titleRange)
+    
+    placeNameLabel.attributedText = attributedString
   }
   
 }

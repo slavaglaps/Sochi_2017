@@ -26,6 +26,10 @@ struct AppColor {
     return UIColor(hexString: "1E5FA7")
   }
   
+  static var lightBlue: UIColor {
+    return UIColor(red: 158.0 / 255.0, green: 175.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
+  }
+  
   static var darkBlueGrey: UIColor {
     return UIColor(red: 32.0 / 255.0, green: 52.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
   }

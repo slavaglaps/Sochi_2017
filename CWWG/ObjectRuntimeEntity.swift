@@ -11,6 +11,16 @@ import CoreLocation
 import SwiftyJSON
 
 struct ObjectRuntimeEntityContainer {
+  static func findEntity(by id: Int) -> ObjectRuntimeEntity? {
+    for entity in entities {
+      if entity.id == id {
+        return entity
+      }
+    }
+    assertionFailure("No entity with such id: \(id)")
+    return nil
+  }
+  
   private static var _entities: [ObjectRuntimeEntity]? = nil
   static var entities: [ObjectRuntimeEntity] {
     if _entities == nil {
@@ -31,6 +41,7 @@ struct ObjectRuntimeEntityContainer {
     _entities = []
     
     for objectInfo in json.arrayValue {
+      let id = objectInfo["id"].intValue
       let title = objectInfo["title"].stringValue
       let subtitle = objectInfo["subtitle"].stringValue
       let size = objectInfo["size"].intValue
@@ -47,13 +58,14 @@ struct ObjectRuntimeEntityContainer {
         coordinatesPair = (0, 0)
       }
       
-      let entity = ObjectRuntimeEntity(title: title, subtitle: subtitle, description: description, size: size, event: event, imageName: imageName, latitude: coordinatesPair.latitude, longitude: coordinatesPair.longitude)
+      let entity = ObjectRuntimeEntity(id: id, title: title, subtitle: subtitle, description: description, size: size, event: event, imageName: imageName, latitude: coordinatesPair.latitude, longitude: coordinatesPair.longitude)
       _entities?.append(entity)
     }
   }
 }
 
 class ObjectRuntimeEntity {
+  var id: Int
   var title: String
   var subtitle: String
   var description: String
@@ -66,7 +78,8 @@ class ObjectRuntimeEntity {
     return Localizations.ObjectPreview.Size(value1: size)
   }
   
-  init(title: String, subtitle: String, description: String, size: Int, event: String, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+  init(id: Int, title: String, subtitle: String, description: String, size: Int, event: String, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+    self.id = id
     self.title = title
     self.subtitle = subtitle
     self.description = description

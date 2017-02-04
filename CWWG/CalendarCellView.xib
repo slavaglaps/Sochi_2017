@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CalendarCellView" customModule="CWWG" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icon_plane" translatesAutoresizingMaskIntoConstraints="NO" id="x5j-6V-tCT">
+                    <rect key="frame" x="25.5" y="0.0" width="14" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="RKd-3e-3or"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пн" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-eP-aEf">
+                    <rect key="frame" x="21.5" y="28" width="22" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55v-Hb-XNX">
+                    <rect key="frame" x="14.5" y="57" width="36" height="36"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-lL-hAf">
+                            <rect key="frame" x="8" y="7.5" width="20" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FWi-lL-hAf" secondAttribute="trailing" constant="8" id="Chs-Qk-xtW"/>
+                        <constraint firstItem="FWi-lL-hAf" firstAttribute="leading" secondItem="55v-Hb-XNX" secondAttribute="leading" constant="8" id="CiH-gQ-euA"/>
+                        <constraint firstAttribute="width" secondItem="55v-Hb-XNX" secondAttribute="height" id="cZd-kc-WCv"/>
+                        <constraint firstItem="FWi-lL-hAf" firstAttribute="centerY" secondItem="55v-Hb-XNX" secondAttribute="centerY" id="i9h-Ka-6SN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="55v-Hb-XNX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5iT-iS-CHX"/>
+                <constraint firstItem="Kse-eP-aEf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EGQ-W4-Hrn"/>
+                <constraint firstItem="55v-Hb-XNX" firstAttribute="top" secondItem="Kse-eP-aEf" secondAttribute="bottom" constant="8" id="Kh0-bC-mZN"/>
+                <constraint firstItem="x5j-6V-tCT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fIw-ub-L22"/>
+                <constraint firstAttribute="bottom" secondItem="55v-Hb-XNX" secondAttribute="bottom" id="gTB-XA-CP7"/>
+                <constraint firstItem="Kse-eP-aEf" firstAttribute="top" secondItem="x5j-6V-tCT" secondAttribute="bottom" constant="12" id="jr8-Db-Mhy"/>
+                <constraint firstItem="x5j-6V-tCT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rM8-q1-mt3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateBackgroundView" destination="55v-Hb-XNX" id="gFo-Nq-g1j"/>
+                <outlet property="dateLabel" destination="FWi-lL-hAf" id="Sis-Oi-qOY"/>
+                <outlet property="iconImageView" destination="x5j-6V-tCT" id="L3P-LE-6FJ"/>
+                <outlet property="weekDateLabel" destination="Kse-eP-aEf" id="bWQ-NE-Ndq"/>
+            </connections>
+            <point key="canvasLocation" x="80.5" y="16.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img_icon_plane" width="14" height="15"/>
+    </resources>
+</document>
