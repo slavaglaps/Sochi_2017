@@ -12,6 +12,16 @@ class SeparatorsTableViewCell: UITableViewCell {
   
   var separatorLeadingConstraint: NSLayoutConstraint!
   
+  func updateCellPosition(at indexPath: IndexPath, inside tableView: UITableView) {
+    if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 { // If last
+      position = .bottom
+    } else if indexPath.row == 0 { // If first
+      position = .top
+    } else {
+      position = .normal
+    }
+  }
+  
   enum CellPosition {
     case normal
     case top

@@ -11,6 +11,7 @@ import RealmSwift
 import SwiftyJSON
 
 typealias CompletionBlock = (_ success: Bool) -> ()
+typealias CompletionBlockForData = (_ success: Bool, _ newData: Bool) -> ()
 
 var defaultRealm: Realm?
 
@@ -28,13 +29,19 @@ class DataModelController {
     }
   }
   
-  static func processNewsFromServer(json: JSON, completionBlock: CompletionBlock) {
+  // MARK: - News
+  
+  static func processNewsFromServer(json: JSON, completionBlock: CompletionBlockForData) {
+    var anythingNew = false
+    
     for newsInfo in json.arrayValue {
       let id = newsInfo["id"].intValue
+      
+      anythingNew = true
       updateNews(id: id, json: newsInfo, completionBlock: nil)
     }
     
-    completionBlock(true)
+    completionBlock(true, anythingNew)
   }
   
   static func updateNews(id: Int, json: JSON, completionBlock: CompletionBlock?) {
@@ -57,5 +64,22 @@ class DataModelController {
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })
+  }
+  
+  // MARK: - Events
+  
+  static func processEvents(json: JSON, completionBlock: CompletionBlock) {
+    for daysInfo in json.arrayValue {
+      for itemInfo in daysInfo["items"].arrayValue {
+        let id = itemInfo["id"].intValue
+        updateNews(id: id, json: itemInfo, completionBlock: nil)
+      }
+    }
+    
+    completionBlock(true)
+  }
+  
+  static func updateEvent(id: Int, json: JSON, completionBlock: CompletionBlock?) {
+    
   }
 }

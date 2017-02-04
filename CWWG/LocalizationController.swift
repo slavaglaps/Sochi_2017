@@ -129,8 +129,6 @@ struct LocalizationController {
                   Localizations.Time.Weekday.Sunday]
   }
   
-  // TODO: - Migrate to realm
-  
   static var isLocalizationWasSelected: Bool {
     return SettingsEntity.value?.selectedLocalizationString != nil
   }

@@ -23,7 +23,7 @@ struct NetworkRequestsController {
     }
   }
   
-  static func requstNews(lastId: Int = 0, limit: Int = 20, ascending: Bool, completionBlock: @escaping CompletionBlock) {
+  static func requstNews(lastId: Int = 0, limit: Int = 20, ascending: Bool, completionBlock: @escaping CompletionBlockForData) {
     
     let url = stringURLFromPostfix(string: "news")
     let body = ["pivot": lastId,
@@ -36,11 +36,13 @@ struct NetworkRequestsController {
         let json = JSON(data: data)
         DataModelController.processNewsFromServer(json: json["news"], completionBlock: completionBlock)
       } else {
-        completionBlock(false)
+        completionBlock(false, false)
         print("Error loading news")
       }
     }
   }
+  
+  // MARK: - News
   
   static func requestNewsInfo(id: Int, completionBlock: @escaping CompletionBlock) {
     let url = stringURLFromPostfix(string: "news/\(id)")
@@ -48,6 +50,26 @@ struct NetworkRequestsController {
       if let data = data.data {
         let json = JSON(data: data)
         DataModelController.updateNews(id: id, json: json["news"], completionBlock: completionBlock)
+      } else {
+        completionBlock(false)
+        print("Error loading news from id")
+      }
+    }
+  }
+  
+  // MARK: - Events
+  
+  static func requestEvents(completionBlock: @escaping CompletionBlock) {
+    let url = stringURLFromPostfix(string: "schedule")
+    
+    // TODO: -- add last_update
+    let body = ["lang": LocalizationController.currentLocalization.serverString,
+                "last_update": 0] as [String: Any]
+    
+    request(url, method: .get, parameters: body).responseJSON { (data) in
+      if let data = data.data {
+        let json = JSON(data: data)
+        DataModelController.processEvents(json: json, completionBlock: completionBlock)
       } else {
         completionBlock(false)
         print("Error loading news from id")

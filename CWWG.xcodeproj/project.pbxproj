@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F028B811E46257D000FFB11 /* SeparatorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */; };
+		9F028B841E462B3C000FFB11 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */; };
+		9F028B861E46336E000FFB11 /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B851E46336E000FFB11 /* EventEntity.swift */; };
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
@@ -99,6 +101,8 @@
 
 /* Begin PBXFileReference section */
 		9F028B801E46257D000FFB11 /* SeparatorsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorsTableViewCell.swift; sourceTree = "<group>"; };
+		9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		9F028B851E46336E000FFB11 /* EventEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9F028B821E462B31000FFB11 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F028B831E462B3C000FFB11 /* ScheduleTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		9F1907B31E3892F10056FAFD /* Localizations */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +273,7 @@
 			children = (
 				9F5492A01E3937AC004FC272 /* NewsEntity.swift */,
 				9F5492A21E3937C0004FC272 /* SettingsEntity.swift */,
+				9F028B851E46336E000FFB11 /* EventEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -465,6 +478,7 @@
 		9F8545321E2FD874004964F5 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				9F028B821E462B31000FFB11 /* Cell */,
 				9F8545331E2FD87D004964F5 /* ScheduleViewController.swift */,
 			);
 			name = Schedule;
@@ -789,9 +803,11 @@
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
 				9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */,
 				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
+				9F028B861E46336E000FFB11 /* EventEntity.swift in Sources */,
 				9F028B811E46257D000FFB11 /* SeparatorsTableViewCell.swift in Sources */,
 				9F54929D1E392FD8004FC272 /* ObjectExtension.swift in Sources */,
 				9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */,
+				9F028B841E462B3C000FFB11 /* ScheduleTableViewCell.swift in Sources */,
 				9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */,
 				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,

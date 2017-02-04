@@ -36,11 +36,6 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     tableView.rowHeight = UITableViewAutomaticDimension
     
     news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
-    notificationToken = news?.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-      OperationQueue.main.addOperation({ 
-        self?.tableView.reloadData()
-      })
-    }
     
     updateFeed(inDirection: .toNew)
     
@@ -62,25 +57,43 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   func updateLanguage() {
     title = Localizations.MenuItem.News
     tableView.reloadData()
+    
+    shouldUpdateToOldData = true
   }
   
   var isUpdateStarted = false
   var isUpdateOfUIStarted = false
+  var shouldUpdateToOldData = true
   
   func updateFeed(inDirection: UpdateDirection) {
     if isUpdateStarted || isUpdateOfUIStarted {
       return
     }
     
+    if inDirection == .toOld && shouldUpdateToOldData == false {
+      return
+    }
+    
     let id = inDirection == .toNew ? news?.first?.id : news?.last?.id
     
     isUpdateStarted = true
-    NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10, ascending: inDirection == .toOld) {
-      success in
-      self.isUpdateStarted = false
-      if self.refreshControl.isRefreshing {
-        self.refreshControl.endRefreshing()
+    NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10, ascending: inDirection == .toOld) { [weak self]
+      (success, isNewData) in
+      guard let strongSelf = self else { return }
+      
+      strongSelf.isUpdateStarted = false
+      if strongSelf.refreshControl.isRefreshing {
+        strongSelf.refreshControl.endRefreshing()
       }
+      
+      if isNewData {
+        strongSelf.tableView.reloadData()
+      }
+      
+      if success && isNewData == false && inDirection == .toOld {
+        strongSelf.shouldUpdateToOldData = false
+      }
+      
       print("Request news, success: \(success)")
     }
   }

@@ -15,6 +15,8 @@ class ScheduleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    addMenuButton()
+    
     tableView.rowHeight = 120
     
     // Do any additional setup after loading the view.
@@ -33,7 +35,9 @@ extension ScheduleViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(for: indexPath) as ScheduleTableViewCell
+    
+    cell.updateCellPosition(at: indexPath, inside: tableView)
     
     return cell
   }
