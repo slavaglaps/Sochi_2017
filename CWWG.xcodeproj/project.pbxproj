@@ -63,6 +63,7 @@
 		9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545421E2FD8F9004964F5 /* MapViewController.swift */; };
 		9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */; };
 		9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545481E2FDEDA004964F5 /* FashionLineView.swift */; };
+		9F9D06CD1E478799009B9EE8 /* ResultsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D06CC1E478799009B9EE8 /* ResultsViewTableViewCell.swift */; };
 		9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */; };
 		9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */; };
 		9FC1D9841E3A409C00EDDA13 /* DateRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */; };
@@ -163,6 +164,7 @@
 		9F8545421E2FD8F9004964F5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F8545481E2FDEDA004964F5 /* FashionLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FashionLineView.swift; sourceTree = "<group>"; };
+		9F9D06CC1E478799009B9EE8 /* ResultsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewTableViewCell.swift; sourceTree = "<group>"; };
 		9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+Extensions.swift"; sourceTree = "<group>"; };
 		9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensisons.swift"; sourceTree = "<group>"; };
 		9FC1D97C1E3A3D4800EDDA13 /* CWWG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWWG-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -503,8 +505,8 @@
 		9F8545351E2FD885004964F5 /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				9F8545361E2FD896004964F5 /* ResultsViewController.swift */,
-				9F8545381E2FD8A7004964F5 /* ResultsSearchViewController.swift */,
+				9F9D06C91E4786F3009B9EE8 /* ResultsView */,
+				9F9D06CA1E4786F9009B9EE8 /* ResultsSearch */,
 			);
 			name = Results;
 			sourceTree = "<group>";
@@ -535,6 +537,31 @@
 				9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */,
 			);
 			name = Runtime;
+			sourceTree = "<group>";
+		};
+		9F9D06C91E4786F3009B9EE8 /* ResultsView */ = {
+			isa = PBXGroup;
+			children = (
+				9F9D06CB1E47877F009B9EE8 /* Cell */,
+				9F8545361E2FD896004964F5 /* ResultsViewController.swift */,
+			);
+			name = ResultsView;
+			sourceTree = "<group>";
+		};
+		9F9D06CA1E4786F9009B9EE8 /* ResultsSearch */ = {
+			isa = PBXGroup;
+			children = (
+				9F8545381E2FD8A7004964F5 /* ResultsSearchViewController.swift */,
+			);
+			name = ResultsSearch;
+			sourceTree = "<group>";
+		};
+		9F9D06CB1E47877F009B9EE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F9D06CC1E478799009B9EE8 /* ResultsViewTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		9FD765D51E31716200E1375F /* Feed */ = {
@@ -830,6 +857,7 @@
 				9F5CF6131E3F5E6C001EECB9 /* ObjectHeaderTableViewCell.swift in Sources */,
 				9FFFA26D1E3794DC00669B68 /* NewsFeedImageTableViewCell.swift in Sources */,
 				9F85453C1E2FD8C8004964F5 /* BroadcastViewController.swift in Sources */,
+				9F9D06CD1E478799009B9EE8 /* ResultsViewTableViewCell.swift in Sources */,
 				9F028B8A1E464423000FFB11 /* UIView+Extensions.swift in Sources */,
 				9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */,
 				9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */,
