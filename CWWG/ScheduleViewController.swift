@@ -37,6 +37,8 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
     selectedCell = cell
   }
   
+  var isLoaded: Bool = false
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -45,8 +47,21 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
     tableView.rowHeight = 120
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
+    if isLoaded == false {
+      requestEvents()
+    }
+  }
+  
+  func requestEvents() {
     NetworkRequestsController.requestEvents { [weak self] (success) in
+      if success {
+        self?.isLoaded = true
+      }
       self?.updateEvents()
     }
   }

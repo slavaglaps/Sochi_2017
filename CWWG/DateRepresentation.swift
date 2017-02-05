@@ -42,14 +42,7 @@ struct DateRepresentation {
       let hoursDelta = abs(todayRepresentation.hour - dateRepresentation.hour)
       let minutesDelta = abs(todayRepresentation.minute - dateRepresentation.minute)
       
-      let time: String
-      if Date.using12hClockFormat {
-        dateFormatter.dateFormat = "hh:mm a"
-        time = dateFormatter.string(from: date)
-      } else {
-        dateFormatter.dateFormat = "HH:mm"
-        time = dateFormatter.string(from: date)
-      }
+      let time: String = date.hoursAndMinutes
       
       if todayRepresentation.year != dateRepresentation.year {
         representationString = "\(day) \(month), \(dateRepresentation.year)"

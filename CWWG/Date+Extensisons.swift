@@ -25,6 +25,18 @@ extension Date {
     return dateFormatter.string(from: self)
   }
   
+  // 01:30 om or 13:30
+  var hoursAndMinutes: String {
+    let dateFormatter = DateFormatter()
+    if Date.using12hClockFormat {
+      dateFormatter.dateFormat = "hh:mm a"
+      return dateFormatter.string(from: self)
+    } else {
+      dateFormatter.dateFormat = "HH:mm"
+      return dateFormatter.string(from: self)
+    }
+  }
+  
   static var using12hClockFormat: Bool {
     let formatter = DateFormatter()
     formatter.locale = Locale.current

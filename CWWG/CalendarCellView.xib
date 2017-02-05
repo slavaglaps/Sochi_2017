@@ -31,7 +31,7 @@
                     <rect key="frame" x="14.5" y="57" width="36" height="36"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-lL-hAf">
-                            <rect key="frame" x="8" y="7.5" width="20" height="21"/>
+                            <rect key="frame" x="8" y="6.5" width="20" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -41,7 +41,7 @@
                         <constraint firstAttribute="trailing" secondItem="FWi-lL-hAf" secondAttribute="trailing" constant="8" id="Chs-Qk-xtW"/>
                         <constraint firstItem="FWi-lL-hAf" firstAttribute="leading" secondItem="55v-Hb-XNX" secondAttribute="leading" constant="8" id="CiH-gQ-euA"/>
                         <constraint firstAttribute="width" secondItem="55v-Hb-XNX" secondAttribute="height" id="cZd-kc-WCv"/>
-                        <constraint firstItem="FWi-lL-hAf" firstAttribute="centerY" secondItem="55v-Hb-XNX" secondAttribute="centerY" id="i9h-Ka-6SN"/>
+                        <constraint firstItem="FWi-lL-hAf" firstAttribute="centerY" secondItem="55v-Hb-XNX" secondAttribute="centerY" constant="-1" id="i9h-Ka-6SN"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jp7-5E-Spa">

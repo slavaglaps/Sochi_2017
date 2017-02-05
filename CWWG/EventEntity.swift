@@ -27,7 +27,7 @@ class EventEntity: Object {
   }
   
   var timeIntervalString: String {
-    return "11:00 - 14:00"
+    return "\(startDate.hoursAndMinutes) - \(endDate.hoursAndMinutes)"
   }
   
   static func fakeData() -> [EventEntity] {

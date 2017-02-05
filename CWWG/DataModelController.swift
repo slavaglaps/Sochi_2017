@@ -86,7 +86,7 @@ class DataModelController {
     
     let newsEntity = EventEntity()
     newsEntity.id = id
-    newsEntity.name = json["title"].stringValue
+    newsEntity.name = json["name"].stringValue
     newsEntity.startDate = startDate
     newsEntity.endDate = endDate
     newsEntity.objectId = json["game_object_id"].intValue

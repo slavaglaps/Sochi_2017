@@ -13,6 +13,11 @@ class SeparatorsTableViewCell: UITableViewCell {
   var separatorLeadingConstraint: NSLayoutConstraint!
   
   func updateCellPosition(at indexPath: IndexPath, inside tableView: UITableView) {
+    if tableView.numberOfRows(inSection: indexPath.section) == 1 {
+      position = .topAndBottom
+      return
+    }
+    
     if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 { // If last
       position = .bottom
     } else if indexPath.row == 0 { // If first
@@ -26,21 +31,27 @@ class SeparatorsTableViewCell: UITableViewCell {
     case normal
     case top
     case bottom
+    case topAndBottom
   }
   
   var position: CellPosition = .normal {
     didSet {
+      
+      bottomSeparatorView.isHidden = true
+      topSeparatorView.isHidden = true
+      separatorView.isHidden = true
+      
       switch position {
       case .normal:
-        bottomSeparatorView.isHidden = true
-        topSeparatorView.isHidden = true
         separatorView.isHidden = false
       case .top:
         topSeparatorView.isHidden = false
         separatorView.isHidden = false
       case .bottom:
         bottomSeparatorView.isHidden = false
-        separatorView.isHidden = true
+      case .topAndBottom:
+        topSeparatorView.isHidden = false
+        bottomSeparatorView.isHidden = false
       }
     }
   }
