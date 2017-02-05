@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var tableView: UITableView!
-  var events: [EventEntity] = []
+  
+  var events: Results<EventEntity>?
+  var eventDays: [String] = EventEntity.eventDays()
   
   @IBOutlet weak var monthLabel: UILabel!
   @IBOutlet weak var calendarStackView: UIStackView!
@@ -25,6 +28,7 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
   var selectedIndex: Int = 0 {
     didSet {
       updateCellSelection()
+      updateEvents()
     }
   }
   
@@ -36,19 +40,27 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    events = EventEntity.fakeData()
-    
     addMenuButton()
     
     tableView.rowHeight = 120
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
+    
+    NetworkRequestsController.requestEvents { [weak self] (success) in
+      self?.updateEvents()
+    }
   }
   
   func updateLanguage() {
     monthLabel.text = "\(localized(monthAtIndex: 2)) 2017"
     title = Localizations.MenuItem.Schedule
     fillCalendar()
+  }
+  
+  func updateEvents() {
+    let currentDayString = eventDays[selectedIndex]
+    events = defaultRealm?.objects(EventEntity.self).filter("dayString == '\(currentDayString)'").sorted(byKeyPath: #keyPath(EventEntity.startDate))
+    tableView.reloadData()
   }
   
   func fillCalendar() {
@@ -88,11 +100,15 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
 
 extension ScheduleViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return events.count
+    return events?.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let event = events[indexPath.row]
+    guard let event = events?.safeObject(atIndex: indexPath.row) else {
+      assertionFailure("No event at index path: \(indexPath)")
+      return UITableViewCell()
+    }
+    
     let object = ObjectRuntimeEntityContainer.findEntity(by: event.objectId)
     
     let cell = tableView.dequeueReusableCell(for: indexPath) as ScheduleTableViewCell
@@ -103,6 +119,8 @@ extension ScheduleViewController: UITableViewDataSource {
     cell.updateCellPosition(at: indexPath, inside: tableView)
     cell.setupWithPlace(nameString: object?.title ?? "")
     
+    cell.isEvent = event.isEvent
+    
     return cell
   }
 }
@@ -111,7 +129,7 @@ extension ScheduleViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     
-    let event = events[indexPath.row]
+    guard let event = events?.safeObject(atIndex: indexPath.row) else { return }
     let object = ObjectRuntimeEntityContainer.findEntity(by: event.objectId)
     
     if let object = object {

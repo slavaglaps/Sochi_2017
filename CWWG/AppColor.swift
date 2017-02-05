@@ -22,6 +22,10 @@ struct AppColor {
     return UIColor.black
   }
   
+  static var red: UIColor {
+    return UIColor(hexString: "9E4343")
+  }
+  
   static var blue: UIColor {
     return UIColor(hexString: "1E5FA7")
   }

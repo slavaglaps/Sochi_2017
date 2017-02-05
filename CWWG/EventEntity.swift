@@ -18,6 +18,10 @@ class EventEntity: Object {
   dynamic var name: String = ""
   dynamic var dayString: String = ""
   
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+  
   var image: UIImage {
     return UIImage(named: "img_sport_1")!
   }
@@ -31,5 +35,13 @@ class EventEntity: Object {
     event.name = "Биатлон"
     event.objectId = 1
     return [event, event, event]
+  }
+  
+  static func eventDays() -> [String] {
+    var result: [String] = []
+    for day in 10...16 {
+      result.append("2017-\(10)-\(day)")
+    }
+    return result
   }
 }

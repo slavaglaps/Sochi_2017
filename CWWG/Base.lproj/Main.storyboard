@@ -324,7 +324,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NewsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jM9-sa-2VN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jM9-sa-2VN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -835,13 +835,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="164"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Февраль 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVM-5P-0Lu">
-                                        <rect key="frame" x="131.5" y="30" width="111" height="20.5"/>
+                                        <rect key="frame" x="131.5" y="25" width="111" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-An-CbJ">
-                                        <rect key="frame" x="20" y="59.5" width="335" height="93"/>
+                                        <rect key="frame" x="20" y="54.5" width="335" height="93"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" placeholder="YES" id="EiH-QU-ZDf"/>
                                         </constraints>
@@ -852,7 +852,7 @@
                                     <constraint firstItem="GdB-An-CbJ" firstAttribute="leading" secondItem="yWt-RV-6yn" secondAttribute="leading" constant="20" id="1SU-ab-aBj"/>
                                     <constraint firstAttribute="height" constant="164" id="93d-5v-pU5"/>
                                     <constraint firstItem="GdB-An-CbJ" firstAttribute="top" secondItem="mVM-5P-0Lu" secondAttribute="bottom" constant="9" id="AZJ-mF-QLc"/>
-                                    <constraint firstItem="mVM-5P-0Lu" firstAttribute="top" secondItem="yWt-RV-6yn" secondAttribute="top" constant="30" id="EuB-ad-xnt"/>
+                                    <constraint firstItem="mVM-5P-0Lu" firstAttribute="top" secondItem="yWt-RV-6yn" secondAttribute="top" constant="25" id="EuB-ad-xnt"/>
                                     <constraint firstItem="GdB-An-CbJ" firstAttribute="centerX" secondItem="yWt-RV-6yn" secondAttribute="centerX" id="GZM-9I-mKL"/>
                                     <constraint firstAttribute="trailing" secondItem="iiS-0X-yWI" secondAttribute="trailing" id="bwb-Pg-77I"/>
                                     <constraint firstItem="iiS-0X-yWI" firstAttribute="top" secondItem="yWt-RV-6yn" secondAttribute="top" id="orz-dI-43t"/>
@@ -1216,7 +1216,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ResultsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ddi-5R-46m" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ddk-Er-y8L">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ddk-Er-y8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1253,7 +1253,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ScheduleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ECR-kh-P84">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ECR-kh-P84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1271,7 +1271,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ObjectsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1289,7 +1289,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ScreencastNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lCE-TU-jAm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCE-TU-jAm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

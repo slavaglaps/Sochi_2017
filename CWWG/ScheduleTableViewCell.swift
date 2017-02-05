@@ -58,4 +58,14 @@ class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
     placeNameLabel.attributedText = attributedString
   }
   
+  var isEvent: Bool = false {
+    didSet {
+      if isEvent {
+        timeLabelBackgroundView.backgroundColor = AppColor.red
+      } else {
+        timeLabelBackgroundView.backgroundColor = AppColor.blue
+      }
+    }
+  }
+  
 }

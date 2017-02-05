@@ -19,6 +19,12 @@ extension Date {
     }
   }
   
+  var serverString: String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+    return dateFormatter.string(from: self)
+  }
+  
   static var using12hClockFormat: Bool {
     let formatter = DateFormatter()
     formatter.locale = Locale.current
