@@ -32,8 +32,8 @@ struct ViewControllersFactory {
     return newsViewController
   }
   
-  static var resultsViewController: ResultsViewController {
-    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SportList") as! ResultsViewController
+  static var resultsSearchViewController: ResultsSearchViewController {
+    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsSearch") as! ResultsSearchViewController
   }
   
   static var scheduleViewController: ScheduleViewController {

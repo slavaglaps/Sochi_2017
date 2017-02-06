@@ -677,7 +677,7 @@
         <!--Результаты-->
         <scene sceneID="Dh5-5m-m9c">
             <objects>
-                <viewController storyboardIdentifier="Results" id="Tox-Gj-HzV" customClass="ResultsSearchViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsSearch" id="Tox-Gj-HzV" customClass="ResultsSearchViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pDt-Hd-8B4"/>
                         <viewControllerLayoutGuide type="bottom" id="3nY-TL-UV6"/>
@@ -685,10 +685,104 @@
                     <view key="view" contentMode="scaleToFill" id="IfH-dm-uTD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_menu_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8Qf-wC-bVg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5p-7d-XzU">
+                                <rect key="frame" x="50" y="231" width="276" height="205"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-Rr-afC">
+                                        <rect key="frame" x="20" y="0.0" width="236" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="Omv-Jd-f2h"/>
+                                            <constraint firstAttribute="width" constant="236" id="odE-2B-R3f"/>
+                                        </constraints>
+                                        <state key="normal" image="img_result_seach_button_bg"/>
+                                        <connections>
+                                            <action selector="sportButtonAction:" destination="Tox-Gj-HzV" eventType="touchUpInside" id="jBz-gh-HGw"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yN-ec-mcJ">
+                                        <rect key="frame" x="38" y="13" width="37.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Dl-cXs">
+                                        <rect key="frame" x="20" y="51" width="236" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="6Th-F0-gjg"/>
+                                            <constraint firstAttribute="width" constant="236" id="cIp-w9-kfD"/>
+                                        </constraints>
+                                        <state key="normal" image="img_result_seach_button_bg"/>
+                                        <connections>
+                                            <action selector="currentSportButtonAction:" destination="Tox-Gj-HzV" eventType="touchUpInside" id="2y4-pd-yGM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0l-jd-RCM">
+                                        <rect key="frame" x="38" y="64" width="37.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahP-2i-ifv">
+                                        <rect key="frame" x="58" y="162" width="160" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="KId-qZ-IZN"/>
+                                            <constraint firstAttribute="height" constant="43" id="Vnf-1e-MGQ"/>
+                                        </constraints>
+                                        <state key="normal" image="img_result_search_button">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchButtonAction:" destination="Tox-Gj-HzV" eventType="touchUpInside" id="r2L-nY-GAs"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Найти" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-tx-1qv">
+                                        <rect key="frame" x="113" y="173" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="3yN-ec-mcJ" firstAttribute="leading" secondItem="DVE-Rr-afC" secondAttribute="leading" constant="18" id="1pY-fg-yD1"/>
+                                    <constraint firstItem="DVE-Rr-afC" firstAttribute="centerX" secondItem="h5p-7d-XzU" secondAttribute="centerX" id="2Ch-b9-Fdw"/>
+                                    <constraint firstItem="DVE-Rr-afC" firstAttribute="top" secondItem="h5p-7d-XzU" secondAttribute="top" id="72X-oY-cey"/>
+                                    <constraint firstItem="P0l-jd-RCM" firstAttribute="centerY" secondItem="QER-Dl-cXs" secondAttribute="centerY" id="8fF-pQ-nwN"/>
+                                    <constraint firstAttribute="bottom" secondItem="ahP-2i-ifv" secondAttribute="bottom" id="DRM-hj-2gf"/>
+                                    <constraint firstItem="QER-Dl-cXs" firstAttribute="centerX" secondItem="h5p-7d-XzU" secondAttribute="centerX" id="H7j-3s-A0O"/>
+                                    <constraint firstItem="3yN-ec-mcJ" firstAttribute="centerY" secondItem="DVE-Rr-afC" secondAttribute="centerY" id="HuR-ZQ-Z0x"/>
+                                    <constraint firstItem="ahP-2i-ifv" firstAttribute="top" secondItem="QER-Dl-cXs" secondAttribute="bottom" constant="68" id="J3F-MN-8uS"/>
+                                    <constraint firstItem="ahP-2i-ifv" firstAttribute="centerX" secondItem="h5p-7d-XzU" secondAttribute="centerX" id="LBC-Ax-t4o"/>
+                                    <constraint firstItem="QER-Dl-cXs" firstAttribute="top" secondItem="DVE-Rr-afC" secondAttribute="bottom" constant="8" id="OhL-9V-UWR"/>
+                                    <constraint firstItem="Jvc-tx-1qv" firstAttribute="centerX" secondItem="ahP-2i-ifv" secondAttribute="centerX" id="V3l-go-k7g"/>
+                                    <constraint firstAttribute="width" constant="276" id="ef0-Uf-HyE"/>
+                                    <constraint firstItem="P0l-jd-RCM" firstAttribute="leading" secondItem="QER-Dl-cXs" secondAttribute="leading" constant="18" id="hx7-WK-6zD"/>
+                                    <constraint firstItem="Jvc-tx-1qv" firstAttribute="centerY" secondItem="ahP-2i-ifv" secondAttribute="centerY" id="r5N-q5-dWA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h5p-7d-XzU" firstAttribute="centerY" secondItem="IfH-dm-uTD" secondAttribute="centerY" id="3nh-oc-v6R"/>
+                            <constraint firstAttribute="trailing" secondItem="8Qf-wC-bVg" secondAttribute="trailing" id="9eK-4e-2h5"/>
+                            <constraint firstItem="8Qf-wC-bVg" firstAttribute="top" secondItem="IfH-dm-uTD" secondAttribute="top" id="EtK-Li-ORG"/>
+                            <constraint firstItem="8Qf-wC-bVg" firstAttribute="leading" secondItem="IfH-dm-uTD" secondAttribute="leading" id="HEe-zo-6gl"/>
+                            <constraint firstItem="h5p-7d-XzU" firstAttribute="centerX" secondItem="IfH-dm-uTD" secondAttribute="centerX" id="NKZ-9l-qks"/>
+                            <constraint firstItem="3nY-TL-UV6" firstAttribute="top" secondItem="8Qf-wC-bVg" secondAttribute="bottom" id="cXP-op-57A"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="T2H-wC-W4v"/>
                     <connections>
+                        <outlet property="currentSportButton" destination="QER-Dl-cXs" id="8F1-Rn-MtH"/>
+                        <outlet property="currentSportLabel" destination="P0l-jd-RCM" id="TKF-hL-3w5"/>
+                        <outlet property="searchButton" destination="ahP-2i-ifv" id="FtP-rN-qdq"/>
+                        <outlet property="searchLabel" destination="Jvc-tx-1qv" id="37K-7g-J6t"/>
+                        <outlet property="sportButton" destination="DVE-Rr-afC" id="6YB-9S-ATj"/>
+                        <outlet property="sportLabel" destination="3yN-ec-mcJ" id="h6t-Ky-WdL"/>
                         <segue destination="mL5-2o-CjK" kind="show" identifier="Results" id="dRt-b5-SFd"/>
                     </connections>
                 </viewController>
@@ -1362,7 +1456,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tdq-2q-OXO" customClass="OpenInButtonsView" customModule="CWWG" customModuleProvider="target">
-                                <rect key="frame" x="67.5" y="582" width="240" height="10"/>
+                                <rect key="frame" x="68" y="582" width="240" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="8QD-g5-RM1"/>
@@ -1499,6 +1593,8 @@
         <image name="img_news_gradient" width="375" height="181"/>
         <image name="img_object_gradient" width="375" height="120"/>
         <image name="img_result_header_bg" width="375" height="79"/>
+        <image name="img_result_seach_button_bg" width="236" height="43"/>
+        <image name="img_result_search_button" width="160" height="43"/>
         <image name="img_schedule_bg" width="375" height="164"/>
         <image name="img_sport_1" width="64" height="72"/>
         <image name="img_tempalte" width="375" height="181"/>
