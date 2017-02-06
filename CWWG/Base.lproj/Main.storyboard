@@ -503,7 +503,7 @@
                                 <rect key="frame" x="145" y="20" width="85" height="47"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="FlR-dP-ieP">
-                                <rect key="frame" x="115.5" y="620" width="145" height="22"/>
+                                <rect key="frame" x="115.5" y="627" width="145" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-lP-xXe">
                                         <rect key="frame" x="0.0" y="0.0" width="9" height="22"/>
@@ -536,7 +536,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe8-jW-nzz">
-                                <rect key="frame" x="134.5" y="566" width="106" height="29"/>
+                                <rect key="frame" x="134.5" y="580" width="106" height="29"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwB-Fh-ms1">
                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="29"/>
@@ -628,7 +628,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E2a-rf-ANN" customClass="MenuListView" customModule="CWWG" customModuleProvider="target">
-                                <rect key="frame" x="28" y="75" width="319" height="483"/>
+                                <rect key="frame" x="28" y="75" width="319" height="497"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -636,8 +636,8 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="E2a-rf-ANN" secondAttribute="trailing" constant="12" id="4PL-V6-k9Z"/>
                             <constraint firstItem="Iic-C6-mCD" firstAttribute="top" secondItem="lEI-Pa-82q" secondAttribute="bottom" id="CR8-QN-Ur9"/>
-                            <constraint firstItem="de6-gl-NvB" firstAttribute="top" secondItem="FlR-dP-ieP" secondAttribute="bottom" constant="25" id="GFV-WH-aCw"/>
-                            <constraint firstItem="FlR-dP-ieP" firstAttribute="top" secondItem="pe8-jW-nzz" secondAttribute="bottom" constant="25" id="KgM-RD-a5f"/>
+                            <constraint firstItem="de6-gl-NvB" firstAttribute="top" secondItem="FlR-dP-ieP" secondAttribute="bottom" constant="18" id="GFV-WH-aCw"/>
+                            <constraint firstItem="FlR-dP-ieP" firstAttribute="top" secondItem="pe8-jW-nzz" secondAttribute="bottom" constant="18" id="KgM-RD-a5f"/>
                             <constraint firstAttribute="trailing" secondItem="xyX-QX-u7i" secondAttribute="trailing" constant="-6" id="MNh-FM-efV"/>
                             <constraint firstItem="FlR-dP-ieP" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="NKf-Zd-3gT"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="top" secondItem="E2a-rf-ANN" secondAttribute="bottom" constant="8" id="SVj-mW-x6c"/>
@@ -814,7 +814,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-yg-XuM">
-                                                    <rect key="frame" x="57" y="8" width="304" height="59"/>
+                                                    <rect key="frame" x="57" y="18" width="304" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -824,9 +824,9 @@
                                                 <constraint firstItem="bgB-nG-bkW" firstAttribute="leading" secondItem="eW3-uT-O2b" secondAttribute="leading" id="3E0-N3-9V3"/>
                                                 <constraint firstAttribute="bottom" secondItem="bgB-nG-bkW" secondAttribute="bottom" id="O4m-6I-mn0"/>
                                                 <constraint firstItem="ZRH-yg-XuM" firstAttribute="leading" secondItem="bgB-nG-bkW" secondAttribute="trailing" id="aGE-4c-VC8"/>
-                                                <constraint firstItem="ZRH-yg-XuM" firstAttribute="top" secondItem="eW3-uT-O2b" secondAttribute="top" constant="8" id="h0u-Si-lxE"/>
+                                                <constraint firstItem="ZRH-yg-XuM" firstAttribute="top" secondItem="eW3-uT-O2b" secondAttribute="top" constant="18" id="h0u-Si-lxE"/>
                                                 <constraint firstItem="bgB-nG-bkW" firstAttribute="top" secondItem="eW3-uT-O2b" secondAttribute="top" id="jGI-Y0-D1x"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZRH-yg-XuM" secondAttribute="bottom" constant="8" id="tzA-nu-WNe"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZRH-yg-XuM" secondAttribute="bottom" constant="18" id="tzA-nu-WNe"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZRH-yg-XuM" secondAttribute="trailing" constant="14" id="xyB-mT-ou7"/>
                                             </constraints>
                                         </tableViewCellContentView>

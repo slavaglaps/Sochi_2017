@@ -21,6 +21,8 @@
 		9F1907BB1E3893110056FAFD /* ru-RU.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9F1907B91E3893110056FAFD /* ru-RU.txt */; };
 		9F1907BD1E38942E0056FAFD /* Localizations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907BC1E38942E0056FAFD /* Localizations.swift */; };
 		9F1907C01E3897500056FAFD /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */; };
+		9F196F471E48F47A00F94225 /* AlamofireNetworkActivityIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F196F461E48F47A00F94225 /* AlamofireNetworkActivityIndicator.framework */; };
+		9F196F491E48FA8E00F94225 /* ObjectEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F196F481E48FA8E00F94225 /* ObjectEntity.swift */; };
 		9F54928E1E392D1E004FC272 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54928C1E392D1E004FC272 /* Alamofire.framework */; };
 		9F54928F1E392D1E004FC272 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F54928D1E392D1E004FC272 /* Nuke.framework */; };
 		9F5492951E392F27004FC272 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5492921E392F27004FC272 /* Realm.framework */; };
@@ -120,6 +122,8 @@
 		9F1907B91E3893110056FAFD /* ru-RU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ru-RU.txt"; path = "Localization/ru-RU.txt"; sourceTree = "<group>"; };
 		9F1907BC1E38942E0056FAFD /* Localizations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizations.swift; path = Localization/Localizations.swift; sourceTree = "<group>"; };
 		9F1907BF1E3897500056FAFD /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		9F196F461E48F47A00F94225 /* AlamofireNetworkActivityIndicator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireNetworkActivityIndicator.framework; path = Carthage/Build/iOS/AlamofireNetworkActivityIndicator.framework; sourceTree = "<group>"; };
+		9F196F481E48FA8E00F94225 /* ObjectEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectEntity.swift; sourceTree = "<group>"; };
 		9F54928C1E392D1E004FC272 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		9F54928D1E392D1E004FC272 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		9F5492921E392F27004FC272 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				9F5492951E392F27004FC272 /* Realm.framework in Frameworks */,
 				9F5492961E392F27004FC272 /* RealmSwift.framework in Frameworks */,
 				9F5492971E392F27004FC272 /* SwiftyJSON.framework in Frameworks */,
+				9F196F471E48F47A00F94225 /* AlamofireNetworkActivityIndicator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +236,7 @@
 		457C04A816D03D9B5129D9B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F196F461E48F47A00F94225 /* AlamofireNetworkActivityIndicator.framework */,
 				9F5CF6161E3F6435001EECB9 /* MapKit.framework */,
 				9F5492921E392F27004FC272 /* Realm.framework */,
 				9F5492931E392F27004FC272 /* RealmSwift.framework */,
@@ -296,6 +302,7 @@
 				9F5492A01E3937AC004FC272 /* NewsEntity.swift */,
 				9F5492A21E3937C0004FC272 /* SettingsEntity.swift */,
 				9F028B851E46336E000FFB11 /* EventEntity.swift */,
+				9F196F481E48FA8E00F94225 /* ObjectEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -791,6 +798,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireNetworkActivityIndicator.framework",
 			);
 			outputPaths = (
 			);
@@ -860,6 +868,7 @@
 				9F1907B21E388CEE0056FAFD /* NotificationCenter+Extensions.swift in Sources */,
 				9F5CF6101E3F51EF001EECB9 /* String+Extensions.swift in Sources */,
 				9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */,
+				9F196F491E48FA8E00F94225 /* ObjectEntity.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
 				9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */,

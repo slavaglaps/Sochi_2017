@@ -70,6 +70,7 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
     monthLabel.text = "\(localized(monthAtIndex: 2)) 2017"
     title = Localizations.MenuItem.Schedule
     fillCalendar()
+    updateEvents()
   }
   
   func updateEvents() {

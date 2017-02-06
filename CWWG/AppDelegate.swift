@@ -12,6 +12,8 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
+import AlamofireNetworkActivityIndicator
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     LocalizationController.loadLocalization()
     AppearanceController.setup()
+    
+    NetworkActivityIndicatorManager.shared.isEnabled = true
+    NetworkActivityIndicatorManager.shared.startDelay = 0
     
     if #available(iOS 10.0, *) {
       UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]) {

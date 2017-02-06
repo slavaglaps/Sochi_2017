@@ -22,8 +22,14 @@ public struct Localizations {
     /// Base translation: News
     public static var News : String { return localized(string: "menu-item.news", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
+    /// Base translation: Quest
+    public static var Quest : String { return localized(string: "menu-item.quest", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
     /// Base translation: Messenger
     public static var Messenger : String { return localized(string: "menu-item.messenger", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: About CISM
+    public static var AboutCism : String { return localized(string: "menu-item.about-CISM", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Results
     public static var Results : String { return localized(string: "menu-item.results", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
@@ -31,8 +37,8 @@ public struct Localizations {
     /// Base translation: Broadcast
     public static var Broadcast : String { return localized(string: "menu-item.broadcast", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Accreditation
-    public static var Accreditation : String { return localized(string: "menu-item.accreditation", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+    /// Base translation: About Russian Military
+    public static var AboutRfMilitary : String { return localized(string: "menu-item.about-RF-military", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Objects
     public static var Objects : String { return localized(string: "menu-item.objects", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
@@ -44,13 +50,13 @@ public struct Localizations {
 
   public struct Map {
 
-    /// Base translation: Map
-    public static var Title : String { return localized(string: "map.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
     /// Base translation: Open in %@
     public static func OpenIn(value1 : String) -> String {
       return String(format: localized(string: "map.open-in", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
     }
+
+    /// Base translation: Map
+    public static var Title : String { return localized(string: "map.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
   }
 
@@ -98,11 +104,11 @@ public struct Localizations {
         /// Base translation: Thu
         public static var Thursday : String { return localized(string: "time.weekday.short.thursday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-        /// Base translation: Sat
-        public static var Saturday : String { return localized(string: "time.weekday.short.saturday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
         /// Base translation: Wed
         public static var Wednesday : String { return localized(string: "time.weekday.short.wednesday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+        /// Base translation: Sat
+        public static var Saturday : String { return localized(string: "time.weekday.short.saturday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
       }
     }
@@ -188,13 +194,13 @@ public struct Localizations {
     /// Base translation: Today
     public static var Today : String { return localized(string: "time-managment.today", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Just now
-    public static var Now : String { return localized(string: "time-managment.now", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
     /// Base translation: %i minutes ago
     public static func InHour(value1 : Int) -> String {
       return String(format: localized(string: "time-managment.in-hour", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
     }
+
+    /// Base translation: Just now
+    public static var Now : String { return localized(string: "time-managment.now", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Yersterday at %@
     public static func Yersteday(value1 : String) -> String {

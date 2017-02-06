@@ -46,7 +46,10 @@
 "menu-item.results" = "Результаты";
 "menu-item.messenger" = "Мессенджер";
 "menu-item.broadcast" = "Трансляция";
-"menu-item.accreditation" = "Аккредитация";
+"menu-item.quest" = "Квест";
+
+"menu-item.about-CISM" = "Все о CISM";
+"menu-item.about-RF-military" = "Об армии РФ";
 
 // Objects
 

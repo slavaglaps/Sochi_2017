@@ -17,6 +17,9 @@ class ResultsViewController: UIViewController {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var scroreLabel: UILabel!
   
+  var sportString: String = ""
+  var currentSportString: String = ""
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -30,7 +33,7 @@ class ResultsViewController: UIViewController {
     nameLabel.text = Localizations.Results.Name
     scroreLabel.text = Localizations.Results.Score
     
-    fill(with: "Скалолазанье", additionalInfo: "Женская квалификация")
+    fill(with: sportString, additionalInfo: currentSportString)
     // Do any additional setup after loading the view.
   }
   

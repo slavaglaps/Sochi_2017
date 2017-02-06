@@ -106,6 +106,11 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     if let destination = segue.destination as? SelectionViewController {
       destination.delegate = self
     }
+    
+    if let destination = segue.destination as? ResultsViewController {
+      destination.sportString = selectedSport ?? ""
+      destination.currentSportString = selectedCurrentSport ?? ""
+    }
   }
   
 }

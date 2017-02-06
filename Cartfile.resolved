@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "4.3.0"
-github "kean/Nuke" "4.1.2"
+github "kean/Nuke" "5.0.1"
 github "SwiftyJSON/SwiftyJSON" "3.1.4"
-github "realm/realm-cocoa" "v2.3.0"
+github "realm/realm-cocoa" "v2.4.2"
+github "Alamofire/AlamofireNetworkActivityIndicator" "2.1.0"

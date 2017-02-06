@@ -15,7 +15,7 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var menuListItem: MenuListView!
   
-  var menuItems: [MenuListItem] = [.news, .schedule, .objects, .results, .messenger, .broadcast, .accreditation]
+  var menuItems: [MenuListItem] = [.schedule, .results, .news, .broadcast, .quest, .objects, .messenger, .cism, .military]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -110,8 +110,8 @@ extension MenuViewController: MenuListViewDelegate {
       showSchedule()
     case .objects:
       showObjects()
-    case .accreditation:
-      openAccreditation()
+    case .results:
+      openResults()
     default:
       print(index)
     }
@@ -134,8 +134,13 @@ extension MenuViewController {
     self.dismiss(animated: true, completion: nil)
   }
   
-  func openAccreditation() {
-    let url = URL(string: "http://cismsochi2017.ru/accreditation/")!
-    UIApplication.shared.openURL(url)
+  func openResults() {
+    RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.resultsSearchViewController]
+    self.dismiss(animated: true, completion: nil)
   }
+  
+//  func openAccreditation() {
+//    let url = URL(string: "http://cismsochi2017.ru/accreditation/")!
+//    UIApplication.shared.openURL(url)
+//  }
 }
