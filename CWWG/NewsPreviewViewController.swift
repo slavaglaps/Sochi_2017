@@ -50,8 +50,11 @@ extension NewsPreviewViewController: UITableViewDataSource {
       
       return cell
     } else {
-      let cell = tableView.dequeueReusableCell(for: indexPath) as NewsPreviewDescriptionTableViewCell
+      let cell = tableView.dequeueReusableCell(for: indexPath) as DescriptionTableViewCell
+      
       cell.newsDescriptionLabel.text = currentNews.text
+      cell.updateCellPosition(at: indexPath, inside: tableView)
+      
       return cell
     }
   }

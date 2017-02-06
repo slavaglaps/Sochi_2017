@@ -63,16 +63,20 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     selectedSport = nil
   }
   
+  var fieldIndex: Int = 0
+  
   @IBAction func sportButtonAction(_ sender: UIButton) {
-    selectedSport = "Крутой"
+    fieldIndex = 0
+    self.performSegue(withIdentifier: "Select", sender: nil)
   }
   
   @IBAction func currentSportButtonAction(_ sender: UIButton) {
-    selectedCurrentSport = "Очень крутой"
+    fieldIndex = 1
+    self.performSegue(withIdentifier: "Select", sender: nil)
   }
   
   @IBAction func searchButtonAction(_ sender: UIButton) {
-    
+    self.performSegue(withIdentifier: "Results", sender: nil)
   }
   
   var isCurrentSportActive: Bool = false {
@@ -98,5 +102,20 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     }
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? SelectionViewController {
+      destination.delegate = self
+    }
+  }
   
+}
+
+extension ResultsSearchViewController: SelectionViewControllerDelegate {
+  func selectionViewController(selectionViewController: SelectionViewController, didSelect element: String) {
+    if fieldIndex == 0 {
+      selectedSport = element
+    } else {
+      selectedCurrentSport = element
+    }
+  }
 }

@@ -54,7 +54,6 @@ class ResultsViewController: UIViewController {
     label.sizeToFit()
     navigationItem.titleView = label
   }
-  
 }
 
 extension ResultsViewController: UITableViewDataSource {

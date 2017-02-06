@@ -1,5 +1,5 @@
 //
-//  NewsPreviewDescriptionTableViewCell.swift
+//  DescriptionTableViewCell.swift
 //  CWWG
 //
 //  Created by Alexander Zimin on 24/01/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsPreviewDescriptionTableViewCell: UITableViewCell, Reusable {
+class DescriptionTableViewCell: SeparatorsTableViewCell, Reusable {
   
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -31,23 +31,9 @@ class NewsPreviewDescriptionTableViewCell: UITableViewCell, Reusable {
     }
   }
   
-  @IBOutlet weak var separatorView: UIView! {
-    didSet {
-      separatorView.backgroundColor = AppColor.seperatorColor
-    }
-  }
-  
-  @IBOutlet var separatorsViewHeightConstraints: [NSLayoutConstraint]! {
-    didSet {
-      for constraint in separatorsViewHeightConstraints {
-        constraint.constant = 1
-      }
-    }
-  }
-  
-  
   override func awakeFromNib() {
     super.awakeFromNib()
+     separatorLeadingConstraint.constant = fashionLineView.frame.width
     // Initialization code
   }
   
