@@ -57,3 +57,10 @@
 
 "map.title" = "Карта";
 "map.open-in" = "Открыть в %@";
+
+// Results
+
+"results.place" = "Место";
+"results.country" = "Страна";
+"results.name" = "Имя";
+"results.score" = "Счет";

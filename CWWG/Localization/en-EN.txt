@@ -57,3 +57,10 @@
 
 "map.title" = "Map";
 "map.open-in" = "Open in %@";
+
+// Results
+
+"results.place" = "Place";
+"results.country" = "Country";
+"results.name" = "Name";
+"results.score" = "Scores";

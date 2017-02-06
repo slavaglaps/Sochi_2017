@@ -712,7 +712,7 @@
                                 <rect key="frame" x="0.0" y="142" width="375" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultsViewTableViewCell" rowHeight="66" id="Lsb-zO-VkF" customClass="ResultsViewTableViewCell" customModule="CWWG" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResultsViewTableViewCell" rowHeight="66" id="Lsb-zO-VkF" customClass="ResultsViewTableViewCell" customModule="CWWG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lsb-zO-VkF" id="v4X-zm-i2g">
@@ -882,6 +882,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="&lt;Название спорта&gt;" id="0o1-1V-KMH"/>
                     <connections>
+                        <outlet property="countryLabel" destination="ay0-3U-xhZ" id="5D9-Y8-Rat"/>
+                        <outlet property="nameLabel" destination="elK-sr-I0U" id="Fxj-mv-fIe"/>
+                        <outlet property="placeLabel" destination="m42-8i-MGr" id="Yyn-H6-RYn"/>
+                        <outlet property="scroreLabel" destination="NyH-VS-MjF" id="0xI-vi-09g"/>
                         <outlet property="tableView" destination="XvK-hn-KmM" id="E6q-1c-56T"/>
                     </connections>
                 </viewController>

@@ -17,32 +17,6 @@ import Foundation
 public struct Localizations {
 
 
-  public struct TimeManagment {
-
-    /// Base translation: at
-    public static var At : String { return localized(string: "time-managment.at", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: In future
-    public static var Future : String { return localized(string: "time-managment.future", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: Today
-    public static var Today : String { return localized(string: "time-managment.today", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: Just now
-    public static var Now : String { return localized(string: "time-managment.now", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: %i minutes ago
-    public static func InHour(value1 : Int) -> String {
-      return String(format: localized(string: "time-managment.in-hour", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
-    }
-
-    /// Base translation: Yersterday at %@
-    public static func Yersteday(value1 : String) -> String {
-      return String(format: localized(string: "time-managment.yersteday", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
-    }
-
-  }
-
   public struct MenuItem {
 
     /// Base translation: News
@@ -76,25 +50,6 @@ public struct Localizations {
     /// Base translation: Open in %@
     public static func OpenIn(value1 : String) -> String {
       return String(format: localized(string: "map.open-in", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
-    }
-
-  }
-
-  public struct SelectLanguage {
-
-    /// Base translation: Select language
-    public static var Title : String { return localized(string: "select-language.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-  }
-
-  public struct ObjectPreview {
-
-    /// Base translation: What is going on:
-    public static var WhatIsGoingOn : String { return localized(string: "object-preview.what-is-going-on", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: Сapacity: %i viewers
-    public static func Size(value1 : Int) -> String {
-      return String(format: localized(string: "object-preview.size", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
     }
 
   }
@@ -191,5 +146,66 @@ public struct Localizations {
       public static var May : String { return localized(string: "time.month.may", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     }
+  }
+
+  public struct Results {
+
+    /// Base translation: Place
+    public static var Place : String { return localized(string: "results.place", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Country
+    public static var Country : String { return localized(string: "results.country", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Scores
+    public static var Score : String { return localized(string: "results.score", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Name
+    public static var Name : String { return localized(string: "results.name", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+  }
+
+  public struct TimeManagment {
+
+    /// Base translation: at
+    public static var At : String { return localized(string: "time-managment.at", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: In future
+    public static var Future : String { return localized(string: "time-managment.future", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Today
+    public static var Today : String { return localized(string: "time-managment.today", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Just now
+    public static var Now : String { return localized(string: "time-managment.now", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: %i minutes ago
+    public static func InHour(value1 : Int) -> String {
+      return String(format: localized(string: "time-managment.in-hour", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
+
+    /// Base translation: Yersterday at %@
+    public static func Yersteday(value1 : String) -> String {
+      return String(format: localized(string: "time-managment.yersteday", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
+
+  }
+
+  public struct ObjectPreview {
+
+    /// Base translation: What is going on:
+    public static var WhatIsGoingOn : String { return localized(string: "object-preview.what-is-going-on", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Сapacity: %i viewers
+    public static func Size(value1 : Int) -> String {
+      return String(format: localized(string: "object-preview.size", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
+
+  }
+
+  public struct SelectLanguage {
+
+    /// Base translation: Select language
+    public static var Title : String { return localized(string: "select-language.title", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
   }
 }

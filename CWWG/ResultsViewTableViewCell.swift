@@ -16,14 +16,35 @@ class ResultsViewTableViewCell: SeparatorsTableViewCell, Reusable {
     }
   }
   
-  @IBOutlet weak var placeLabel: UILabel!
+  @IBOutlet weak var placeLabel: UILabel! {
+    didSet {
+      placeLabel.textColor = AppColor.blue
+      placeLabel.font = AppFont.latoRegularFont(ofSize: 17)
+    }
+  }
   
   @IBOutlet weak var countryImageView: UIImageView!
   
-  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!  {
+    didSet {
+      nameLabel.textColor = AppColor.black
+      nameLabel.font = AppFont.latoRegularFont(ofSize: 17)
+      nameLabel.adjustsFontSizeToFitWidth = true
+    }
+  }
   
-  @IBOutlet weak var scoresBackgroundView: UIView!
-  @IBOutlet weak var scoresLabel: UILabel!
+  @IBOutlet weak var scoresBackgroundView: UIView! {
+    didSet {
+      scoresBackgroundView.backgroundColor = AppColor.blue
+    }
+  }
+  
+  @IBOutlet weak var scoresLabel: UILabel! {
+    didSet {
+      scoresLabel.textColor = AppColor.white
+      scoresLabel.font = AppFont.latoBoldFont(ofSize: 17)
+    }
+  }
   
   override func awakeFromNib() {
     super.awakeFromNib()
