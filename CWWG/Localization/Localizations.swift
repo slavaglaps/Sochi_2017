@@ -148,6 +148,19 @@ public struct Localizations {
     }
   }
 
+  public struct ResultSearch {
+
+    /// Base translation: Competition
+    public static var Competition : String { return localized(string: "result-search.competition", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Search
+    public static var Search : String { return localized(string: "result-search.search", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Sport type
+    public static var Sport : String { return localized(string: "result-search.sport", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+  }
+
   public struct Results {
 
     /// Base translation: Place

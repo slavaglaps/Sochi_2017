@@ -64,3 +64,7 @@
 "results.country" = "Страна";
 "results.name" = "Имя";
 "results.score" = "Счет";
+
+"result-search.sport" = "Вид спорта";
+"result-search.competition" = "Соревнование";
+"result-search.search" = "Поиск";
