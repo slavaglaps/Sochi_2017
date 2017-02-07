@@ -631,6 +631,29 @@
                                 <rect key="frame" x="28" y="75" width="319" height="497"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymy-Dn-Vhp">
+                                <rect key="frame" x="28" y="37" width="67" height="20.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_weather_8xx" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-PN-rpz">
+                                        <rect key="frame" x="45" y="3" width="22" height="14"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Y-h3-esi">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="IKD-PN-rpz" firstAttribute="centerY" secondItem="ymy-Dn-Vhp" secondAttribute="centerY" id="Fpi-2o-7DY"/>
+                                    <constraint firstAttribute="bottom" secondItem="23Y-h3-esi" secondAttribute="bottom" id="GPH-zR-kyH"/>
+                                    <constraint firstItem="IKD-PN-rpz" firstAttribute="leading" secondItem="23Y-h3-esi" secondAttribute="trailing" constant="6" id="OuS-4z-y8N"/>
+                                    <constraint firstAttribute="trailing" secondItem="IKD-PN-rpz" secondAttribute="trailing" id="Xdl-fk-eFh"/>
+                                    <constraint firstItem="23Y-h3-esi" firstAttribute="top" secondItem="ymy-Dn-Vhp" secondAttribute="top" id="nHs-9B-Ija"/>
+                                    <constraint firstItem="23Y-h3-esi" firstAttribute="leading" secondItem="ymy-Dn-Vhp" secondAttribute="leading" id="w7H-Il-0OW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -642,12 +665,14 @@
                             <constraint firstItem="FlR-dP-ieP" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="NKf-Zd-3gT"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="top" secondItem="E2a-rf-ANN" secondAttribute="bottom" constant="8" id="SVj-mW-x6c"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="WgR-qi-TbR"/>
+                            <constraint firstItem="ymy-Dn-Vhp" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leadingMargin" constant="12" id="XcW-3f-GDj"/>
                             <constraint firstItem="E2a-rf-ANN" firstAttribute="top" secondItem="Iic-C6-mCD" secondAttribute="bottom" constant="8" id="Yky-Tp-kWi"/>
                             <constraint firstAttribute="trailing" secondItem="Rwx-Ye-Hj6" secondAttribute="trailing" id="Zhz-pq-44n"/>
                             <constraint firstItem="Rwx-Ye-Hj6" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leading" id="asI-jl-QKg"/>
                             <constraint firstItem="Rwx-Ye-Hj6" firstAttribute="top" secondItem="gYx-Pv-Ih0" secondAttribute="top" id="b5e-if-uh8"/>
                             <constraint firstItem="E2a-rf-ANN" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leadingMargin" constant="12" id="b88-Da-3MH"/>
                             <constraint firstItem="Iic-C6-mCD" firstAttribute="centerY" secondItem="xyX-QX-u7i" secondAttribute="centerY" constant="-3" id="ldi-ro-IPQ"/>
+                            <constraint firstItem="ymy-Dn-Vhp" firstAttribute="centerY" secondItem="xyX-QX-u7i" secondAttribute="centerY" id="m7K-nf-sqS"/>
                             <constraint firstItem="de6-gl-NvB" firstAttribute="top" secondItem="Rwx-Ye-Hj6" secondAttribute="bottom" id="sGt-N1-M6W"/>
                             <constraint firstItem="Iic-C6-mCD" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="xNX-ga-5kl"/>
                         </constraints>
@@ -656,6 +681,9 @@
                         <outlet property="englishLabel" destination="S7w-G5-cy9" id="106-Lj-rXb"/>
                         <outlet property="menuListItem" destination="E2a-rf-ANN" id="oCb-9Y-hhb"/>
                         <outlet property="russianLabel" destination="ILk-Yc-buL" id="t9J-xn-iJW"/>
+                        <outlet property="weatherImageView" destination="IKD-PN-rpz" id="N0P-Z4-soy"/>
+                        <outlet property="weatherLabel" destination="23Y-h3-esi" id="jn3-EK-ubA"/>
+                        <outlet property="weatherView" destination="ymy-Dn-Vhp" id="BCN-1j-3vc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYV-b9-g0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1151,7 +1179,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="b1Y-d6-6mg" secondAttribute="trailing" constant="12" id="Bw9-Ev-ODf"/>
                                                 <constraint firstAttribute="bottom" secondItem="hoC-f5-bKQ" secondAttribute="bottom" id="FCO-gz-b0R"/>
                                                 <constraint firstItem="hoC-f5-bKQ" firstAttribute="leading" secondItem="ycq-pm-h2Z" secondAttribute="leading" id="R9M-SU-kEf"/>
-                                                <constraint firstItem="b1Y-d6-6mg" firstAttribute="centerY" secondItem="ycq-pm-h2Z" secondAttribute="centerY" id="l9J-MH-0bE"/>
+                                                <constraint firstItem="b1Y-d6-6mg" firstAttribute="top" secondItem="ycq-pm-h2Z" secondAttribute="topMargin" constant="9.5" id="i1R-A3-QZr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="b1Y-d6-6mg" secondAttribute="bottom" constant="9" id="sGc-VX-fJt"/>
                                                 <constraint firstItem="b1Y-d6-6mg" firstAttribute="leading" secondItem="j8d-ph-WsQ" secondAttribute="trailing" constant="28" id="w4S-ZC-raa"/>
                                                 <constraint firstItem="hoC-f5-bKQ" firstAttribute="top" secondItem="ycq-pm-h2Z" secondAttribute="top" id="yWB-6s-cG7"/>
                                             </constraints>
@@ -1668,6 +1697,7 @@
         <image name="img_schedule_bg" width="375" height="164"/>
         <image name="img_sport_1" width="64" height="72"/>
         <image name="img_tempalte" width="375" height="181"/>
+        <image name="img_weather_8xx" width="22" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aW9-xf-NH0"/>

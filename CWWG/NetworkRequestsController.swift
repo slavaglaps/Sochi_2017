@@ -88,8 +88,7 @@ struct NetworkRequestsController {
   static func requestEventsTypes(completionBlock: @escaping CompletionBlock) {
     let url = stringURLFromPostfix(string: "events")
     
-    var body: [String: Any] = [:]
-    body = addLanguage(withParametrs: body)
+    let body = addLanguage(withParametrs: [:])
     
     request(url, method: .get, parameters: body).responseJSON { (data) in
       if let data = data.data {
@@ -98,6 +97,26 @@ struct NetworkRequestsController {
       } else {
         completionBlock(false)
         print("Error loading events tpyes")
+      }
+    }
+  }
+  
+  // MARK: - Weather
+  
+  static func requestWeather(completionBlock: @escaping ((degree: Float, id: Int)?) -> Void) {
+    let url = stringURLFromPostfix(string: "weather")
+    let body = addLanguage(withParametrs: [:])
+    
+    request(url, method: .get, parameters: body).responseJSON { (data) in
+      if let data = data.data {
+        let json = JSON(data: data)
+        if let degree = json["weather"]["temperature"].float, let id = json["weather"]["id"].int {
+          completionBlock((degree, id))
+        } else {
+          completionBlock(nil)
+        }
+      } else {
+        completionBlock(nil)
       }
     }
   }

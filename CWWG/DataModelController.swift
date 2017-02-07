@@ -17,7 +17,7 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 5, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
       writeFunction(block: {
@@ -80,11 +80,10 @@ class DataModelController {
   // MARK: - Events
   
   static func processEventTypes(json: JSON, completionBlock: CompletionBlock) {
-    for daysInfo in json.arrayValue {
-      for itemInfo in daysInfo["events"].arrayValue {
-        let id = itemInfo["id"].intValue
-        updateEventType(id: id, json: itemInfo, completionBlock: nil)
-      }
+    
+    for itemInfo in json["events"].arrayValue {
+      let id = itemInfo["id"].intValue
+      updateEventType(id: id, json: itemInfo, completionBlock: nil)
     }
     
     completionBlock(true)
@@ -95,7 +94,7 @@ class DataModelController {
     
     newsEntity.id = id
     newsEntity.name = json["name"].stringValue
-
+    
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })

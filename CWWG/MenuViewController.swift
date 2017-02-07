@@ -16,6 +16,19 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   @IBOutlet weak var menuListItem: MenuListView!
   
+  @IBOutlet weak var weatherLabel: UILabel! {
+    didSet {
+      weatherLabel.font = AppFont.latoRegularFont(ofSize: 15)
+    }
+  }
+  @IBOutlet weak var weatherImageView: UIImageView!
+  @IBOutlet weak var weatherView: UIView! {
+    didSet {
+      weatherView.isHidden = true
+    }
+  }
+  
+  
   var menuItems: [MenuListItem] = [.schedule, .results, .news, .broadcast, .quest, .objects, .messenger, .cism, .military]
   
   override func viewDidLoad() {
@@ -28,9 +41,15 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     // Do any additional setup after loading the view.
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    NetworkRequestsController.requestWeather { [weak self] (result) in
+      guard let result = result, let strongSelf = self else { return }
+      strongSelf.weatherView.isHidden = false
+      strongSelf.weatherLabel.text = "\(result.degree)°C"
+      strongSelf.weatherImageView.image = WeatherHelper.parseWeatherId(id: result.id)
+    }
   }
   
   @IBAction func selectNewsButtonAction(_ sender: UIButton) {

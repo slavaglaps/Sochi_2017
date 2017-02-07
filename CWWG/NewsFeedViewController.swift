@@ -27,6 +27,8 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   var bottomCell: UITableViewCell?
   var topCell: UITableViewCell?
   
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
