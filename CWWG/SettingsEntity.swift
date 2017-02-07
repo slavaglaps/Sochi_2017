@@ -11,4 +11,6 @@ import RealmSwift
 
 class SettingsEntity: Object, ObjectSingletone {
   dynamic var selectedLocalizationString: String?
+  dynamic var lastWeatherId: Int = 0
+  dynamic var lastWeatherDegree: Float = 0
 }

@@ -15,6 +15,8 @@
 		9F028B8D1E46445D000FFB11 /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */; };
 		9F0645071E49FAD500B1D923 /* EventTypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */; };
 		9F0645091E4A205700B1D923 /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0645081E4A205700B1D923 /* WeatherHelper.swift */; };
+		9F06450B1E4A2B3E00B1D923 /* ContestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06450A1E4A2B3E00B1D923 /* ContestEntity.swift */; };
+		9F06450D1E4A2BC300B1D923 /* ContestResultsRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06450C1E4A2BC300B1D923 /* ContestResultsRuntimeEntity.swift */; };
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
@@ -118,6 +120,8 @@
 		9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
 		9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeEntity.swift; sourceTree = "<group>"; };
 		9F0645081E4A205700B1D923 /* WeatherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
+		9F06450A1E4A2B3E00B1D923 /* ContestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContestEntity.swift; sourceTree = "<group>"; };
+		9F06450C1E4A2BC300B1D923 /* ContestResultsRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContestResultsRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 				9F028B851E46336E000FFB11 /* EventEntity.swift */,
 				9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */,
 				9F196F481E48FA8E00F94225 /* ObjectEntity.swift */,
+				9F06450A1E4A2B3E00B1D923 /* ContestEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */,
 				9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */,
 				9F5CF60D1E3F50DB001EECB9 /* ObjectRuntimeEntity.swift */,
+				9F06450C1E4A2BC300B1D923 /* ContestResultsRuntimeEntity.swift */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -836,6 +842,7 @@
 				9F8545291E2FD82A004964F5 /* SelectLanguageViewController.swift in Sources */,
 				9FFFA2631E378D9B00669B68 /* AppearanceController.swift in Sources */,
 				9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */,
+				9F06450D1E4A2BC300B1D923 /* ContestResultsRuntimeEntity.swift in Sources */,
 				9FFFA2611E3787CE00669B68 /* AppFont.swift in Sources */,
 				9F8545311E2FD868004964F5 /* MenuViewController.swift in Sources */,
 				9F85453F1E2FD8E4004964F5 /* ObjectsListViewController.swift in Sources */,
@@ -895,6 +902,7 @@
 				9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */,
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,
 				9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */,
+				9F06450B1E4A2B3E00B1D923 /* ContestEntity.swift in Sources */,
 				9F5CF6151E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift in Sources */,
 				9F0645071E49FAD500B1D923 /* EventTypeEntity.swift in Sources */,
 			);

@@ -37,6 +37,8 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     menuListItem.dataSource = self
     menuListItem.delegate = self
     
+    updateWeather()
+    
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
     // Do any additional setup after loading the view.
   }
@@ -47,9 +49,29 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     NetworkRequestsController.requestWeather { [weak self] (result) in
       guard let result = result, let strongSelf = self else { return }
       strongSelf.weatherView.isHidden = false
-      strongSelf.weatherLabel.text = "\(result.degree)°C"
-      strongSelf.weatherImageView.image = WeatherHelper.parseWeatherId(id: result.id)
+      
+      writeFunction(block: { 
+        SettingsEntity.value?.lastWeatherId = result.id
+        SettingsEntity.value?.lastWeatherDegree = result.degree
+      })
+      
+      strongSelf.updateWeather()
     }
+  }
+  
+  func updateWeather() {
+    let weatherId = SettingsEntity.value?.lastWeatherId ?? 0
+    let weatherDegree = SettingsEntity.value?.lastWeatherDegree ?? 0
+    
+    if weatherId > 0 {
+      self.updateWeather(withDegree: weatherDegree, weatherId: weatherId)
+    }
+  }
+  
+  func updateWeather(withDegree degree: Float, weatherId: Int) {
+    self.weatherView.isHidden = false
+    self.weatherLabel.text = "\(degree)°C"
+    self.weatherImageView.image = WeatherHelper.parseWeatherId(id: weatherId)
   }
   
   @IBAction func selectNewsButtonAction(_ sender: UIButton) {

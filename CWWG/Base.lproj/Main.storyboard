@@ -503,7 +503,7 @@
                                 <rect key="frame" x="145" y="20" width="85" height="47"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="FlR-dP-ieP">
-                                <rect key="frame" x="115.5" y="627" width="145" height="22"/>
+                                <rect key="frame" x="115" y="627" width="145" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-lP-xXe">
                                         <rect key="frame" x="0.0" y="0.0" width="9" height="22"/>
@@ -632,10 +632,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymy-Dn-Vhp">
-                                <rect key="frame" x="28" y="37" width="67" height="20.5"/>
+                                <rect key="frame" x="12" y="37.5" width="66" height="20.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_weather_8xx" translatesAutoresizingMaskIntoConstraints="NO" id="IKD-PN-rpz">
-                                        <rect key="frame" x="45" y="3" width="22" height="14"/>
+                                        <rect key="frame" x="45" y="0.5" width="21" height="18"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23Y-h3-esi">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="20.5"/>
@@ -665,7 +665,7 @@
                             <constraint firstItem="FlR-dP-ieP" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="NKf-Zd-3gT"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="top" secondItem="E2a-rf-ANN" secondAttribute="bottom" constant="8" id="SVj-mW-x6c"/>
                             <constraint firstItem="pe8-jW-nzz" firstAttribute="centerX" secondItem="gYx-Pv-Ih0" secondAttribute="centerX" id="WgR-qi-TbR"/>
-                            <constraint firstItem="ymy-Dn-Vhp" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leadingMargin" constant="12" id="XcW-3f-GDj"/>
+                            <constraint firstItem="ymy-Dn-Vhp" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leading" constant="12" id="XcW-3f-GDj"/>
                             <constraint firstItem="E2a-rf-ANN" firstAttribute="top" secondItem="Iic-C6-mCD" secondAttribute="bottom" constant="8" id="Yky-Tp-kWi"/>
                             <constraint firstAttribute="trailing" secondItem="Rwx-Ye-Hj6" secondAttribute="trailing" id="Zhz-pq-44n"/>
                             <constraint firstItem="Rwx-Ye-Hj6" firstAttribute="leading" secondItem="gYx-Pv-Ih0" secondAttribute="leading" id="asI-jl-QKg"/>
@@ -1697,7 +1697,7 @@
         <image name="img_schedule_bg" width="375" height="164"/>
         <image name="img_sport_1" width="64" height="72"/>
         <image name="img_tempalte" width="375" height="181"/>
-        <image name="img_weather_8xx" width="22" height="14"/>
+        <image name="img_weather_8xx" width="21" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aW9-xf-NH0"/>
