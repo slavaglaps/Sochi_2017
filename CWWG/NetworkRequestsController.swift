@@ -26,10 +26,10 @@ struct NetworkRequestsController {
   static func requstNews(lastId: Int = 0, limit: Int = 20, ascending: Bool, completionBlock: @escaping CompletionBlockForData) {
     
     let url = stringURLFromPostfix(string: "news")
-    let body = ["pivot": lastId,
+    var body = ["pivot": lastId,
                 "limit": limit,
-                "ascending": ascending ? 1 : 0,
-                "lang": LocalizationController.currentLocalization.serverString] as [String: Any]
+                "ascending": ascending ? 1 : 0] as [String: Any]
+    body = addLanguage(withParametrs: body)
     
     request(url, method: .get, parameters: body).responseJSON { (data) in
       if let data = data.data {
@@ -60,19 +60,44 @@ struct NetworkRequestsController {
   // MARK: - Events
   
   static func requestEvents(completionBlock: @escaping CompletionBlock) {
-    let url = stringURLFromPostfix(string: "schedule")
     
-    // TODO: -- add last_update
-    let body = ["lang": LocalizationController.currentLocalization.serverString,
-                "last_update": 0] as [String: Any]
+    requestEventsTypes { (success) in
+      guard success else {
+        completionBlock(false)
+        return
+      }
+     
+      let url = stringURLFromPostfix(string: "schedule")
+      
+      // TODO: -- add last_update
+      var body = ["last_update": 0] as [String: Any]
+      body = addLanguage(withParametrs: body)
+      
+      request(url, method: .get, parameters: body).responseJSON { (data) in
+        if let data = data.data {
+          let json = JSON(data: data)
+          DataModelController.processEvents(json: json, completionBlock: completionBlock)
+        } else {
+          completionBlock(false)
+          print("Error loading events")
+        }
+      }
+    }
+  }
+  
+  static func requestEventsTypes(completionBlock: @escaping CompletionBlock) {
+    let url = stringURLFromPostfix(string: "events")
+    
+    var body: [String: Any] = [:]
+    body = addLanguage(withParametrs: body)
     
     request(url, method: .get, parameters: body).responseJSON { (data) in
       if let data = data.data {
         let json = JSON(data: data)
-        DataModelController.processEvents(json: json, completionBlock: completionBlock)
+        DataModelController.processEventTypes(json: json, completionBlock: completionBlock)
       } else {
         completionBlock(false)
-        print("Error loading news from id")
+        print("Error loading events tpyes")
       }
     }
   }
@@ -81,6 +106,12 @@ struct NetworkRequestsController {
   
   private static func stringURLFromPostfix(string: String) -> String {
     return currentURL + string
+  }
+  
+  private static func addLanguage(withParametrs parametrs: [String: Any]) -> [String: Any] {
+    var result = parametrs
+    result["lang"] = LocalizationController.currentLocalization.serverString
+    return result
   }
   
   private static func baseBodyPrametrs(withParametrs parametrs: [String: Any]) -> [String: Any] {

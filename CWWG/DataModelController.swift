@@ -17,16 +17,27 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 2, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
-      writeFunction(block: { 
-        defaultRealm!.delete(defaultRealm!.objects(NewsEntity.self))
+      writeFunction(block: {
+        guard let realm = defaultRealm else { return }
+        realm.delete(realm.objects(NewsEntity.self))
       })
     }
     catch {
       assertionFailure("Default realm init error: \(error)")
     }
+  }
+  
+  static func clearLanguageModel() {
+    writeFunction(block: {
+      guard let realm = defaultRealm else { return }
+      realm.delete(realm.objects(NewsEntity.self))
+      realm.delete(realm.objects(EventEntity.self))
+      realm.delete(realm.objects(EventTypeEntity.self))
+      realm.delete(realm.objects(ObjectEntity.self))
+    })
   }
   
   // MARK: - News
@@ -68,6 +79,30 @@ class DataModelController {
   
   // MARK: - Events
   
+  static func processEventTypes(json: JSON, completionBlock: CompletionBlock) {
+    for daysInfo in json.arrayValue {
+      for itemInfo in daysInfo["events"].arrayValue {
+        let id = itemInfo["id"].intValue
+        updateEventType(id: id, json: itemInfo, completionBlock: nil)
+      }
+    }
+    
+    completionBlock(true)
+  }
+  
+  static func updateEventType(id: Int, json: JSON, completionBlock: CompletionBlock?) {
+    let newsEntity = EventTypeEntity()
+    
+    newsEntity.id = id
+    newsEntity.name = json["name"].stringValue
+
+    writeFunction(block: {
+      defaultRealm?.add(newsEntity, update: true)
+    })
+    
+    completionBlock?(true)
+  }
+  
   static func processEvents(json: JSON, completionBlock: CompletionBlock) {
     for daysInfo in json.arrayValue {
       for itemInfo in daysInfo["items"].arrayValue {
@@ -81,6 +116,7 @@ class DataModelController {
   
   static func updateEvent(id: Int, json: JSON, completionBlock: CompletionBlock?) {
     guard let startDate = Date(serverString: json["start"].stringValue), let endDate = Date(serverString: json["end"].stringValue) else {
+      completionBlock?(false)
       return
     }
     
@@ -90,11 +126,13 @@ class DataModelController {
     newsEntity.startDate = startDate
     newsEntity.endDate = endDate
     newsEntity.objectId = json["game_object_id"].intValue
-    newsEntity.isEvent = json["event"].boolValue
+    newsEntity.eventTypeId = json["event_id"].intValue
     newsEntity.dayString = json["day"].stringValue
     
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })
+    
+    completionBlock?(true)
   }
 }

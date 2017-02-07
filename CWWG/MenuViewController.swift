@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
@@ -113,6 +114,7 @@ extension MenuViewController: MenuListViewDelegate {
     case .results:
       openResults()
     default:
+      self.openUrl(string: "https://www.google.de")
       print(index)
     }
   }
@@ -139,8 +141,8 @@ extension MenuViewController {
     self.dismiss(animated: true, completion: nil)
   }
   
-//  func openAccreditation() {
-//    let url = URL(string: "http://cismsochi2017.ru/accreditation/")!
-//    UIApplication.shared.openURL(url)
-//  }
+  func openUrl(string: String) {
+    let safariViewController = SFSafariViewController(url: URL(string: string)!)
+    self.present(safariViewController, animated: true, completion: nil)
+  }
 }

@@ -14,9 +14,14 @@ class EventEntity: Object {
   dynamic var startDate: Date = Date()
   dynamic var endDate: Date = Date()
   dynamic var objectId: Int = 0
-  dynamic var isEvent: Bool = false
   dynamic var name: String = ""
   dynamic var dayString: String = ""
+  dynamic var eventTypeId: Int = 0
+  
+  var eventType: EventTypeEntity {
+    let event = defaultRealm?.objects(EventTypeEntity.self).filter("id = \(eventTypeId)").first ?? EventTypeEntity.defaultEntity
+    return event
+  }
   
   override static func primaryKey() -> String? {
     return "id"
@@ -39,8 +44,8 @@ class EventEntity: Object {
   
   static func eventDays() -> [String] {
     var result: [String] = []
-    for day in 10...16 {
-      result.append("2017-\(10)-\(day)")
+    for day in 22...28 {
+      result.append("2017-02-\(day)")
     }
     return result
   }

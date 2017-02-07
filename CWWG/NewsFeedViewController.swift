@@ -37,17 +37,11 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     
     news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
     
-    updateFeed(inDirection: .toNew)
-    
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(NewsFeedViewController.refreshFeed), for: .valueChanged)
     tableView.addSubview(refreshControl)
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
-  }
-  
-  deinit {
-    print("Deinit")
   }
   
   func refreshFeed() {
@@ -56,6 +50,8 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   
   func updateLanguage() {
     title = Localizations.MenuItem.News
+    
+    updateFeed(inDirection: .toNew)
     tableView.reloadData()
     
     shouldUpdateToOldData = true

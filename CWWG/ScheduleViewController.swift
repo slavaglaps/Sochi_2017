@@ -44,7 +44,8 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
     
     addMenuButton()
     
-    tableView.rowHeight = 120
+    tableView.estimatedRowHeight = 44.0
+    tableView.rowHeight = UITableViewAutomaticDimension
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
   }
@@ -126,6 +127,7 @@ extension ScheduleViewController: UITableViewDataSource {
     }
     
     let object = ObjectRuntimeEntityContainer.findEntity(by: event.objectId)
+    let eventType = event.eventType
     
     let cell = tableView.dequeueReusableCell(for: indexPath) as ScheduleTableViewCell
     
@@ -135,7 +137,8 @@ extension ScheduleViewController: UITableViewDataSource {
     cell.updateCellPosition(at: indexPath, inside: tableView)
     cell.setupWithPlace(nameString: object?.title ?? "")
     
-    cell.isEvent = event.isEvent
+    cell.timeLabelBackgroundView.backgroundColor = eventType.color
+    cell.iconImageView.image = UIImage(named: eventType.imageName)
     
     return cell
   }

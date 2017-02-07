@@ -68,11 +68,22 @@ class ObjectInfoTableViewCell: UITableViewCell, Reusable, UpdateLanguageNotifica
     let subtitleRange = NSMakeRange(0, subtitle.characters.count)
     let titleRange = NSMakeRange(subtitle.characters.count, fullTitle.characters.count)
     
+    let fontsSizes = fontsSizesTuple
+    
     attributedString.addAttribute(NSForegroundColorAttributeName, value: AppColor.black, range: fullRange)
-    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: 15), range: subtitleRange)
-    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: 22), range: titleRange)
+    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: fontsSizes.0), range: subtitleRange)
+    attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: fontsSizes.1), range: titleRange)
     
     objectNameLabel.attributedText = attributedString
+  }
+  
+  private var fontsSizesTuple: (CGFloat, CGFloat) {
+    let bounds = UIScreen.main.bounds
+    if bounds.width < 340 {
+      return (13, 19)
+    } else {
+      return (15, 21)
+    }
   }
   
   override func awakeFromNib() {

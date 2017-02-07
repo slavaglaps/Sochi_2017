@@ -13,6 +13,7 @@
 		9F028B881E4643EE000FFB11 /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B871E4643EE000FFB11 /* CalendarCellView.swift */; };
 		9F028B8A1E464423000FFB11 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F028B891E464423000FFB11 /* UIView+Extensions.swift */; };
 		9F028B8D1E46445D000FFB11 /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */; };
+		9F0645071E49FAD500B1D923 /* EventTypeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */; };
 		9F176DCF1E37B86C006082EA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */; };
 		9F176DD11E37C295006082EA /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD01E37C295006082EA /* ViewControllersFactory.swift */; };
 		9F176DD31E37C3B1006082EA /* RouterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F176DD21E37C3B1006082EA /* RouterController.swift */; };
@@ -114,6 +115,7 @@
 		9F028B871E4643EE000FFB11 /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		9F028B891E464423000FFB11 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		9F028B8C1E46445D000FFB11 /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
+		9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTypeEntity.swift; sourceTree = "<group>"; };
 		9F176DCE1E37B86C006082EA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		9F176DD01E37C295006082EA /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		9F176DD21E37C3B1006082EA /* RouterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterController.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				9F5492A01E3937AC004FC272 /* NewsEntity.swift */,
 				9F5492A21E3937C0004FC272 /* SettingsEntity.swift */,
 				9F028B851E46336E000FFB11 /* EventEntity.swift */,
+				9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */,
 				9F196F481E48FA8E00F94225 /* ObjectEntity.swift */,
 			);
 			name = Entities;
@@ -889,6 +892,7 @@
 				9F8545371E2FD896004964F5 /* ResultsViewController.swift in Sources */,
 				9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */,
 				9F5CF6151E3F5E76001EECB9 /* ObjectInfoTableViewCell.swift in Sources */,
+				9F0645071E49FAD500B1D923 /* EventTypeEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

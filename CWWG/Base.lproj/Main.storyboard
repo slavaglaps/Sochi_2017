@@ -1090,7 +1090,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1Y-d6-6mg">
-                                                    <rect key="frame" x="124" y="17.5" width="243" height="85.5"/>
+                                                    <rect key="frame" x="124" y="17.5" width="239" height="85.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-m2-0NN">
                                                             <rect key="frame" x="0.0" y="0.0" width="62" height="32.5"/>
@@ -1111,16 +1111,16 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nvQ-pk-56l">
-                                                            <rect key="frame" x="0.0" y="40.5" width="225.5" height="45"/>
+                                                            <rect key="frame" x="0.0" y="40.5" width="239" height="45"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGc-DX-lgE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="225.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGc-DX-lgE">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="239" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZV-DW-ECw">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="225.5" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="24.5" width="239" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1133,6 +1133,7 @@
                                                         <constraint firstItem="yp5-m2-0NN" firstAttribute="leading" secondItem="b1Y-d6-6mg" secondAttribute="leading" id="35D-dE-gOw"/>
                                                         <constraint firstItem="nvQ-pk-56l" firstAttribute="leading" secondItem="b1Y-d6-6mg" secondAttribute="leading" id="5If-SK-jgy"/>
                                                         <constraint firstAttribute="bottom" secondItem="nvQ-pk-56l" secondAttribute="bottom" id="NDt-67-PPb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="nvQ-pk-56l" secondAttribute="trailing" id="lDT-nh-nVD"/>
                                                         <constraint firstItem="nvQ-pk-56l" firstAttribute="top" secondItem="yp5-m2-0NN" secondAttribute="bottom" constant="8" id="wiU-2C-nK7"/>
                                                         <constraint firstItem="yp5-m2-0NN" firstAttribute="top" secondItem="b1Y-d6-6mg" secondAttribute="top" id="xRY-x2-oAa"/>
                                                     </constraints>
@@ -1147,7 +1148,7 @@
                                             <constraints>
                                                 <constraint firstItem="j8d-ph-WsQ" firstAttribute="leading" secondItem="hoC-f5-bKQ" secondAttribute="trailing" id="38t-nU-Mwk"/>
                                                 <constraint firstItem="j8d-ph-WsQ" firstAttribute="centerY" secondItem="ycq-pm-h2Z" secondAttribute="centerY" id="74Z-9H-lTm"/>
-                                                <constraint firstAttribute="trailing" secondItem="b1Y-d6-6mg" secondAttribute="trailing" constant="8" id="Bw9-Ev-ODf"/>
+                                                <constraint firstAttribute="trailing" secondItem="b1Y-d6-6mg" secondAttribute="trailing" constant="12" id="Bw9-Ev-ODf"/>
                                                 <constraint firstAttribute="bottom" secondItem="hoC-f5-bKQ" secondAttribute="bottom" id="FCO-gz-b0R"/>
                                                 <constraint firstItem="hoC-f5-bKQ" firstAttribute="leading" secondItem="ycq-pm-h2Z" secondAttribute="leading" id="R9M-SU-kEf"/>
                                                 <constraint firstItem="b1Y-d6-6mg" firstAttribute="centerY" secondItem="ycq-pm-h2Z" secondAttribute="centerY" id="l9J-MH-0bE"/>
@@ -1158,6 +1159,7 @@
                                         <connections>
                                             <outlet property="eventNameLabel" destination="mGc-DX-lgE" id="Hfb-GP-IQi"/>
                                             <outlet property="fashionLineView" destination="hoC-f5-bKQ" id="qkZ-bz-l8a"/>
+                                            <outlet property="iconImageView" destination="j8d-ph-WsQ" id="12V-r2-55y"/>
                                             <outlet property="placeNameLabel" destination="RZV-DW-ECw" id="sW4-09-Q4q"/>
                                             <outlet property="timeLabel" destination="lEp-8u-I5F" id="bND-t3-ljY"/>
                                             <outlet property="timeLabelBackgroundView" destination="yp5-m2-0NN" id="MwE-Ez-0je"/>
@@ -1413,7 +1415,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-sz-c2C">
-                                                    <rect key="frame" x="57" y="17.5" width="206" height="61"/>
+                                                    <rect key="frame" x="57" y="17.5" width="208" height="61"/>
                                                     <string key="text">Многофункциональная арена
 «ледяной куб»</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1469,7 +1471,7 @@
                                                 <constraint firstItem="EHL-LL-9FV" firstAttribute="centerY" secondItem="jDG-1D-0Qn" secondAttribute="centerY" id="p23-qK-0dl"/>
                                                 <constraint firstItem="EHL-LL-9FV" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jDG-1D-0Qn" secondAttribute="trailing" constant="-6" id="pq6-P3-fLC"/>
                                                 <constraint firstItem="Zw5-f0-wja" firstAttribute="leading" secondItem="HCc-nT-j0q" secondAttribute="trailing" id="psz-yG-B7A"/>
-                                                <constraint firstItem="jDG-1D-0Qn" firstAttribute="leading" secondItem="kTV-sz-c2C" secondAttribute="trailing" constant="12" id="qIp-1z-PHN"/>
+                                                <constraint firstItem="jDG-1D-0Qn" firstAttribute="leading" secondItem="kTV-sz-c2C" secondAttribute="trailing" constant="10" id="qIp-1z-PHN"/>
                                                 <constraint firstItem="HCc-nT-j0q" firstAttribute="top" secondItem="II1-UJ-rgK" secondAttribute="top" id="tmv-87-Fg1"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -30,6 +30,7 @@ class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
     }
   }
   
+  @IBOutlet weak var iconImageView: UIImageView!
   @IBOutlet weak var placeNameLabel: UILabel!
   
   @IBOutlet weak var fashionLineView: FashionLineView! {
@@ -56,16 +57,6 @@ class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
     attributedString.addAttribute(NSFontAttributeName, value: AppFont.latoBoldFont(ofSize: 12), range: titleRange)
     
     placeNameLabel.attributedText = attributedString
-  }
-  
-  var isEvent: Bool = false {
-    didSet {
-      if isEvent {
-        timeLabelBackgroundView.backgroundColor = AppColor.red
-      } else {
-        timeLabelBackgroundView.backgroundColor = AppColor.blue
-      }
-    }
   }
   
 }

@@ -83,6 +83,7 @@ struct LocalizationController {
     currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
     
+    DataModelController.clearLanguageModel()
     ObjectRuntimeEntityContainer.resetEntities()
     
     NotificationCenter.default.postUpdateLanguageChangedNotification()
