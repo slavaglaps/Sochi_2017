@@ -70,7 +70,17 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   
   func updateWeather(withDegree degree: Float, weatherId: Int) {
     self.weatherView.isHidden = false
-    self.weatherLabel.text = "\(degree)°C"
+    
+    let intDegree = Int(round(degree))
+    
+    var string: String
+    if intDegree > 0 {
+      string = "+\(intDegree)°C"
+    } else {
+      string = "\(intDegree)°C"
+    }
+    
+    self.weatherLabel.text = string
     self.weatherImageView.image = WeatherHelper.parseWeatherId(id: weatherId)
   }
   
