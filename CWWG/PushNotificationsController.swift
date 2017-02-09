@@ -14,8 +14,16 @@ struct PushNotificationsController {
     registerNotification(withTokenString: deviceTokenString)
   }
   
+  static func updateLanguageRegistration() {
+    if let token = SettingsEntity.value?.deviceTokenString {
+      registerNotification(withTokenString: token)
+    }
+  }
+  
   static func registerNotification(withTokenString tokenString: String) {
-    print(tokenString)
+    writeFunction {
+      SettingsEntity.value?.deviceTokenString = tokenString
+    }
     NetworkRequestsController.sendTokenToServer(tokenString: tokenString)
   }
 }

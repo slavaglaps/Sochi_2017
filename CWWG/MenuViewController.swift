@@ -164,8 +164,15 @@ extension MenuViewController: MenuListViewDelegate {
       showObjects()
     case .results:
       openResults()
+    case .broadcast:
+      openBroadcast()
+    case .messenger:
+      openMessenger()
+    case .quest:
+      openQuiz()
     default:
-      self.openUrl(string: "https://www.google.de")
+      showDocument()
+      //self.openUrl(string: "https://www.google.de")
       print(index)
     }
   }
@@ -189,6 +196,25 @@ extension MenuViewController {
   
   func openResults() {
     RouterController.shared.baseNavigationController.viewControllers = [ViewControllersFactory.resultsSearchViewController]
+    self.dismiss(animated: true, completion: nil)
+  }
+  
+  func openBroadcast() {
+    AlertViewHelper.showAlertView(with: "", message: "Трансляция начнётся 22-го Февраля", buttonTitle: "", fromViewController: self)
+  }
+  
+  func openMessenger() {
+    AlertViewHelper.showAlertView(with: "", message: "Этот раздел заработает 21-го Февраля", buttonTitle: "Ок", fromViewController: self)
+  }
+  
+  func openQuiz() {
+    AlertViewHelper.showAlertView(with: "", message: "Этот раздел заработает 21-го Февраля", buttonTitle: "Ок", fromViewController: self)
+  }
+  
+  func showDocument() {
+    let webController = ViewControllersFactory.webViewController
+    webController.fileName = "test"
+    RouterController.shared.baseNavigationController.viewControllers = [webController]
     self.dismiss(animated: true, completion: nil)
   }
   

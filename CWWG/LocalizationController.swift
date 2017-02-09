@@ -86,6 +86,8 @@ struct LocalizationController {
     DataModelController.clearLanguageModel()
     ObjectRuntimeEntityContainer.resetEntities()
     
+    PushNotificationsController.updateLanguageRegistration()
+    
     NotificationCenter.default.postUpdateLanguageChangedNotification()
   }
   

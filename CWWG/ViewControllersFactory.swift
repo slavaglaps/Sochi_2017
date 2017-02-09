@@ -32,6 +32,10 @@ struct ViewControllersFactory {
     return newsViewController
   }
   
+  static var webViewController: WebViewViewController {
+    return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Web") as! WebViewViewController
+  }
+  
   static var resultsSearchViewController: ResultsSearchViewController {
     return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsSearch") as! ResultsSearchViewController
   }
@@ -39,4 +43,5 @@ struct ViewControllersFactory {
   static var scheduleViewController: ScheduleViewController {
     return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Schedule") as! ScheduleViewController
   }
+  
 }

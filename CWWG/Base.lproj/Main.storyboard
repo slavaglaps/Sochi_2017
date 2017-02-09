@@ -1350,7 +1350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-47-U14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="1605.2473763118442"/>
+            <point key="canvasLocation" x="2959.1999999999998" y="1605.2473763118442"/>
         </scene>
         <!--Object Preview View Controller-->
         <scene sceneID="mCb-jd-7TL">
@@ -1537,7 +1537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghO-ex-yav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2760.8000000000002" y="1605.2473763118442"/>
+            <point key="canvasLocation" x="3700" y="1605.2473763118442"/>
         </scene>
         <!--Карта-->
         <scene sceneID="jG3-gC-TRy">
@@ -1581,7 +1581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asq-sS-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3525.5999999999999" y="1605.2473763118442"/>
+            <point key="canvasLocation" x="4464.8000000000002" y="1605.2473763118442"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="kVL-tX-uhr">
@@ -1620,6 +1620,40 @@
             </objects>
             <point key="canvasLocation" x="118" y="833"/>
         </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="pz3-wx-32y">
+            <objects>
+                <viewController storyboardIdentifier="Web" id="MvU-AU-mjf" customClass="WebViewViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BMs-3p-O3r"/>
+                        <viewControllerLayoutGuide type="bottom" id="jC9-Ro-Lwg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nXm-mh-NPa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dm-Cg-sGn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Dm-Cg-sGn" secondAttribute="trailing" id="0ue-tf-C9u"/>
+                            <constraint firstItem="jC9-Ro-Lwg" firstAttribute="top" secondItem="6Dm-Cg-sGn" secondAttribute="bottom" id="1p0-Yh-Hn0"/>
+                            <constraint firstItem="6Dm-Cg-sGn" firstAttribute="top" secondItem="nXm-mh-NPa" secondAttribute="top" id="Jgr-K4-nQ4"/>
+                            <constraint firstItem="6Dm-Cg-sGn" firstAttribute="leading" secondItem="nXm-mh-NPa" secondAttribute="leading" id="bHe-eg-0HN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tNI-EX-Ag3"/>
+                    <connections>
+                        <outlet property="webView" destination="6Dm-Cg-sGn" id="3QT-ZI-bAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzO-JA-fhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="522" y="1523"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="TZj-Vt-QZo">
             <objects>
@@ -1654,7 +1688,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuV-TC-eRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="1606"/>
+            <point key="canvasLocation" x="2143.1999999999998" y="1605.2473763118442"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="eGH-E3-kp4">
@@ -1673,6 +1707,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIS-ua-f0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-778" y="833"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="45p-X7-6Gj">
+            <objects>
+                <navigationController storyboardIdentifier="WebNavigation" automaticallyAdjustsScrollViewInsets="NO" id="Fb7-TU-f66" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVj-Xw-Iuu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MvU-AU-mjf" kind="relationship" relationship="rootViewController" id="44r-Hx-Qwj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdl-pR-r2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="1523.3883058470765"/>
         </scene>
     </scenes>
     <resources>

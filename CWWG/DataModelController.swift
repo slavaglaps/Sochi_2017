@@ -17,7 +17,7 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 6, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 7, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
       writeFunction(block: {

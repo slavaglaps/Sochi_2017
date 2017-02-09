@@ -140,6 +140,7 @@ struct NetworkRequestsController {
     result["deviceId"] = deviceId
     result["appId"] = 1
     result["deviceType"] = "ios"
+    result["lang"] = LocalizationController.currentLocalization.serverString
     
     return result
   }

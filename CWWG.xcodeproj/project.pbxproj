@@ -50,6 +50,9 @@
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
+		9F74F87F1E4CD8970003E6C9 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9F74F87E1E4CD8970003E6C9 /* test.pdf */; };
+		9F74F8831E4CDDAC0003E6C9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74F8821E4CDDAC0003E6C9 /* WebViewViewController.swift */; };
+		9F74F8851E4CEAAE0003E6C9 /* AlertViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74F8841E4CEAAE0003E6C9 /* AlertViewHelper.swift */; };
 		9F7FBEC61E38007E0004BF69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F7FBEC81E38007E0004BF69 /* Localizable.strings */; };
 		9F7FBECC1E38017B0004BF69 /* LocalizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7FBECB1E38017B0004BF69 /* LocalizationController.swift */; };
 		9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F85450F1E2FD60D004964F5 /* AppDelegate.swift */; };
@@ -156,6 +159,9 @@
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
 		9F64CB961E377DA80038FB29 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		9F74F87E1E4CD8970003E6C9 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
+		9F74F8821E4CDDAC0003E6C9 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		9F74F8841E4CEAAE0003E6C9 /* AlertViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewHelper.swift; sourceTree = "<group>"; };
 		9F7FBEC91E38007F0004BF69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9F7FBECA1E3800800004BF69 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9F7FBECB1E38017B0004BF69 /* LocalizationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationController.swift; sourceTree = "<group>"; };
@@ -380,6 +386,7 @@
 				9FD765D91E31721700E1375F /* UITableView+Reusable.swift */,
 				9FFFA2661E378EC000669B68 /* Appearance */,
 				9F0645081E4A205700B1D923 /* WeatherHelper.swift */,
+				9F74F8841E4CEAAE0003E6C9 /* AlertViewHelper.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F74F87E1E4CD8970003E6C9 /* test.pdf */,
 				9F5BB9511E41E9FC007CBE28 /* Objects */,
 				9F1907B31E3892F10056FAFD /* Localizations */,
 				9F7FBEC81E38007E0004BF69 /* Localizable.strings */,
@@ -512,6 +520,7 @@
 			children = (
 				9F8545281E2FD82A004964F5 /* SelectLanguageViewController.swift */,
 				9F8545301E2FD868004964F5 /* MenuViewController.swift */,
+				9F74F8821E4CDDAC0003E6C9 /* WebViewViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -731,7 +740,7 @@
 				TargetAttributes = {
 					9F85450B1E2FD60D004964F5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = SGAF76T5DB;
+						DevelopmentTeam = LP52Q55CR6;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -786,6 +795,7 @@
 				9FFFA25B1E37871B00669B68 /* Lato-Regular.ttf in Resources */,
 				9FFFA25C1E37871B00669B68 /* Lato-Semibold.ttf in Resources */,
 				9FFFA25D1E37871B00669B68 /* Lato-SemiboldItalic.ttf in Resources */,
+				9F74F87F1E4CD8970003E6C9 /* test.pdf in Resources */,
 				9F1907BA1E3893110056FAFD /* en-EN.txt in Resources */,
 				9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */,
 				9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */,
@@ -857,6 +867,7 @@
 				9F54929E1E392FD8004FC272 /* RealmExtension.swift in Sources */,
 				9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */,
 				9FFFA2751E37B0C100669B68 /* DescriptionTableViewCell.swift in Sources */,
+				9F74F8831E4CDDAC0003E6C9 /* WebViewViewController.swift in Sources */,
 				9F8545391E2FD8A7004964F5 /* ResultsSearchViewController.swift in Sources */,
 				9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */,
 				9F8545101E2FD60D004964F5 /* AppDelegate.swift in Sources */,
@@ -885,6 +896,7 @@
 				9F196F491E48FA8E00F94225 /* ObjectEntity.swift in Sources */,
 				9F85452B1E2FD838004964F5 /* NewsFeedViewController.swift in Sources */,
 				9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */,
+				9F74F8851E4CEAAE0003E6C9 /* AlertViewHelper.swift in Sources */,
 				9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */,
 				9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */,
 				9F028B861E46336E000FFB11 /* EventEntity.swift in Sources */,
@@ -1040,7 +1052,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = SGAF76T5DB;
+				DEVELOPMENT_TEAM = LP52Q55CR6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1049,7 +1061,7 @@
 				INFOPLIST_FILE = CWWG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team.CWWG";
+				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team-prod.CWWG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CWWG/CWWG-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1064,7 +1076,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CWWG/CWWG.entitlements;
-				DEVELOPMENT_TEAM = SGAF76T5DB;
+				DEVELOPMENT_TEAM = LP52Q55CR6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1073,7 +1085,7 @@
 				INFOPLIST_FILE = CWWG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team.CWWG";
+				PRODUCT_BUNDLE_IDENTIFIER = "cwwg-team-prod.CWWG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CWWG/CWWG-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
