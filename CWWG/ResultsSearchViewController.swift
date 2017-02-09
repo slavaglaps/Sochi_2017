@@ -67,12 +67,12 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   
   @IBAction func sportButtonAction(_ sender: UIButton) {
     fieldIndex = 0
-    self.performSegue(withIdentifier: "Select", sender: nil)
+    self.performSegue(withIdentifier: "Select", sender: 1)
   }
   
   @IBAction func currentSportButtonAction(_ sender: UIButton) {
     fieldIndex = 1
-    self.performSegue(withIdentifier: "Select", sender: nil)
+    self.performSegue(withIdentifier: "Select", sender: 2)
   }
   
   @IBAction func searchButtonAction(_ sender: UIButton) {
@@ -104,6 +104,13 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? SelectionViewController {
+      if let tag = sender as? Int {
+        if tag == 1 {
+          destination.elemets = ["Ски-альпинизм", "Горнолыжный спорт"]
+        } else {
+          destination.elemets = ["Индивидуальная гонка муж., жен", "Официальная тренировка"]
+        }
+      }
       destination.delegate = self
     }
     
