@@ -45,7 +45,7 @@ class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
   }
   
   func setupWithPlace(nameString: String) {
-    let subtitle = Localizations.ObjectPreview.WhatIsGoingOn + " "
+    let subtitle = Localizations.Schedule.TakePlace + " "
     let attributedString = NSMutableAttributedString(string: "\(subtitle)\(nameString)")
     
     let subtitleRange = NSMakeRange(0, subtitle.characters.count)

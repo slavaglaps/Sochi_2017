@@ -71,3 +71,11 @@
 "result-search.sport" = "Вид спорта";
 "result-search.competition" = "Соревнование";
 "result-search.search" = "Поиск";
+
+// Schedule
+
+"schedule.take-place" = "Где проходит:";
+
+// Debug
+
+"debug.this-part-would-work" = "Этот раздел заработает %i-го Февраля";

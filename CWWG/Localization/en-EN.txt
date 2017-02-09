@@ -71,3 +71,11 @@
 "result-search.sport" = "Sport type";
 "result-search.competition" = "Competition";
 "result-search.search" = "Search";
+
+// Schedule
+
+"schedule.take-place" = "Take place:";
+
+// Debug
+
+"debug.this-part-would-work" = "This section will work from %i February";

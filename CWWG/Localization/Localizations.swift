@@ -48,6 +48,15 @@ public struct Localizations {
 
   }
 
+  public struct Debug {
+
+    /// Base translation: This section will work from %i February
+    public static func ThisPartWouldWork(value1 : Int) -> String {
+      return String(format: localized(string: "debug.this-part-would-work", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
+    }
+
+  }
+
   public struct Map {
 
     /// Base translation: Open in %@
@@ -164,6 +173,13 @@ public struct Localizations {
 
     /// Base translation: Sport type
     public static var Sport : String { return localized(string: "result-search.sport", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+  }
+
+  public struct Schedule {
+
+    /// Base translation: Take place:
+    public static var TakePlace : String { return localized(string: "schedule.take-place", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
   }
 

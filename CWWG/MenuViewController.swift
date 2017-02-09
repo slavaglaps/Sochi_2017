@@ -200,22 +200,27 @@ extension MenuViewController {
   }
   
   func openBroadcast() {
-    AlertViewHelper.showAlertView(with: "", message: "Трансляция начнётся 22-го Февраля", buttonTitle: "", fromViewController: self)
+    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 22), buttonTitle: "Ok", fromViewController: self)
   }
   
   func openMessenger() {
-    AlertViewHelper.showAlertView(with: "", message: "Этот раздел заработает 21-го Февраля", buttonTitle: "Ок", fromViewController: self)
+    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
   }
   
   func openQuiz() {
-    AlertViewHelper.showAlertView(with: "", message: "Этот раздел заработает 21-го Февраля", buttonTitle: "Ок", fromViewController: self)
+    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
   }
   
   func showDocument() {
-    let webController = ViewControllersFactory.webViewController
-    webController.fileName = "test"
-    RouterController.shared.baseNavigationController.viewControllers = [webController]
-    self.dismiss(animated: true, completion: nil)
+    
+    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
+    
+//    return
+//    
+//    let webController = ViewControllersFactory.webViewController
+//    webController.fileName = "test"
+//    RouterController.shared.baseNavigationController.viewControllers = [webController]
+//    self.dismiss(animated: true, completion: nil)
   }
   
   func openUrl(string: String) {
