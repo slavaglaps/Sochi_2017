@@ -150,7 +150,7 @@ struct NetworkRequestsController {
   // MARK: - Objecrts
   
   static func requestWhatIsGoingOnNow(completionBlock: @escaping CompletionBlock) {
-    let url = stringURLFromPostfix(string: "now")
+    let url = stringURLFromPostfix(string: "objects/now")
     let body = addLanguage(withParametrs: [:])
     
     request(url, method: .get, parameters: body).responseJSON { (data) in

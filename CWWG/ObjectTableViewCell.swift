@@ -35,6 +35,11 @@ class ObjectTableViewCell: UITableViewCell, Reusable {
   }
   
   func setupWhatIsGoingOn(text: String) {
+    if text.isEmpty {
+      eventLabel.attributedText = NSAttributedString(string: "")
+      return
+    }
+    
     let subtitle = Localizations.ObjectPreview.WhatIsGoingOn + " "
     let attributedString = NSMutableAttributedString(string: "\(subtitle)\(text)")
     
