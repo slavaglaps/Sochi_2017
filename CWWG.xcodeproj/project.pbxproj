@@ -77,6 +77,7 @@
 		9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */; };
 		9FC1D97A1E3A33C900EDDA13 /* Date+Extensisons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */; };
 		9FC1D9841E3A409C00EDDA13 /* DateRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */; };
+		9FD39D661E4E286300C7A89E /* ContestResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD39D651E4E286300C7A89E /* ContestResultEntity.swift */; };
 		9FD765D81E3171B100E1375F /* NewsFeedPlainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D71E3171B100E1375F /* NewsFeedPlainTableViewCell.swift */; };
 		9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765D91E31721700E1375F /* UITableView+Reusable.swift */; };
 		9FD765DE1E31723300E1375F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD765DC1E31723300E1375F /* NibLoadable.swift */; };
@@ -190,6 +191,7 @@
 		9FC1D9791E3A33C900EDDA13 /* Date+Extensisons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensisons.swift"; sourceTree = "<group>"; };
 		9FC1D97C1E3A3D4800EDDA13 /* CWWG-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWWG-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FC1D9831E3A409C00EDDA13 /* DateRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateRepresentation.swift; sourceTree = "<group>"; };
+		9FD39D651E4E286300C7A89E /* ContestResultEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContestResultEntity.swift; sourceTree = "<group>"; };
 		9FD765D71E3171B100E1375F /* NewsFeedPlainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedPlainTableViewCell.swift; sourceTree = "<group>"; };
 		9FD765D91E31721700E1375F /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		9FD765DC1E31723300E1375F /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				9F0645061E49FAD500B1D923 /* EventTypeEntity.swift */,
 				9F196F481E48FA8E00F94225 /* ObjectEntity.swift */,
 				9F06450A1E4A2B3E00B1D923 /* ContestEntity.swift */,
+				9FD39D651E4E286300C7A89E /* ContestResultEntity.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				9F5CF60A1E3F4F4B001EECB9 /* ObjectTableViewCell.swift in Sources */,
 				9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */,
 				9F028B881E4643EE000FFB11 /* CalendarCellView.swift in Sources */,
+				9FD39D661E4E286300C7A89E /* ContestResultEntity.swift in Sources */,
 				9FFFA2691E37902200669B68 /* NavigationViewController.swift in Sources */,
 				9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */,
 				9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */,

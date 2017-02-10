@@ -52,7 +52,18 @@ extension NewsPreviewViewController: UITableViewDataSource {
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as DescriptionTableViewCell
       
-      cell.newsDescriptionLabel.text = currentNews.text
+      let text = currentNews.text ?? ""
+      
+//      let data = text.data(using: String.Encoding.unicode)
+//      if let data = data {
+//        do {
+//          let attributedString = try NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+//          cell.newsDescriptionLabel.attributedText = attributedString
+//        }
+//        catch { }
+//      }
+      
+      cell.newsDescriptionLabel.text = text
       cell.updateCellPosition(at: indexPath, inside: tableView)
       
       return cell

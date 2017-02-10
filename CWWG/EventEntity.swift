@@ -19,7 +19,7 @@ class EventEntity: Object {
   dynamic var eventTypeId: Int = 0
   
   var eventType: EventTypeEntity {
-    let event = defaultRealm?.objects(EventTypeEntity.self).filter("id = \(eventTypeId)").first ?? EventTypeEntity.defaultEntity
+    let event = defaultRealm?.objects(EventTypeEntity.self).filter("id = \(eventTypeId)").first ?? EventTypeEntity.defaultEntity(withId: eventTypeId)
     return event
   }
   

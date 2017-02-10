@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ResultsViewController: UIViewController {
   
@@ -16,6 +17,10 @@ class ResultsViewController: UIViewController {
   @IBOutlet weak var countryLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var scroreLabel: UILabel!
+  
+  var results: [ContestResultEntity] = []
+  
+  var resultsId: Int = 0
   
   var sportString: String = ""
   var currentSportString: String = ""
@@ -34,6 +39,11 @@ class ResultsViewController: UIViewController {
     scroreLabel.text = Localizations.Results.Score
     
     fill(with: sportString, additionalInfo: currentSportString)
+    
+    NetworkRequestsController.requestContestResults(byId: resultsId) { [weak self] (results) in
+      self?.results = results ?? []
+      self?.tableView.reloadData()
+    }
     // Do any additional setup after loading the view.
   }
   
@@ -61,19 +71,31 @@ class ResultsViewController: UIViewController {
 
 extension ResultsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return results.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(for: indexPath) as ResultsViewTableViewCell
     
-    cell.placeLabel.text = "\(indexPath.row + 1)"
-    cell.nameLabel.text = "Спорстмен"
-    cell.scoresLabel.text = "n/a"
+    let result = results[indexPath.row]
+    
+    cell.placeLabel.text = "\(result.place)"
+    cell.nameLabel.text = result.name
+    cell.scoresLabel.text = result.points
+    
+    if let url = URL(string: result.icon) {
+      Nuke.loadImage(with: url, into: cell.countryImageView)
+    }
     
     cell.updateCellPosition(at: indexPath, inside: tableView)
     
     return cell
     
+  }
+  
+  func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if let cell = cell as? ResultsViewTableViewCell {
+      Nuke.cancelRequest(for: cell.countryImageView)
+    }
   }
 }

@@ -10,6 +10,11 @@ import UIKit
 
 class ResultsViewTableViewCell: SeparatorsTableViewCell, Reusable {
   
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    countryImageView.image = nil
+  }
+  
   @IBOutlet weak var fashionLineView: FashionLineView! {
     didSet {
       fashionLineView.tintColor = AppColor.seperatorColor
@@ -49,6 +54,7 @@ class ResultsViewTableViewCell: SeparatorsTableViewCell, Reusable {
   override func awakeFromNib() {
     super.awakeFromNib()
     separatorLeadingConstraint.constant = fashionLineView.frame.width
+    countryImageView.image = nil
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {

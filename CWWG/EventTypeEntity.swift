@@ -22,7 +22,7 @@ class EventTypeEntity: Object {
     case 10...12:
       return AppColor.red
     case 9:
-      return AppColor.gray
+      return AppColor.yellow
     default:
       return AppColor.blue
     }
@@ -49,7 +49,9 @@ class EventTypeEntity: Object {
     }
   }
   
-  static var defaultEntity: EventTypeEntity {
-    return EventTypeEntity()
+  static func defaultEntity(withId id: Int) -> EventTypeEntity {
+    let entity = EventTypeEntity()
+    entity.id = id
+    return entity
   }
 }

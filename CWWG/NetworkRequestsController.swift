@@ -121,6 +121,53 @@ struct NetworkRequestsController {
     }
   }
   
+  // MARK: - Contest Info
+  
+  static func requestContestResults(byId id: Int, completionBlock:  @escaping ([ContestResultEntity]?) -> Void) {
+    let url = stringURLFromPostfix(string: "contests/\(id)")
+    let body = addLanguage(withParametrs: [:])
+    
+    request(url, method: .get, parameters: body).responseJSON { (data) in
+      if let data = data.data {
+        let json = JSON(data: data)
+        var results: [ContestResultEntity] = []
+        for resultInfo in json["results"].arrayValue {
+          let result = ContestResultEntity()
+          result.id = id
+          result.name = resultInfo["name"].stringValue
+          result.points = resultInfo["points"].stringValue
+          result.place = resultInfo["place"].intValue
+          result.icon = resultInfo["icon"].stringValue
+          results.append(result)
+        }
+        completionBlock(results)
+      } else {
+        completionBlock(nil)
+      }
+    }
+  }
+  
+  // MARK: - Objecrts
+  
+  static func requestWhatIsGoingOnNow(completionBlock: @escaping CompletionBlock) {
+    let url = stringURLFromPostfix(string: "now")
+    let body = addLanguage(withParametrs: [:])
+    
+    request(url, method: .get, parameters: body).responseJSON { (data) in
+      if let data = data.data {
+        let json = JSON(data: data)
+        for objectInfo in json["objects"].arrayValue {
+          let id = objectInfo["id"].intValue
+          let object = ObjectRuntimeEntityContainer.findEntity(by: id)
+          object?.event = objectInfo["now"].stringValue
+        }
+        completionBlock(true)
+      } else {
+        completionBlock(false)
+      }
+    }
+  }
+  
   // MARK: - Helpers
   
   private static func stringURLFromPostfix(string: String) -> String {

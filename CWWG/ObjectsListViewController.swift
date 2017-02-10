@@ -23,6 +23,12 @@ class ObjectsListViewController: UIViewController, UpdateLanguageNotificationObs
     
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
     
+    NetworkRequestsController.requestWhatIsGoingOnNow { [weak self] (success) in
+      if success {
+        self?.tableView.reloadData()
+      }
+    }
+    
     // Do any additional setup after loading the view.
   }
   
@@ -55,7 +61,7 @@ extension ObjectsListViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath) as ObjectTableViewCell
     
     cell.setup(with: object.title, subtitle: object.subtitle)
-    cell.setupWhatIsGoingOn(text: object.event)
+    cell.setupWhatIsGoingOn(text: object.event ?? "")
     cell.objectImageView.image = object.imageName.image
     
     return cell

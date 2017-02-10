@@ -117,6 +117,7 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     if let destination = segue.destination as? ResultsViewController {
       destination.sportString = selectedSport ?? ""
       destination.currentSportString = selectedCurrentSport ?? ""
+      destination.resultsId = 5
     }
   }
   

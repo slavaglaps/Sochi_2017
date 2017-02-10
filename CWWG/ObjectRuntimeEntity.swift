@@ -45,7 +45,7 @@ struct ObjectRuntimeEntityContainer {
       let title = objectInfo["title"].stringValue
       let subtitle = objectInfo["subtitle"].stringValue
       let size = objectInfo["size"].intValue
-      let event = objectInfo["event"].stringValue
+      let event: String? = nil // objectInfo["event"].stringValue
       let description = objectInfo["description"].stringValue
       let imageName = objectInfo["image_name"].stringValue
       
@@ -71,14 +71,14 @@ class ObjectRuntimeEntity {
   var description: String
   var size: Int
   var imageName: String
-  var event: String
+  var event: String?
   var coordinates: CLLocation
   
   var sizeString: String {
     return Localizations.ObjectPreview.Size(value1: size)
   }
   
-  init(id: Int, title: String, subtitle: String, description: String, size: Int, event: String, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+  init(id: Int, title: String, subtitle: String, description: String, size: Int, event: String?, imageName: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
     self.id = id
     self.title = title
     self.subtitle = subtitle
