@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationObserver {
   
@@ -18,18 +19,22 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   @IBOutlet weak var currentSportLabel: PlaceholderLabel!
   @IBOutlet weak var searchLabel: UILabel!
   
-  var selectedSport: String? = nil {
+  var events: Results<EventTypeEntity>?
+  var contests: List<ContestEntity>?
+  
+  var selectedSport: EventTypeEntity? = nil {
     didSet {
       selectedCurrentSport = nil
       isCurrentSportActive = selectedSport != nil
-      sportLabel.textString = selectedSport
+      sportLabel.textString = selectedSport?.name
+      contests = selectedSport?.contests
     }
   }
   
-  var selectedCurrentSport: String? {
+  var selectedCurrentSport: ContestEntity? {
     didSet {
       isSearchActive = selectedCurrentSport != nil
-      currentSportLabel.textString = selectedCurrentSport
+      currentSportLabel.textString = selectedCurrentSport?.name
     }
   }
   
@@ -41,14 +46,29 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
       label?.font = AppFont.latoRegularFont(ofSize: 14)
     }
     
+    isSportActive = true
+    events = defaultRealm?.objects(EventTypeEntity.self)
+    
     addMenuButton()
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
-    // Do any additional setup after loading the view.
+    
+    checkIfNeedToUpdateSport()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  func checkIfNeedToUpdateSport() {
+    if events?.isEmpty == true {
+      isSportActive = false
+      NetworkRequestsController.requestEventsTypes { [weak self] (success) in
+        if success && self?.events?.isEmpty == false {
+          self?.isSportActive = true
+        }
+      }
+    }
   }
   
   func updateLanguage() {
@@ -61,6 +81,7 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     searchLabel.text = Localizations.ResultSearch.Search
     
     selectedSport = nil
+    checkIfNeedToUpdateSport()
   }
   
   var fieldIndex: Int = 0
@@ -77,6 +98,19 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   
   @IBAction func searchButtonAction(_ sender: UIButton) {
     self.performSegue(withIdentifier: "Results", sender: nil)
+  }
+  
+  var isSportActive: Bool = false {
+    didSet {
+      sportButton.isEnabled = isSportActive
+      
+      let alpha: CGFloat = isSportActive ? 1 : 0.7
+      let placeholderAlpha: CGFloat = isSportActive ? 0.5 : 0.7
+      
+      sportButton.alpha = alpha
+      sportLabel.realAlpha = alpha
+      sportLabel.placeholderAlpha = placeholderAlpha
+    }
   }
   
   var isCurrentSportActive: Bool = false {
@@ -106,29 +140,29 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     if let destination = segue.destination as? SelectionViewController {
       if let tag = sender as? Int {
         if tag == 1 {
-          destination.elemets = ["Ски-альпинизм", "Горнолыжный спорт"]
+          destination.elemets = events?.map({ $0 }) ?? []
         } else {
-          destination.elemets = ["Индивидуальная гонка муж., жен", "Официальная тренировка"]
+          destination.elemets = contests?.map({ $0 }) ?? []
         }
       }
       destination.delegate = self
     }
     
     if let destination = segue.destination as? ResultsViewController {
-      destination.sportString = selectedSport ?? ""
-      destination.currentSportString = selectedCurrentSport ?? ""
-      destination.resultsId = 5
+      destination.sportString = selectedSport?.name ?? ""
+      destination.currentSportString = selectedCurrentSport?.name ?? ""
+      destination.resultsId = selectedCurrentSport?.id ?? 0
     }
   }
   
 }
 
 extension ResultsSearchViewController: SelectionViewControllerDelegate {
-  func selectionViewController(selectionViewController: SelectionViewController, didSelect element: String) {
+  func selectionViewController(selectionViewController: SelectionViewController, didSelect element: SelectionEntity) {
     if fieldIndex == 0 {
-      selectedSport = element
+      selectedSport = element as? EventTypeEntity
     } else {
-      selectedCurrentSport = element
+      selectedCurrentSport = element as? ContestEntity
     }
   }
 }

@@ -9,8 +9,12 @@
 import Foundation
 import RealmSwift
 
-class ContestEntity: Object {
-  var title: String = ""
-  var subtitle: String = ""
-  var id: Int = 0
+class ContestEntity: Object, SelectionEntity {
+  dynamic var name: String = ""
+  dynamic var id: Int = 0
+  let eventType = LinkingObjects(fromType: EventTypeEntity.self, property: "contests")
+  
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 }

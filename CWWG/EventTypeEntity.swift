@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class EventTypeEntity: Object {
+class EventTypeEntity: Object, SelectionEntity {
   dynamic var id: Int = 0
   dynamic var name: String = ""
+  let contests = List<ContestEntity>()
   
   override static func primaryKey() -> String? {
     return "id"

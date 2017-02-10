@@ -76,7 +76,8 @@ struct NetworkRequestsController {
       request(url, method: .get, parameters: body).responseJSON { (data) in
         if let data = data.data {
           let json = JSON(data: data)
-          DataModelController.processEvents(json: json, completionBlock: completionBlock)
+          DataModelController.processEvents(json: json)
+          completionBlock(true)
         } else {
           completionBlock(false)
           print("Error loading events")
@@ -93,7 +94,8 @@ struct NetworkRequestsController {
     request(url, method: .get, parameters: body).responseJSON { (data) in
       if let data = data.data {
         let json = JSON(data: data)
-        DataModelController.processEventTypes(json: json, completionBlock: completionBlock)
+        DataModelController.processEventTypes(json: json)
+        completionBlock(true)
       } else {
         completionBlock(false)
         print("Error loading events tpyes")

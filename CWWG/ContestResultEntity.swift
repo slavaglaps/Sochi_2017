@@ -10,9 +10,13 @@ import Foundation
 import RealmSwift
 
 class ContestResultEntity: Object {
-  var id: Int = 0
-  var name: String = ""
-  var points: String = ""
-  var place: Int = 0
-  var icon: String = ""
+  dynamic var id: Int = 0
+  dynamic var name: String = ""
+  dynamic var points: String = ""
+  dynamic var place: Int = 0
+  dynamic var icon: String = ""
+  
+  override static func primaryKey() -> String? {
+    return "id"
+  }
 }

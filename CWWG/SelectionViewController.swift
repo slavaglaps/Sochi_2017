@@ -9,7 +9,12 @@
 import UIKit
 
 protocol SelectionViewControllerDelegate {
-  func selectionViewController(selectionViewController: SelectionViewController, didSelect element: String)
+  func selectionViewController(selectionViewController: SelectionViewController, didSelect element: SelectionEntity)
+}
+
+protocol SelectionEntity {
+  var name: String { get }
+  var id: Int { get }
 }
 
 class SelectionViewController: UIViewController {
@@ -18,7 +23,13 @@ class SelectionViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  var elemets = ["Горные лыжи", "Водные лыжи", "Спуск со склона"]
+  var elemets: [SelectionEntity] = [] {
+    didSet {
+      if isViewLoaded {
+        tableView.reloadData()
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,7 +49,9 @@ extension SelectionViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(for: indexPath) as DescriptionTableViewCell
     
-    cell.newsDescriptionLabel.text = elemets[indexPath.row]
+    let element = elemets[indexPath.row]
+    
+    cell.newsDescriptionLabel.text = element.name
     cell.updateCellPosition(at: indexPath, inside: tableView)
     
     return cell

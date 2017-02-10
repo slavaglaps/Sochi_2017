@@ -17,7 +17,7 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 7, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 9, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
       writeFunction(block: {
@@ -37,6 +37,7 @@ class DataModelController {
       realm.delete(realm.objects(EventEntity.self))
       realm.delete(realm.objects(EventTypeEntity.self))
       realm.delete(realm.objects(ObjectEntity.self))
+      realm.delete(realm.objects(ContestEntity.self))
     })
   }
   
@@ -79,17 +80,32 @@ class DataModelController {
   
   // MARK: - Events
   
-  static func processEventTypes(json: JSON, completionBlock: CompletionBlock) {
+  static func processEventTypes(json: JSON) {
+    
+    if (json["errors"].bool ?? true) == true {
+      return
+    }
+    
+    if let realm = defaultRealm {
+      writeFunction {
+        realm.delete(realm.objects(EventTypeEntity.self))
+        realm.delete(realm.objects(ContestEntity.self))
+      }
+    }
     
     for itemInfo in json["events"].arrayValue {
       let id = itemInfo["id"].intValue
-      updateEventType(id: id, json: itemInfo, completionBlock: nil)
+      let event = updateEventType(id: id, json: itemInfo)
+      for contestInfo in itemInfo["contests"].arrayValue {
+        let contest = updateConstest(json: contestInfo)
+        writeFunction {
+          event.contests.append(contest)
+        }
+      }
     }
-    
-    completionBlock(true)
   }
   
-  static func updateEventType(id: Int, json: JSON, completionBlock: CompletionBlock?) {
+  static func updateEventType(id: Int, json: JSON) -> EventTypeEntity {
     let newsEntity = EventTypeEntity()
     
     newsEntity.id = id
@@ -99,23 +115,35 @@ class DataModelController {
       defaultRealm?.add(newsEntity, update: true)
     })
     
-    completionBlock?(true)
+    return newsEntity
   }
   
-  static func processEvents(json: JSON, completionBlock: CompletionBlock) {
+  static func updateConstest(json: JSON) -> ContestEntity {
+    let id = json["id"].intValue
+    let name = json["name"].stringValue
+    
+    let contestEntity = ContestEntity()
+    contestEntity.id = id
+    contestEntity.name = name
+    
+    writeFunction(block: {
+      defaultRealm?.add(contestEntity, update: true)
+    })
+    
+    return contestEntity
+  }
+  
+  static func processEvents(json: JSON) {
     for daysInfo in json.arrayValue {
       for itemInfo in daysInfo["items"].arrayValue {
         let id = itemInfo["id"].intValue
-        updateEvent(id: id, json: itemInfo, completionBlock: nil)
+        updateEvent(id: id, json: itemInfo)
       }
     }
-    
-    completionBlock(true)
   }
   
-  static func updateEvent(id: Int, json: JSON, completionBlock: CompletionBlock?) {
+  static func updateEvent(id: Int, json: JSON) {
     guard let startDate = Date(serverString: json["start"].stringValue), let endDate = Date(serverString: json["end"].stringValue) else {
-      completionBlock?(false)
       return
     }
     
@@ -131,7 +159,5 @@ class DataModelController {
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })
-    
-    completionBlock?(true)
   }
 }

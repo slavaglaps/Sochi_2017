@@ -10,7 +10,7 @@ import UIKit
 
 class AppConfiguration: NSObject {
   class var appId: Int {
-    return 1096787850
+    return 1204479917
   }
   
   class var deviceId: String {
@@ -27,10 +27,6 @@ class AppConfiguration: NSObject {
   
   class var appStoreOpenURL: NSURL {
     return NSURL(string:"itms-apps://itunes.apple.com/app/id\(appIdString)")!
-  }
-  
-  class var contactURL: NSURL {
-    return NSURL(string: "https://twitter.com/TrickyCircle")!
   }
   
   class var bundleIdentifier: String {
