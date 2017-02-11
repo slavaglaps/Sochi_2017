@@ -14,7 +14,7 @@ extension UIViewController {
   }
   
   func addMenuButton() {
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "img_icon_menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.openMenuButtonAction(_:)))
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "img_icon_menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.openMenuButtonAction(_:)))
   }
   
   func openMenuButtonAction(_ sender: UIBarButtonItem) {

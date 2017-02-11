@@ -28,8 +28,8 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
     }
   }
   
-  
-  var menuItems: [MenuListItem] = [.schedule, .results, .news, .broadcast, .quest, .objects, .messenger, .cism, .military]
+  // .broadcast
+  var menuItems: [MenuListItem] = [.schedule, .results, .news, .quest, .objects, .messenger, .cism, .military]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -213,14 +213,14 @@ extension MenuViewController {
   
   func showDocument() {
     
-    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
-    
+//    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
+//    
 //    return
 //    
-//    let webController = ViewControllersFactory.webViewController
-//    webController.fileName = "test"
-//    RouterController.shared.baseNavigationController.viewControllers = [webController]
-//    self.dismiss(animated: true, completion: nil)
+    let webController = ViewControllersFactory.webViewController
+    webController.fileName = "CISM"
+    RouterController.shared.baseNavigationController.viewControllers = [webController]
+    self.dismiss(animated: true, completion: nil)
   }
   
   func openUrl(string: String) {
