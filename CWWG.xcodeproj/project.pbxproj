@@ -37,7 +37,6 @@
 		9F54929E1E392FD8004FC272 /* RealmExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F54929B1E392FD8004FC272 /* RealmExtension.swift */; };
 		9F5492A11E3937AC004FC272 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A01E3937AC004FC272 /* NewsEntity.swift */; };
 		9F5492A31E3937C0004FC272 /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5492A21E3937C0004FC272 /* SettingsEntity.swift */; };
-		9F5A064F1E4F02FC005E343B /* CISM.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A064E1E4F02FC005E343B /* CISM.pdf */; };
 		9F5BB9301E4117E6007CBE28 /* OpenInButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */; };
 		9F5BB9531E41EDB4007CBE28 /* Objects-ru-RU.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F5BB9521E41EDB4007CBE28 /* Objects-ru-RU.json */; };
 		9F5BB95C1E422A8D007CBE28 /* Objects-en-EN.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F5BB95B1E422A8D007CBE28 /* Objects-en-EN.json */; };
@@ -51,7 +50,6 @@
 		9F64CB921E377BB50038FB29 /* PushNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */; };
 		9F64CB941E377CA00038FB29 /* NetworkRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */; };
 		9F64CB971E377DA80038FB29 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F64CB961E377DA80038FB29 /* AppConfiguration.swift */; };
-		9F74F87F1E4CD8970003E6C9 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9F74F87E1E4CD8970003E6C9 /* test.pdf */; };
 		9F74F8831E4CDDAC0003E6C9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74F8821E4CDDAC0003E6C9 /* WebViewViewController.swift */; };
 		9F74F8851E4CEAAE0003E6C9 /* AlertViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F74F8841E4CEAAE0003E6C9 /* AlertViewHelper.swift */; };
 		9F7FBEC61E38007E0004BF69 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F7FBEC81E38007E0004BF69 /* Localizable.strings */; };
@@ -86,6 +84,8 @@
 		9FDEEC791E3E15A600A2C368 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEEC781E3E15A600A2C368 /* MenuListView.swift */; };
 		9FDEEC7B1E3E213400A2C368 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */; };
 		9FEEE2331E48C110000353FD /* PlaceholderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEE2321E48C110000353FD /* PlaceholderLabel.swift */; };
+		9FF24A8D1E521FF9009262A3 /* CISM_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */; };
+		9FF24A8E1E521FF9009262A3 /* CISM_ru.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */; };
 		9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */; };
 		9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23C1E37870500669B68 /* Lato-Black.ttf */; };
 		9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */; };
@@ -147,7 +147,6 @@
 		9F54929B1E392FD8004FC272 /* RealmExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmExtension.swift; sourceTree = "<group>"; };
 		9F5492A01E3937AC004FC272 /* NewsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
 		9F5492A21E3937C0004FC272 /* SettingsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
-		9F5A064E1E4F02FC005E343B /* CISM.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM.pdf; sourceTree = "<group>"; };
 		9F5BB92F1E4117E6007CBE28 /* OpenInButtonsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenInButtonsView.swift; sourceTree = "<group>"; };
 		9F5BB9521E41EDB4007CBE28 /* Objects-ru-RU.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Objects-ru-RU.json"; sourceTree = "<group>"; };
 		9F5BB95B1E422A8D007CBE28 /* Objects-en-EN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Objects-en-EN.json"; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 		9F64CB911E377BB50038FB29 /* PushNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationsController.swift; sourceTree = "<group>"; };
 		9F64CB931E377CA00038FB29 /* NetworkRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestsController.swift; sourceTree = "<group>"; };
 		9F64CB961E377DA80038FB29 /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		9F74F87E1E4CD8970003E6C9 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		9F74F8821E4CDDAC0003E6C9 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		9F74F8841E4CEAAE0003E6C9 /* AlertViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewHelper.swift; sourceTree = "<group>"; };
 		9F7FBEC91E38007F0004BF69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -201,6 +199,8 @@
 		9FDEEC781E3E15A600A2C368 /* MenuListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		9FDEEC7A1E3E213400A2C368 /* MenuListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		9FEEE2321E48C110000353FD /* PlaceholderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderLabel.swift; sourceTree = "<group>"; };
+		9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_en.pdf; sourceTree = "<group>"; };
+		9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_ru.pdf; sourceTree = "<group>"; };
 		9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalTransition.swift; sourceTree = "<group>"; };
 		9FFFA23C1E37870500669B68 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -425,8 +425,8 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F5A064E1E4F02FC005E343B /* CISM.pdf */,
-				9F74F87E1E4CD8970003E6C9 /* test.pdf */,
+				9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */,
+				9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */,
 				9F5BB9511E41E9FC007CBE28 /* Objects */,
 				9F1907B31E3892F10056FAFD /* Localizations */,
 				9F7FBEC81E38007E0004BF69 /* Localizable.strings */,
@@ -801,11 +801,11 @@
 				9FFFA25B1E37871B00669B68 /* Lato-Regular.ttf in Resources */,
 				9FFFA25C1E37871B00669B68 /* Lato-Semibold.ttf in Resources */,
 				9FFFA25D1E37871B00669B68 /* Lato-SemiboldItalic.ttf in Resources */,
-				9F5A064F1E4F02FC005E343B /* CISM.pdf in Resources */,
-				9F74F87F1E4CD8970003E6C9 /* test.pdf in Resources */,
+				9FF24A8E1E521FF9009262A3 /* CISM_ru.pdf in Resources */,
 				9F1907BA1E3893110056FAFD /* en-EN.txt in Resources */,
 				9FFFA25E1E37871B00669B68 /* Lato-Thin.ttf in Resources */,
 				9FFFA25F1E37871B00669B68 /* Lato-ThinItalic.ttf in Resources */,
+				9FF24A8D1E521FF9009262A3 /* CISM_en.pdf in Resources */,
 				9F85451A1E2FD60D004964F5 /* LaunchScreen.storyboard in Resources */,
 				9F028B8D1E46445D000FFB11 /* CalendarCellView.xib in Resources */,
 				9F8545171E2FD60D004964F5 /* Assets.xcassets in Resources */,

@@ -20,7 +20,7 @@ class WebViewViewController: UIViewController {
       do {
         let data = try Data(contentsOf: pdfURL)
         webView.load(data, mimeType: "application/pdf", textEncodingName:"", baseURL: pdfURL.deletingLastPathComponent())
-        webView.scalesPageToFit = true
+        // webView.scalesPageToFit = true
       }
       catch { }
     }

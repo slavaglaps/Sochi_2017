@@ -50,7 +50,7 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
       guard let result = result, let strongSelf = self else { return }
       strongSelf.weatherView.isHidden = false
       
-      writeFunction(block: { 
+      writeFunction(block: {
         SettingsEntity.value?.lastWeatherId = result.id
         SettingsEntity.value?.lastWeatherDegree = result.degree
       })
@@ -170,10 +170,10 @@ extension MenuViewController: MenuListViewDelegate {
       openMessenger()
     case .quest:
       openQuiz()
-    default:
-      showDocument()
-      //self.openUrl(string: "https://www.google.de")
-      print(index)
+    case .military:
+      showAboutMilitary()
+    case .cism:
+      showAboutCISM()
     }
   }
 }
@@ -211,14 +211,13 @@ extension MenuViewController {
     AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
   }
   
-  func showDocument() {
-    
-//    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
-//    
-//    return
-//    
+  func showAboutMilitary() {
+    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
+  }
+  
+  func showAboutCISM() {
     let webController = ViewControllersFactory.webViewController
-    webController.fileName = "CISM"
+    webController.fileName = "CISM_\(LocalizationController.currentLocalization.serverString)"
     RouterController.shared.baseNavigationController.viewControllers = [webController]
     self.dismiss(animated: true, completion: nil)
   }
