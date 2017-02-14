@@ -15,6 +15,7 @@ class NewsEntity: Object {
   dynamic var title: String = ""
   dynamic var text: String?
   dynamic var imageURL: String?
+  dynamic var isInCurrentSession: Bool = true
   
   dynamic var dateOfCreation: Date = Date()
   

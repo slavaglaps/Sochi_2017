@@ -17,12 +17,12 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 9, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 10, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
       writeFunction(block: {
         guard let realm = defaultRealm else { return }
-        realm.delete(realm.objects(NewsEntity.self))
+        realm.objects(NewsEntity.self).setValue(false, forKey: #keyPath(NewsEntity.isInCurrentSession))
       })
     }
     catch {
@@ -70,6 +70,7 @@ class DataModelController {
     newsEntity.title = json["title"].stringValue
     newsEntity.imageURL = json["photo"].string
     newsEntity.id = id
+    newsEntity.isInCurrentSession = true
     newsEntity.dateOfCreation = dateValue
     newsEntity.text = json["text"].stringValue
     

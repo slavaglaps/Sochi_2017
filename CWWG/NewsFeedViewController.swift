@@ -28,7 +28,6 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   var topCell: UITableViewCell?
   
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -60,6 +59,7 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   }
   
   var isUpdateStarted = false
+  var shouldLoadOldNewsInCount = 0
   var isUpdateOfUIStarted = false
   var shouldUpdateToOldData = true
   
@@ -72,7 +72,12 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
       return
     }
     
-    let id = inDirection == .toNew ? news?.first?.id : news?.last?.id
+    if inDirection == .toOld {
+      shouldLoadOldNewsInCount -= 1
+    }
+    
+    let onlyNewNews = defaultRealm?.objects(NewsEntity.self).filter("isInCurrentSession == true").sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    let id = inDirection == .toNew ? onlyNewNews?.first?.id : onlyNewNews?.last?.id
     
     isUpdateStarted = true
     NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10, ascending: inDirection == .toOld) { [weak self]
@@ -90,6 +95,10 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
       
       if success && isNewData == false && inDirection == .toOld {
         strongSelf.shouldUpdateToOldData = false
+      }
+      
+      if strongSelf.shouldLoadOldNewsInCount > 0 {
+        strongSelf.updateFeed(inDirection: .toOld)
       }
       
       print("Request news, success: \(success)")
@@ -146,6 +155,15 @@ extension NewsFeedViewController: UITableViewDataSource {
 }
 
 extension NewsFeedViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    let percent = CGFloat(indexPath.row) / CGFloat(tableView.numberOfRows(inSection: 0))
+    let currentNews = news![indexPath.row]
+    if percent > 0.8 || currentNews.isInCurrentSession == false {
+      shouldLoadOldNewsInCount += 1
+      updateFeed(inDirection: .toOld)
+    }
+  }
+  
   func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if let cell = cell as? NewsFeedImageTableViewCell {
       Nuke.cancelRequest(for: cell.newsImageView)
@@ -157,10 +175,10 @@ extension NewsFeedViewController: UITableViewDelegate {
     self.performSegue(withIdentifier: "Preview", sender: indexPath)
   }
   
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let percent = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height)
-    if percent > 0.8 {
-       updateFeed(inDirection: .toOld)
-    }
-  }
+//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//    let percent = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.frame.height)
+//    if percent > 0.8 {
+//       updateFeed(inDirection: .toOld)
+//    }
+//  }
 }
