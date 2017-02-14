@@ -217,7 +217,7 @@ extension MenuViewController {
   
   func showAboutCISM() {
     let webController = ViewControllersFactory.webViewController
-    webController.fileName = "CISM_\(LocalizationController.currentLocalization.serverString)"
+    webController.type = .cism
     RouterController.shared.baseNavigationController.viewControllers = [webController]
     self.dismiss(animated: true, completion: nil)
   }
