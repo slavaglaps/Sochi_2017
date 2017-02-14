@@ -22,6 +22,15 @@ class WebViewViewController: UIViewController {
         fatalError("Militart")
       }
     }
+    
+    var title: String {
+      switch self {
+      case .cism:
+        return Localizations.MenuItem.AboutCism
+      case .military:
+        return Localizations.MenuItem.AboutRfMilitary
+      }
+    }
   }
   
   @IBOutlet var webView: UIWebView!
@@ -29,6 +38,8 @@ class WebViewViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    title = type.title
     
     if let pdfURL = Bundle.main.url(forResource: type.fileName, withExtension: "pdf", subdirectory: nil, localization: nil)  {
       do {

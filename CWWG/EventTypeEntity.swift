@@ -45,6 +45,8 @@ class EventTypeEntity: Object, SelectionEntity {
       return "img_sport_1"
     case 8:
       return "img_sport_6"
+    case 9:
+      return "img_sport_8"
     default:
       return "img_sport_0"
     }
