@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 let currentURL = "http://95.213.237.126:7777/api/v1/"
+let pdfURL = URL(string: "http://95.213.237.126:7777/award/award_doc.pdf")!
 
 struct NetworkRequestsController {
   static func sendTokenToServer(tokenString: String) {

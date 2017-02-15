@@ -43,7 +43,7 @@
 "menu-item.news" = "News";
 "menu-item.schedule" = "Schedule";
 "menu-item.objects" = "Objects";
-"menu-item.results" = "Results";
+"menu-item.results" = "Sports and countries";
 "menu-item.messenger" = "Messenger";
 "menu-item.broadcast" = "Broadcast";
 "menu-item.quest" = "Quest";
@@ -71,6 +71,8 @@
 "result-search.sport" = "Sport type";
 "result-search.competition" = "Competition";
 "result-search.search" = "Search";
+
+"results.who-is" = "Страны участницы";
 
 // Schedule
 

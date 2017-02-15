@@ -29,7 +29,7 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   }
   
   // .broadcast
-  var menuItems: [MenuListItem] = [.schedule, .results, .news, .quest, .objects, .messenger, .cism, .military]
+  var menuItems: [MenuListItem] = [.schedule, .results, .objects, .military, .news, .quest, .messenger, .cism]
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -313,7 +313,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NewsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="adm-lC-rNU" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jM9-sa-2VN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jM9-sa-2VN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -784,7 +784,7 @@
                                     <constraint firstItem="DVE-Rr-afC" firstAttribute="centerX" secondItem="h5p-7d-XzU" secondAttribute="centerX" id="2Ch-b9-Fdw"/>
                                     <constraint firstItem="DVE-Rr-afC" firstAttribute="top" secondItem="h5p-7d-XzU" secondAttribute="top" id="72X-oY-cey"/>
                                     <constraint firstItem="P0l-jd-RCM" firstAttribute="centerY" secondItem="QER-Dl-cXs" secondAttribute="centerY" id="8fF-pQ-nwN"/>
-                                    <constraint firstAttribute="bottom" secondItem="ahP-2i-ifv" secondAttribute="bottom" id="DRM-hj-2gf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ahP-2i-ifv" secondAttribute="bottom" id="FoS-gN-Tqv"/>
                                     <constraint firstItem="QER-Dl-cXs" firstAttribute="centerX" secondItem="h5p-7d-XzU" secondAttribute="centerX" id="H7j-3s-A0O"/>
                                     <constraint firstItem="3yN-ec-mcJ" firstAttribute="centerY" secondItem="DVE-Rr-afC" secondAttribute="centerY" id="HuR-ZQ-Z0x"/>
                                     <constraint firstItem="ahP-2i-ifv" firstAttribute="top" secondItem="QER-Dl-cXs" secondAttribute="bottom" constant="68" id="J3F-MN-8uS"/>
@@ -798,6 +798,17 @@
                                     <constraint firstAttribute="trailing" secondItem="P0l-jd-RCM" secondAttribute="trailing" constant="70" id="v1a-Zp-FWX"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reb-dY-IGF">
+                                <rect key="frame" x="78" y="622" width="203" height="25"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Общий медальный зачет" image="img_medal_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allMedalsButtonActon:" destination="Tox-Gj-HzV" eventType="touchUpInside" id="oPD-B8-4We"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -805,12 +816,15 @@
                             <constraint firstAttribute="trailing" secondItem="8Qf-wC-bVg" secondAttribute="trailing" id="9eK-4e-2h5"/>
                             <constraint firstItem="8Qf-wC-bVg" firstAttribute="top" secondItem="IfH-dm-uTD" secondAttribute="top" id="EtK-Li-ORG"/>
                             <constraint firstItem="8Qf-wC-bVg" firstAttribute="leading" secondItem="IfH-dm-uTD" secondAttribute="leading" id="HEe-zo-6gl"/>
+                            <constraint firstItem="3nY-TL-UV6" firstAttribute="top" secondItem="reb-dY-IGF" secondAttribute="bottom" constant="20" id="HlL-f9-DbC"/>
                             <constraint firstItem="h5p-7d-XzU" firstAttribute="centerX" secondItem="IfH-dm-uTD" secondAttribute="centerX" id="NKZ-9l-qks"/>
+                            <constraint firstItem="reb-dY-IGF" firstAttribute="centerX" secondItem="IfH-dm-uTD" secondAttribute="centerX" constant="-8" id="NNS-JN-Q6K"/>
                             <constraint firstItem="3nY-TL-UV6" firstAttribute="top" secondItem="8Qf-wC-bVg" secondAttribute="bottom" id="cXP-op-57A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результаты" id="T2H-wC-W4v"/>
                     <connections>
+                        <outlet property="allMedalsButton" destination="reb-dY-IGF" id="FvE-bA-Kyf"/>
                         <outlet property="currentSportButton" destination="QER-Dl-cXs" id="8F1-Rn-MtH"/>
                         <outlet property="currentSportLabel" destination="P0l-jd-RCM" id="TKF-hL-3w5"/>
                         <outlet property="searchButton" destination="ahP-2i-ifv" id="FtP-rN-qdq"/>
@@ -1185,7 +1199,7 @@
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_sport_1" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-ph-WsQ">
-                                                    <rect key="frame" x="56" y="24" width="40" height="72"/>
+                                                    <rect key="frame" x="56" y="15" width="40" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="6j8-ci-RWA"/>
                                                     </constraints>
@@ -1677,7 +1691,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ScheduleNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o61-wx-ShQ" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ECR-kh-P84">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ECR-kh-P84">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1695,7 +1709,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ObjectsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1713,7 +1727,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ScreencastNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="mf1-d2-Oqe" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lCE-TU-jAm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lCE-TU-jAm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1752,6 +1766,7 @@
         <image name="img_icon_russian" width="38" height="38"/>
         <image name="img_language_select_background" width="375" height="667"/>
         <image name="img_map_logo" width="17" height="17"/>
+        <image name="img_medal_button" width="24" height="25"/>
         <image name="img_menu_bg" width="375" height="667"/>
         <image name="img_menu_close" width="22" height="22"/>
         <image name="img_menu_facebook" width="9" height="18"/>
@@ -1765,7 +1780,7 @@
         <image name="img_result_seach_button_bg" width="236" height="43"/>
         <image name="img_result_search_button" width="160" height="43"/>
         <image name="img_schedule_bg" width="375" height="164"/>
-        <image name="img_sport_1" width="64" height="72"/>
+        <image name="img_sport_1" width="84" height="90"/>
         <image name="img_tempalte" width="375" height="181"/>
         <image name="img_weather_8xx" width="21" height="18"/>
     </resources>

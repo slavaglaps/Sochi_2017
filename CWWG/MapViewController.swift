@@ -45,7 +45,7 @@ enum MapAppType {
     case .googleMaps:
       schemeString = "comgooglemaps://?q=\(location.coordinate.latitude),\(location.coordinate.longitude)"
     case .yandexMaps:
-      schemeString = "yandexmaps://maps.yandex.ru/?pt=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+      schemeString = "yandexmaps://maps.yandex.ru/?pt=\(location.coordinate.longitude),\(location.coordinate.latitude)"
     default:
       schemeString = "yandexnavi://build_route_on_map?lat_to=\(location.coordinate.latitude)&lon_to=\(location.coordinate.longitude)"
     }

@@ -44,7 +44,7 @@ class EventEntity: Object {
   
   static func eventDays() -> [String] {
     var result: [String] = []
-    for day in 22...28 {
+    for day in 23...27 {
       result.append("2017-02-\(day)")
     }
     return result

@@ -31,7 +31,7 @@ public struct Localizations {
     /// Base translation: About CISM
     public static var AboutCism : String { return localized(string: "menu-item.about-CISM", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Results
+    /// Base translation: Sports and countries
     public static var Results : String { return localized(string: "menu-item.results", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Broadcast
@@ -188,14 +188,17 @@ public struct Localizations {
     /// Base translation: Place
     public static var Place : String { return localized(string: "results.place", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
+    /// Base translation: Страны участницы
+    public static var WhoIs : String { return localized(string: "results.who-is", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
     /// Base translation: Country
     public static var Country : String { return localized(string: "results.country", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Scores
-    public static var Score : String { return localized(string: "results.score", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
     /// Base translation: Name
     public static var Name : String { return localized(string: "results.name", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
+    /// Base translation: Scores
+    public static var Score : String { return localized(string: "results.score", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
   }
 

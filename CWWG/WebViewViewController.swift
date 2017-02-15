@@ -13,6 +13,7 @@ class WebViewViewController: UIViewController {
   enum `Type` {
     case cism
     case military
+    case custom(url: URL, title: String)
     
     var fileName: String {
       switch self {
@@ -20,6 +21,8 @@ class WebViewViewController: UIViewController {
         return "CISM_\(LocalizationController.currentLocalization.serverString)"
       case .military:
         fatalError("Militart")
+      case .custom(_, _):
+        fatalError("Should not be reached")
       }
     }
     
@@ -29,6 +32,8 @@ class WebViewViewController: UIViewController {
         return Localizations.MenuItem.AboutCism
       case .military:
         return Localizations.MenuItem.AboutRfMilitary
+      case .custom(_, let title):
+        return title
       }
     }
   }
@@ -41,6 +46,19 @@ class WebViewViewController: UIViewController {
     
     title = type.title
     
+    switch type {
+    case .cism, .military:
+      openPdfFile()
+    case .custom(let url, _):
+      openURL(url: url)
+    }
+    
+    if navigationController?.viewControllers.count == 1 {
+      addMenuButton()
+    }
+  }
+  
+  func openPdfFile() {
     if let pdfURL = Bundle.main.url(forResource: type.fileName, withExtension: "pdf", subdirectory: nil, localization: nil)  {
       do {
         let data = try Data(contentsOf: pdfURL)
@@ -49,8 +67,11 @@ class WebViewViewController: UIViewController {
       }
       catch { }
     }
-    
-    addMenuButton()
+  }
+  
+  func openURL(url: URL) {
+    let requst = URLRequest(url: url)
+    webView.loadRequest(requst)
   }
   
 }

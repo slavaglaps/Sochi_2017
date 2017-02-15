@@ -19,6 +19,13 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   @IBOutlet weak var currentSportLabel: PlaceholderLabel!
   @IBOutlet weak var searchLabel: UILabel!
   
+  @IBOutlet var allMedalsButton: UIButton! {
+    didSet {
+      allMedalsButton.titleLabel?.font = AppFont.latoRegularFont(ofSize: 14)
+    }
+  }
+  
+  
   var events: Results<EventTypeEntity>?
   var contests: List<ContestEntity>?
   
@@ -71,6 +78,12 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     }
   }
   
+  @IBAction func allMedalsButtonActon(_ sender: UIButton) {
+    let webController = ViewControllersFactory.webViewController
+    webController.type = .custom(url: pdfURL, title: Localizations.Results.WhoIs)
+    self.navigationController?.pushViewController(webController, animated: true)
+  }
+  
   func updateLanguage() {
     title = Localizations.MenuItem.Results
     
@@ -82,6 +95,8 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     
     selectedSport = nil
     checkIfNeedToUpdateSport()
+    
+    allMedalsButton.setTitle(Localizations.Results.WhoIs, for: .normal)
   }
   
   var fieldIndex: Int = 0

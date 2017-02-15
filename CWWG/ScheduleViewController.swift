@@ -88,9 +88,9 @@ class ScheduleViewController: UIViewController, UpdateLanguageNotificationObserv
     
     _ = calendarStackView.arrangedSubviews.map({ $0.removeFromSuperview() })
     
-    for i in 0..<7 {
+    for i in 0..<5 {
       let dayOfWeek = localized(shortDayOfWeekAtIndex: i + 1)
-      let day = 22 + i
+      let day = 23 + i
       
       var image: UIImage? = nil
       if i == 0 {
