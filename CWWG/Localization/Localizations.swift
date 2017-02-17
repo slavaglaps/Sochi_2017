@@ -19,6 +19,9 @@ public struct Localizations {
 
   public struct MenuItem {
 
+    /// Base translation: Медальный зачет
+    public static var Medals : String { return localized(string: "menu-item.medals", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
+
     /// Base translation: News
     public static var News : String { return localized(string: "menu-item.news", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
@@ -36,9 +39,6 @@ public struct Localizations {
 
     /// Base translation: Broadcast
     public static var Broadcast : String { return localized(string: "menu-item.broadcast", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
-
-    /// Base translation: About Russian Military
-    public static var AboutRfMilitary : String { return localized(string: "menu-item.about-RF-military", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Objects
     public static var Objects : String { return localized(string: "menu-item.objects", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
@@ -188,7 +188,7 @@ public struct Localizations {
     /// Base translation: Place
     public static var Place : String { return localized(string: "results.place", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Страны участницы
+    /// Base translation: Country participants
     public static var WhoIs : String { return localized(string: "results.who-is", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Country

@@ -38,7 +38,7 @@ func localized(dayOfWeekAtIndex index: Int) -> String {
 }
 
 func localized(shortDayOfWeekAtIndex index: Int) -> String {
-  if let dayOfWeek = LocalizationController.shortDaysOfWeek.safeObject(atIndex: index - 1) {
+  if let dayOfWeek = LocalizationController.shortDaysOfWeek.safeObject(atIndex: (index - 1) % 7) {
     return dayOfWeek
   } else {
     assertionFailure("No such day of week")

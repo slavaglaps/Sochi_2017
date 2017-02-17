@@ -17,7 +17,7 @@ enum MenuListItem {
   case broadcast
   case quest
   case cism
-  case military
+  case medals
   
   var title: String {
     switch self {
@@ -37,8 +37,8 @@ enum MenuListItem {
       return Localizations.MenuItem.Quest
     case .cism:
       return Localizations.MenuItem.AboutCism
-    case .military:
-      return Localizations.MenuItem.AboutRfMilitary
+    case .medals:
+      return Localizations.MenuItem.Medals
     }
   }
 }

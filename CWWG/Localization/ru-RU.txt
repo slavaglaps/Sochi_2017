@@ -49,7 +49,7 @@
 "menu-item.quest" = "Квест";
 
 "menu-item.about-CISM" = "Все о CISM";
-"menu-item.about-RF-military" = "Об армии РФ";
+"menu-item.medals" = "Медальный зачет";
 
 // Objects
 

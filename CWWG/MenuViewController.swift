@@ -29,7 +29,7 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
   }
   
   // .broadcast
-  var menuItems: [MenuListItem] = [.schedule, .results, .objects, .military, .news, .quest, .messenger, .cism]
+  var menuItems: [MenuListItem] = [.schedule, .results, .objects, .medals, .news, .quest, .messenger, .cism]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -170,8 +170,8 @@ extension MenuViewController: MenuListViewDelegate {
       openMessenger()
     case .quest:
       openQuiz()
-    case .military:
-      showAboutMilitary()
+    case .medals:
+      showMedals()
     case .cism:
       showAboutCISM()
     }
@@ -211,8 +211,8 @@ extension MenuViewController {
     AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
   }
   
-  func showAboutMilitary() {
-    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 17), buttonTitle: "Ok", fromViewController: self)
+  func showMedals() {
+    openUrl(string: pdfUrl)
   }
   
   func showAboutCISM() {

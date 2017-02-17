@@ -12,15 +12,15 @@ class WebViewViewController: UIViewController {
   
   enum `Type` {
     case cism
-    case military
+    case members
     case custom(url: URL, title: String)
     
     var fileName: String {
       switch self {
       case .cism:
         return "CISM_\(LocalizationController.currentLocalization.serverString)"
-      case .military:
-        fatalError("Militart")
+      case .members:
+        return "CISM_countries_\(LocalizationController.currentLocalization.serverString)"
       case .custom(_, _):
         fatalError("Should not be reached")
       }
@@ -30,8 +30,8 @@ class WebViewViewController: UIViewController {
       switch self {
       case .cism:
         return Localizations.MenuItem.AboutCism
-      case .military:
-        return Localizations.MenuItem.AboutRfMilitary
+      case .members:
+        return Localizations.Results.WhoIs
       case .custom(_, let title):
         return title
       }
@@ -47,7 +47,7 @@ class WebViewViewController: UIViewController {
     title = type.title
     
     switch type {
-    case .cism, .military:
+    case .cism, .members:
       openPdfFile()
     case .custom(let url, _):
       openURL(url: url)

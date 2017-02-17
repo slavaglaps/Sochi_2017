@@ -80,7 +80,7 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   
   @IBAction func allMedalsButtonActon(_ sender: UIButton) {
     let webController = ViewControllersFactory.webViewController
-    webController.type = .custom(url: pdfURL, title: Localizations.Results.WhoIs)
+    webController.type = .members
     self.navigationController?.pushViewController(webController, animated: true)
   }
   

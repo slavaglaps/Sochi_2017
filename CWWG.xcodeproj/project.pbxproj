@@ -86,6 +86,8 @@
 		9FEEE2331E48C110000353FD /* PlaceholderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEEE2321E48C110000353FD /* PlaceholderLabel.swift */; };
 		9FF24A8D1E521FF9009262A3 /* CISM_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */; };
 		9FF24A8E1E521FF9009262A3 /* CISM_ru.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */; };
+		9FFBD69E1E5766E9000357E3 /* CISM_countries_en.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBD69C1E5766E9000357E3 /* CISM_countries_en.pdf */; };
+		9FFBD69F1E5766E9000357E3 /* CISM_countries_ru.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBD69D1E5766E9000357E3 /* CISM_countries_ru.pdf */; };
 		9FFFA2381E3785ED00669B68 /* CustomModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */; };
 		9FFFA24E1E37871B00669B68 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23C1E37870500669B68 /* Lato-Black.ttf */; };
 		9FFFA24F1E37871B00669B68 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */; };
@@ -201,6 +203,8 @@
 		9FEEE2321E48C110000353FD /* PlaceholderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderLabel.swift; sourceTree = "<group>"; };
 		9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_en.pdf; sourceTree = "<group>"; };
 		9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_ru.pdf; sourceTree = "<group>"; };
+		9FFBD69C1E5766E9000357E3 /* CISM_countries_en.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_countries_en.pdf; sourceTree = "<group>"; };
+		9FFBD69D1E5766E9000357E3 /* CISM_countries_ru.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CISM_countries_ru.pdf; sourceTree = "<group>"; };
 		9FFFA2371E3785ED00669B68 /* CustomModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModalTransition.swift; sourceTree = "<group>"; };
 		9FFFA23C1E37870500669B68 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		9FFFA23D1E37870500669B68 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 		9F8545211E2FD76F004964F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9FFBD69C1E5766E9000357E3 /* CISM_countries_en.pdf */,
+				9FFBD69D1E5766E9000357E3 /* CISM_countries_ru.pdf */,
 				9FF24A8B1E521FF9009262A3 /* CISM_en.pdf */,
 				9FF24A8C1E521FF9009262A3 /* CISM_ru.pdf */,
 				9F5BB9511E41E9FC007CBE28 /* Objects */,
@@ -793,8 +799,10 @@
 				9F1907BB1E3893110056FAFD /* ru-RU.txt in Resources */,
 				9FFFA2561E37871B00669B68 /* Lato-Italic.ttf in Resources */,
 				9FFFA2571E37871B00669B68 /* Lato-Light.ttf in Resources */,
+				9FFBD69F1E5766E9000357E3 /* CISM_countries_ru.pdf in Resources */,
 				9F5BB9531E41EDB4007CBE28 /* Objects-ru-RU.json in Resources */,
 				9FFFA2581E37871B00669B68 /* Lato-LightItalic.ttf in Resources */,
+				9FFBD69E1E5766E9000357E3 /* CISM_countries_en.pdf in Resources */,
 				9FFFA2591E37871B00669B68 /* Lato-Medium.ttf in Resources */,
 				9FFFA25A1E37871B00669B68 /* Lato-MediumItalic.ttf in Resources */,
 				9F7FBEC61E38007E0004BF69 /* Localizable.strings in Resources */,

@@ -49,7 +49,7 @@
 "menu-item.quest" = "Quest";
 
 "menu-item.about-CISM" = "About CISM";
-"menu-item.about-RF-military" = "About Russian Military";
+"menu-item.medals" = "Medal table";
 
 // Objects
 
@@ -72,7 +72,7 @@
 "result-search.competition" = "Competition";
 "result-search.search" = "Search";
 
-"results.who-is" = "Страны участницы";
+"results.who-is" = "Country participants";
 
 // Schedule
 
