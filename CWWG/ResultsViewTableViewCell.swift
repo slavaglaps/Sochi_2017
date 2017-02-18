@@ -15,6 +15,11 @@ class ResultsViewTableViewCell: SeparatorsTableViewCell, Reusable {
     countryImageView.image = nil
   }
   
+  override func layoutIfNeeded() {
+    super.layoutIfNeeded()
+    fashionLineView.setNeedsDisplay()
+  }
+  
   @IBOutlet weak var fashionLineView: FashionLineView! {
     didSet {
       fashionLineView.tintColor = AppColor.seperatorColor

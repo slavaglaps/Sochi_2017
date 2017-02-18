@@ -17,7 +17,7 @@ var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 10, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 11, migrationBlock: nil)
     do {
       defaultRealm = try Realm()
       writeFunction(block: {
@@ -156,6 +156,7 @@ class DataModelController {
     newsEntity.objectId = json["game_object_id"].intValue
     newsEntity.eventTypeId = json["event_id"].intValue
     newsEntity.dayString = json["day"].stringValue
+    newsEntity.contestId = json["contest_id"].intValue
     
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)

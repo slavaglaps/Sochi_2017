@@ -10,6 +10,11 @@ import UIKit
 
 class ScheduleTableViewCell: SeparatorsTableViewCell, Reusable {
   
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    fashionLineView.setNeedsDisplay()
+  }
+  
   @IBOutlet weak var timeLabelBackgroundView: UIView! {
     didSet {
       timeLabelBackgroundView.backgroundColor = AppColor.blue

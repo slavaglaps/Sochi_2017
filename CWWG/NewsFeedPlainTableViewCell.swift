@@ -12,6 +12,8 @@ class NewsFeedPlainTableViewCell: SeparatorsTableViewCell, Reusable {
   
   override func awakeFromNib() {
     super.awakeFromNib()
+    fashionLineView.setNeedsDisplay()
+    
     separatorLeadingConstraint.constant = fashionLineView.frame.width
   }
   

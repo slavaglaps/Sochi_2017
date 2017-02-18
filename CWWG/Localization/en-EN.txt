@@ -43,7 +43,7 @@
 "menu-item.news" = "News";
 "menu-item.schedule" = "Schedule";
 "menu-item.objects" = "Objects";
-"menu-item.results" = "Sports and countries";
+"menu-item.results" = "Kinds of Sports & Countries";
 "menu-item.messenger" = "Messenger";
 "menu-item.broadcast" = "Broadcast";
 "menu-item.quest" = "Quest";

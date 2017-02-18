@@ -8,6 +8,7 @@
 
 import UIKit
 import Nuke
+import RealmSwift
 
 class ResultsViewController: UIViewController {
   
@@ -19,6 +20,7 @@ class ResultsViewController: UIViewController {
   @IBOutlet weak var scroreLabel: UILabel!
   
   var results: [ContestResultEntity] = []
+  var events: Results<EventEntity>?
   
   var resultsId: Int = 0
   
@@ -39,6 +41,8 @@ class ResultsViewController: UIViewController {
     scroreLabel.text = Localizations.Results.Score
     
     fill(with: sportString, additionalInfo: currentSportString)
+    
+    events = defaultRealm?.objects(EventEntity.self).filter("contestId == \(resultsId)").sorted(byKeyPath: #keyPath(EventEntity.startDate))
     
     NetworkRequestsController.requestContestResults(byId: resultsId) { [weak self] (results) in
       self?.results = results ?? []
@@ -67,14 +71,56 @@ class ResultsViewController: UIViewController {
     label.sizeToFit()
     navigationItem.titleView = label
   }
+  
+  var isResultsEmpty: Bool {
+    return results.isEmpty
+  }
 }
 
 extension ResultsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return results.count
+    if isResultsEmpty {
+      tableView.estimatedRowHeight = 66.0
+      tableView.rowHeight = UITableViewAutomaticDimension
+      return events?.count ?? 0
+    } else {
+      tableView.rowHeight = 66
+      return results.count
+    }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    if isResultsEmpty {
+      return self.tableView(tableView, eventCellForRowAt: indexPath)
+    } else {
+      return self.tableView(tableView, resultCellForRowAt: indexPath)
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, eventCellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let event = events?.safeObject(atIndex: indexPath.row) else {
+      assertionFailure("No event at index path: \(indexPath)")
+      return UITableViewCell()
+    }
+    
+    let object = ObjectRuntimeEntityContainer.findEntity(by: event.objectId)
+    let eventType = event.eventType
+    
+    let cell = tableView.dequeueReusableCell(for: indexPath) as ScheduleTableViewCell
+    
+    cell.eventNameLabel.text = event.name
+    cell.timeLabel.text = event.timeIntervalString
+    
+    cell.updateCellPosition(at: indexPath, inside: tableView)
+    cell.setupWithPlace(nameString: object?.title ?? "")
+    
+    cell.timeLabelBackgroundView.backgroundColor = eventType.color
+    cell.iconImageView.image = UIImage(named: eventType.imageName)
+    
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, resultCellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(for: indexPath) as ResultsViewTableViewCell
     
     let result = results[indexPath.row]
@@ -90,7 +136,6 @@ extension ResultsViewController: UITableViewDataSource {
     cell.updateCellPosition(at: indexPath, inside: tableView)
     
     return cell
-    
   }
   
   func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
