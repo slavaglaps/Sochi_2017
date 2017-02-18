@@ -13,7 +13,8 @@ import SwiftyJSON
 let currentURL = "http://95.213.237.126:7777/api/v1/"
 
 var pdfUrl: String {
-  return "http://95.213.237.126:7777/award/award_doc_\(LocalizationController.currentLocalization.serverString).pdf"
+  return "http://95.213.237.126:7777/award/award_doc_ru.pdf"
+  // "http://95.213.237.126:7777/award/award_doc_\(LocalizationController.currentLocalization.serverString).pdf"
 }
 
 struct NetworkRequestsController {
@@ -170,6 +171,16 @@ struct NetworkRequestsController {
         completionBlock(true)
       } else {
         completionBlock(false)
+      }
+    }
+  }
+  
+  static func requestMedalPdfFile(completionBlock: @escaping ((Data)?) -> Void) {
+    request(pdfUrl, method: .get, parameters: [:]).responseData { (response) in
+      if let data = response.data {
+        completionBlock(data)
+      } else {
+        completionBlock(nil)
       }
     }
   }

@@ -212,7 +212,11 @@ extension MenuViewController {
   }
   
   func showMedals() {
-    openUrl(string: pdfUrl)
+    let webController = ViewControllersFactory.webViewController
+    webController.type = .medal
+    RouterController.shared.baseNavigationController.viewControllers = [webController]
+    self.dismiss(animated: true, completion: nil)
+    // openUrl(string: pdfUrl)
   }
   
   func showAboutCISM() {

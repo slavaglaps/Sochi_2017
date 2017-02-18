@@ -13,6 +13,7 @@ class WebViewViewController: UIViewController {
   enum `Type` {
     case cism
     case members
+    case medal
     case custom(url: URL, title: String)
     
     var fileName: String {
@@ -21,6 +22,8 @@ class WebViewViewController: UIViewController {
         return "CISM_\(LocalizationController.currentLocalization.serverString)"
       case .members:
         return "CISM_countries_\(LocalizationController.currentLocalization.serverString)"
+      case .medal:
+        return "CISM_medals_ru"
       case .custom(_, _):
         fatalError("Should not be reached")
       }
@@ -32,6 +35,8 @@ class WebViewViewController: UIViewController {
         return Localizations.MenuItem.AboutCism
       case .members:
         return Localizations.Results.WhoIs
+      case .medal:
+        return Localizations.MenuItem.Medals
       case .custom(_, let title):
         return title
       }
@@ -49,6 +54,8 @@ class WebViewViewController: UIViewController {
     switch type {
     case .cism, .members:
       openPdfFile()
+    case .medal:
+      openMedal()
     case .custom(let url, _):
       openURL(url: url)
     }
@@ -72,6 +79,21 @@ class WebViewViewController: UIViewController {
   func openURL(url: URL) {
     let requst = URLRequest(url: url)
     webView.loadRequest(requst)
+  }
+  
+  func openMedal() {
+    NetworkRequestsController.requestMedalPdfFile { [weak self] (data) in
+      var loadedData: Data? = nil
+      if let data = data {
+        loadedData = data
+        DataModelController.updatePdf(data: data)
+      } else {
+        loadedData = DataModelController.loadPdf()
+      }
+      if let data = loadedData {
+        self?.webView.load(data, mimeType: "application/pdf", textEncodingName: "", baseURL: URL(string: pdfUrl)!)
+      }
+    }
   }
   
 }

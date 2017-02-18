@@ -161,4 +161,14 @@ class DataModelController {
       defaultRealm?.add(newsEntity, update: true)
     })
   }
+  
+  // MARK: - Pdf
+  
+  static func updatePdf(data: Data) {
+    UserDefaults.standard.set(data, forKey: "CISM_medals_ru")
+  }
+  
+  static func loadPdf() -> Data? {
+    return UserDefaults.standard.object(forKey: "CISM_medals_ru") as? Data
+  }
 }
