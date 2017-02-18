@@ -75,6 +75,12 @@ class ResultsViewController: UIViewController {
   var isResultsEmpty: Bool {
     return results.isEmpty
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? ObjectPreviewViewController, let object = sender as? ObjectRuntimeEntity {
+      destination.object = object
+    }
+  }
 }
 
 extension ResultsViewController: UITableViewDataSource {
@@ -109,7 +115,7 @@ extension ResultsViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(for: indexPath) as ScheduleTableViewCell
     
     cell.eventNameLabel.text = event.name
-    cell.timeLabel.text = event.timeIntervalString
+    cell.timeLabel.text = event.dayString + "\n" + event.timeIntervalString
     
     cell.updateCellPosition(at: indexPath, inside: tableView)
     cell.setupWithPlace(nameString: object?.title ?? "")
@@ -144,3 +150,22 @@ extension ResultsViewController: UITableViewDataSource {
     }
   }
 }
+
+
+extension ResultsViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    
+    guard isResultsEmpty else {
+      return
+    }
+    
+    guard let event = events?.safeObject(atIndex: indexPath.row) else { return }
+    let object = ObjectRuntimeEntityContainer.findEntity(by: event.objectId)
+    
+    if let object = object {
+      self.performSegue(withIdentifier: "Object", sender: object)
+    }
+  }
+}
+

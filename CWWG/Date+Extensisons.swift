@@ -25,7 +25,7 @@ extension Date {
     return dateFormatter.string(from: self)
   }
   
-  // 01:30 om or 13:30
+  // 01:30 am or 13:30
   var hoursAndMinutes: String {
     let dateFormatter = DateFormatter()
     if Date.using12hClockFormat {
@@ -35,6 +35,12 @@ extension Date {
       dateFormatter.dateFormat = "HH:mm"
       return dateFormatter.string(from: self)
     }
+  }
+  
+  var dateString: String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    return dateFormatter.string(from: self)
   }
   
   static var using12hClockFormat: Bool {

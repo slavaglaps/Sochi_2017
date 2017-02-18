@@ -799,10 +799,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reb-dY-IGF">
-                                <rect key="frame" x="78" y="622" width="203" height="25"/>
+                                <rect key="frame" x="77.5" y="622" width="204" height="25"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="4" maxY="0.0"/>
-                                <state key="normal" title="Общий медальный зачет" image="img_medal_button">
+                                <state key="normal" title="Общий медальный зачет" image="img_countries_button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -938,7 +938,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rUt-Lu-yNO" id="Z6g-o4-ElI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gt4-Le-3Ai" customClass="FashionLineView" customModule="CWWG" customModuleProvider="target">
@@ -958,7 +958,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-Lh-vxh">
                                                             <rect key="frame" x="0.0" y="0.0" width="62" height="32.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-bI-jD8">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaX-bI-jD8">
                                                                     <rect key="frame" x="10" y="6" width="42" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -976,13 +976,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-Re-Uyl">
                                                             <rect key="frame" x="0.0" y="40.5" width="239" height="44.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igu-wN-NGn">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label Label Label Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igu-wN-NGn">
                                                                     <rect key="frame" x="0.0" y="0.0" width="239" height="20"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-HE-Ece">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-HE-Ece">
                                                                     <rect key="frame" x="0.0" y="24" width="239" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -1204,6 +1204,7 @@
                         <outlet property="placeLabel" destination="m42-8i-MGr" id="Yyn-H6-RYn"/>
                         <outlet property="scroreLabel" destination="NyH-VS-MjF" id="0xI-vi-09g"/>
                         <outlet property="tableView" destination="XvK-hn-KmM" id="E6q-1c-56T"/>
+                        <segue destination="CZp-Bm-c6u" kind="show" identifier="Object" id="cer-Tl-9l8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xe-o6-YpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1413,7 +1414,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_object_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jAT-5j-z7Z">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQB-bu-wPW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQB-bu-wPW">
                                                     <rect key="frame" x="20" y="34" width="335" height="29"/>
                                                     <string key="text">Многофункциональная арена
 «ледяной куб»</string>
@@ -1421,7 +1422,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что проходит: Церемония открытия / закрытия Игр" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-TC-vjI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Что проходит: Церемония открытия / закрытия Игр" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiS-TC-vjI">
                                                     <rect key="frame" x="20" y="80" width="335" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1804,7 +1805,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ObjectsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="KH7-Rp-I6x" customClass="NavigationViewController" customModule="CWWG" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h7l-na-Emm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h7l-na-Emm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1856,12 +1857,12 @@
     </scenes>
     <resources>
         <image name="img_btn_dark_selection" width="216" height="44"/>
+        <image name="img_countries_button" width="25" height="25"/>
         <image name="img_icon_clock" width="14" height="14"/>
         <image name="img_icon_english" width="38" height="38"/>
         <image name="img_icon_russian" width="38" height="38"/>
         <image name="img_language_select_background" width="375" height="667"/>
         <image name="img_map_logo" width="17" height="17"/>
-        <image name="img_medal_button" width="24" height="25"/>
         <image name="img_menu_bg" width="375" height="667"/>
         <image name="img_menu_close" width="22" height="22"/>
         <image name="img_menu_facebook" width="9" height="18"/>
