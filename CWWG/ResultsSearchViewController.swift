@@ -70,7 +70,7 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   func checkIfNeedToUpdateSport() {
     if events?.isEmpty == true {
       isSportActive = false
-      NetworkRequestsController.requestEventsTypes { [weak self] (success) in
+      NetworkRequestsController.requestEvents { [weak self] (success) in
         if success && self?.events?.isEmpty == false {
           self?.isSportActive = true
         }

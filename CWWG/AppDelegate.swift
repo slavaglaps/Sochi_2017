@@ -41,13 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.makeKeyAndVisible()
     
     if LocalizationController.isLocalizationWasSelected {
-      window?.rootViewController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.scheduleViewController)
-      RouterController.shared.baseNavigationController = window?.rootViewController as! UINavigationController
+      makeMenuRootViewController()
     } else {
       window?.rootViewController = ViewControllersFactory.selectLanguageController
+      window?.makeKeyAndVisible()
     }
     
     return true
@@ -68,11 +67,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func showNewsViewControllerAsRootViewController() {
-    let newsViewControllerWithNavigation = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.newsViewController)
-    RouterController.shared.baseNavigationController = newsViewControllerWithNavigation
     UIView.transition(with: self.window!, duration: 0.35, options: UIViewAnimationOptions.transitionFlipFromRight, animations: {
-      self.window?.rootViewController = newsViewControllerWithNavigation
+      self.makeMenuRootViewController()
     }, completion: nil)
+  }
+  
+  func makeMenuRootViewController() {
+    let navgationController = ViewControllersFactory.baseNavigationController(withRootViewController: ViewControllersFactory.scheduleViewController)
+    
+    let menu = ViewControllersFactory.menuViewController
+    
+    window?.rootViewController = navgationController
+    window?.makeKeyAndVisible()
+    
+    navgationController.view.addSubview(menu.view)
+    OperationQueue.main.addOperation({
+      navgationController.present(menu, animated: false, completion: nil)
+    })
+    
+    RouterController.shared.baseNavigationController = navgationController
   }
 }
 

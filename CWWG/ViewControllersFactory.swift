@@ -9,6 +9,17 @@
 import UIKit
 
 struct ViewControllersFactory {
+  
+  static func baseViewController(withRootViewController rootViewController: UIViewController) -> UIViewController {
+    let viewController = UIViewController()
+    
+    viewController.view.addSubview(rootViewController.view)
+    viewController.addChildViewController(rootViewController)
+    rootViewController.willMove(toParentViewController: viewController)
+    
+    return viewController
+  }
+  
   static func baseNavigationController(withRootViewController rootViewController: UIViewController) -> NavigationViewController {
     return NavigationViewController(rootViewController: rootViewController)
   }
