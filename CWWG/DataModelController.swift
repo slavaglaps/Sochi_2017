@@ -13,32 +13,37 @@ import SwiftyJSON
 typealias CompletionBlock = (_ success: Bool) -> ()
 typealias CompletionBlockForData = (_ success: Bool, _ newData: Bool) -> ()
 
+var commonRealm: Realm?
 var defaultRealm: Realm?
 
 class DataModelController {
   static func setup() {
-    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 11, migrationBlock: nil)
+    Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 12, migrationBlock: nil)
     do {
-      defaultRealm = try Realm()
+      commonRealm = try Realm()
+      switchDatabase(localization: LocalizationController.currentLocalization)
       writeFunction(block: {
         guard let realm = defaultRealm else { return }
         realm.objects(NewsEntity.self).setValue(false, forKey: #keyPath(NewsEntity.isInCurrentSession))
       })
     }
     catch {
-      assertionFailure("Default realm init error: \(error)")
+      assertionFailure("Common realm init error: \(error)")
     }
   }
   
-  static func clearLanguageModel() {
-    writeFunction(block: {
-      guard let realm = defaultRealm else { return }
-      realm.delete(realm.objects(NewsEntity.self))
-      realm.delete(realm.objects(EventEntity.self))
-      realm.delete(realm.objects(EventTypeEntity.self))
-      realm.delete(realm.objects(ObjectEntity.self))
-      realm.delete(realm.objects(ContestEntity.self))
-    })
+  static func switchDatabase(localization: LocalizationController.Localization) {
+    let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    if let documentDirectory = directory.first {
+      let finalDatabaseURL = documentDirectory.appendingPathComponent("\(localization.rawValue).db")
+      let config = Realm.Configuration(fileURL: finalDatabaseURL, schemaVersion: 1)
+      do {
+        defaultRealm = try Realm(configuration: config)
+      }
+      catch {
+        assertionFailure("Default realm init error: \(error)")
+      }
+    }
   }
   
   // MARK: - News
@@ -77,6 +82,13 @@ class DataModelController {
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })
+    
+    // Updating news description
+    if (newsEntity.text ?? "").isEmpty {
+      NetworkRequestsController.requestNewsInfo(id: id, completionBlock: { (success) in
+        
+      })
+    }
   }
   
   // MARK: - Events

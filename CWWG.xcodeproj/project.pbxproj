@@ -71,6 +71,7 @@
 		9F8545431E2FD8F9004964F5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545421E2FD8F9004964F5 /* MapViewController.swift */; };
 		9F8545471E2FDD26004964F5 /* NewsRuntimeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */; };
 		9F8545491E2FDEDA004964F5 /* FashionLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8545481E2FDEDA004964F5 /* FashionLineView.swift */; };
+		9F8C74FE1E5A301800300455 /* OpenAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8C74FD1E5A301800300455 /* OpenAppsController.swift */; };
 		9F9D06CD1E478799009B9EE8 /* ResultsViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9D06CC1E478799009B9EE8 /* ResultsViewTableViewCell.swift */; };
 		9FB0287E1E48CAE000156DA1 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB0287D1E48CAE000156DA1 /* SelectionViewController.swift */; };
 		9FC1D9781E3A321000EDDA13 /* Results+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */; };
@@ -187,6 +188,7 @@
 		9F8545421E2FD8F9004964F5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9F8545461E2FDD26004964F5 /* NewsRuntimeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRuntimeEntity.swift; sourceTree = "<group>"; };
 		9F8545481E2FDEDA004964F5 /* FashionLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FashionLineView.swift; sourceTree = "<group>"; };
+		9F8C74FD1E5A301800300455 /* OpenAppsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAppsController.swift; sourceTree = "<group>"; };
 		9F9D06CC1E478799009B9EE8 /* ResultsViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewTableViewCell.swift; sourceTree = "<group>"; };
 		9FB0287D1E48CAE000156DA1 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		9FC1D9771E3A321000EDDA13 /* Results+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Results+Extensions.swift"; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				9FFFA2621E378D9B00669B68 /* AppearanceController.swift */,
 				9F176DD01E37C295006082EA /* ViewControllersFactory.swift */,
 				9F176DD21E37C3B1006082EA /* RouterController.swift */,
+				9F8C74FD1E5A301800300455 /* OpenAppsController.swift */,
 				9F1907BE1E3894310056FAFD /* Localization */,
 			);
 			name = Controllers;
@@ -875,6 +878,7 @@
 				9F5CF6191E3F6584001EECB9 /* Color+Extensions.swift in Sources */,
 				9FD765DA1E31721700E1375F /* UITableView+Reusable.swift in Sources */,
 				9F85452D1E2FD846004964F5 /* NewsPreviewViewController.swift in Sources */,
+				9F8C74FE1E5A301800300455 /* OpenAppsController.swift in Sources */,
 				9FFFA26B1E37917000669B68 /* Image+Extensions.swift in Sources */,
 				9F7FBECC1E38017B0004BF69 /* LocalizationController.swift in Sources */,
 				9F54929C1E392FD8004FC272 /* DataModelController.swift in Sources */,

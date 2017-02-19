@@ -50,10 +50,10 @@ class MenuViewController: UIViewController, UpdateLanguageNotificationObserver {
       guard let result = result, let strongSelf = self else { return }
       strongSelf.weatherView.isHidden = false
       
-      writeFunction(block: {
+      writeFunction(realm: commonRealm) {
         SettingsEntity.value?.lastWeatherId = result.id
         SettingsEntity.value?.lastWeatherDegree = result.degree
-      })
+      }
       
       strongSelf.updateWeather()
     }
@@ -204,11 +204,11 @@ extension MenuViewController {
   }
   
   func openMessenger() {
-    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
+    OpenAppsController.open(app: .messenger)
   }
   
   func openQuiz() {
-    AlertViewHelper.showAlertView(with: "", message: Localizations.Debug.ThisPartWouldWork(value1: 21), buttonTitle: "Ok", fromViewController: self)
+    OpenAppsController.open(app: .quiz)
   }
   
   func showMedals() {

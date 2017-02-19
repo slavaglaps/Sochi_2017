@@ -23,28 +23,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>comgooglemaps</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>yandexmaps</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>yandexnavi</string>
+				<string>cwwg</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>35</string>
+	<string>37</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -64,6 +48,8 @@
 		<string>comgooglemaps</string>
 		<string>yandexmaps</string>
 		<string>yandexnavi</string>
+		<string>cwwgmessenger</string>
+		<string>cwwgquiz</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

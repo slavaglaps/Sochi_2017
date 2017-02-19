@@ -21,7 +21,7 @@ struct PushNotificationsController {
   }
   
   static func registerNotification(withTokenString tokenString: String) {
-    writeFunction {
+    writeFunction(realm: commonRealm) {
       SettingsEntity.value?.deviceTokenString = tokenString
     }
     NetworkRequestsController.sendTokenToServer(tokenString: tokenString)

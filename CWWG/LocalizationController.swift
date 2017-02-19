@@ -83,7 +83,7 @@ struct LocalizationController {
     currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
     
-    DataModelController.clearLanguageModel()
+    DataModelController.switchDatabase(localization: localization)
     ObjectRuntimeEntityContainer.resetEntities()
     
     PushNotificationsController.updateLanguageRegistration()
@@ -156,7 +156,7 @@ struct LocalizationController {
   
   private(set) static var currentLocalization: Localization {
     set {
-      writeFunction {
+      writeFunction(realm: commonRealm) { 
         SettingsEntity.value?.selectedLocalizationString = newValue.rawValue
       }
     }

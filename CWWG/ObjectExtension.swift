@@ -15,7 +15,7 @@ protocol ObjectSingletone: class {
 
 extension ObjectSingletone where Self: Object {
   static var value: Self? {
-    guard let realm = defaultRealm else {
+    guard let realm = commonRealm else {
       return nil
     }
     
