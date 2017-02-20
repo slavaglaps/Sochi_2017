@@ -50,12 +50,12 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   func updateLanguage() {
     shouldLoadOldNewsInCount = 0
     
-    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    updateNewsDataSource()
     
     title = Localizations.MenuItem.News
     
     updateFeed(inDirection: .toNew)
-    tableView.reloadData()
+    
     
     shouldUpdateToOldData = true
   }
@@ -65,7 +65,19 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   var isUpdateOfUIStarted = false
   var shouldUpdateToOldData = true
   
+  func updateNewsDataSource() {
+    news = defaultRealm?.objects(NewsEntity.self).filter("isInCurrentSession == true").sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    
+    if (news?.count ?? 0) == 0 {
+      news = defaultRealm?.objects(NewsEntity.self).filter("isInCurrentSession == false").sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    }
+    
+    tableView.reloadData()
+  }
+  
   func updateFeed(inDirection: UpdateDirection) {
+    var inDirection = inDirection
+    
     if isUpdateStarted || isUpdateOfUIStarted {
       return
     }
@@ -78,8 +90,12 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
       shouldLoadOldNewsInCount -= 1
     }
     
-    let onlyNewNews = defaultRealm?.objects(NewsEntity.self).filter("isInCurrentSession == true").sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
-    let id = inDirection == .toNew ? onlyNewNews?.first?.id : onlyNewNews?.last?.id
+    let newNews = defaultRealm?.objects(NewsEntity.self).filter("isInCurrentSession == true").sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    let id = inDirection == .toNew ? newNews?.first?.id : newNews?.last?.id
+    
+    if (newNews?.count ?? 0) == 0 {
+      inDirection = .toNew
+    }
     
     isUpdateStarted = true
     NetworkRequestsController.requstNews(lastId: id ?? 0, limit: 10, ascending: inDirection == .toOld) { [weak self]
@@ -92,7 +108,7 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
       }
       
       if isNewData {
-        strongSelf.tableView.reloadData()
+        strongSelf.updateNewsDataSource()
       }
       
       if success && isNewData == false && inDirection == .toOld {
