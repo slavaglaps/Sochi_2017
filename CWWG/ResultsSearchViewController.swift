@@ -54,8 +54,7 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
     }
     
     isSportActive = true
-    events = defaultRealm?.objects(EventTypeEntity.self)
-    
+
     addMenuButton()
     NotificationCenter.default.addLanguageChangeObserver(observer: self)
     
@@ -85,6 +84,8 @@ class ResultsSearchViewController: UIViewController, UpdateLanguageNotificationO
   }
   
   func updateLanguage() {
+    events = defaultRealm?.objects(EventTypeEntity.self)
+    
     title = Localizations.MenuItem.Results
     
     sportLabel.placeholderAlpha = 0.8

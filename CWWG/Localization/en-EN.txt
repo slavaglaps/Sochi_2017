@@ -35,7 +35,7 @@
 "time-managment.now" = "Just now";
 "time-managment.in-hour" = "%i minutes ago";
 "time-managment.today" = "Today";
-"time-managment.yersteday" = "Yersterday at %@";
+"time-managment.yersteday" = "Yersterday";
 "time-managment.at" = "at";
 
 // Menu Items

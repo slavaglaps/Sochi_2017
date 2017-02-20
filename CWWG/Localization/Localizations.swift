@@ -19,7 +19,7 @@ public struct Localizations {
 
   public struct MenuItem {
 
-    /// Base translation: Медальный зачет
+    /// Base translation: Medal table
     public static var Medals : String { return localized(string: "menu-item.medals", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: News
@@ -34,7 +34,7 @@ public struct Localizations {
     /// Base translation: About CISM
     public static var AboutCism : String { return localized(string: "menu-item.about-CISM", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Sports and countries
+    /// Base translation: Kinds of Sports & Countries
     public static var Results : String { return localized(string: "menu-item.results", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
     /// Base translation: Broadcast
@@ -221,10 +221,8 @@ public struct Localizations {
     /// Base translation: Just now
     public static var Now : String { return localized(string: "time-managment.now", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
-    /// Base translation: Yersterday at %@
-    public static func Yersteday(value1 : String) -> String {
-      return String(format: localized(string: "time-managment.yersteday", tableName: nil, bundle: Bundle.main, value: "", comment: ""), value1)
-    }
+    /// Base translation: Yersterday
+    public static var Yersteday : String { return localized(string: "time-managment.yersteday", tableName: nil, bundle: Bundle.main, value: "", comment: "") }
 
   }
 

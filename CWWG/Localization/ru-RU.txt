@@ -35,7 +35,7 @@
 "time-managment.now" = "Только что";
 "time-managment.in-hour" = "%i минут назад";
 "time-managment.today" = "Сегодня";
-"time-managment.yersteday" = "Вчера в %@";
+"time-managment.yersteday" = "Вчера";
 "time-managment.at" = "в";
 
 // Menu Items

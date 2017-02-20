@@ -22,6 +22,7 @@ class DataModelController {
     do {
       commonRealm = try Realm()
       switchDatabase(localization: LocalizationController.currentLocalization)
+      
       writeFunction(block: {
         guard let realm = defaultRealm else { return }
         realm.objects(NewsEntity.self).setValue(false, forKey: #keyPath(NewsEntity.isInCurrentSession))
@@ -38,6 +39,12 @@ class DataModelController {
       let finalDatabaseURL = documentDirectory.appendingPathComponent("\(localization.rawValue).db")
       let config = Realm.Configuration(fileURL: finalDatabaseURL, schemaVersion: 1)
       do {
+        
+        writeFunction(block: {
+          guard let realm = defaultRealm else { return }
+          realm.objects(NewsEntity.self).setValue(false, forKey: #keyPath(NewsEntity.isInCurrentSession))
+        })
+        
         defaultRealm = try Realm(configuration: config)
       }
       catch {
@@ -95,7 +102,7 @@ class DataModelController {
   
   static func processEventTypes(json: JSON) {
     
-    if (json["errors"].bool ?? true) == true {
+    if !isSuccess(json: json) {
       return
     }
     
@@ -147,6 +154,17 @@ class DataModelController {
   }
   
   static func processEvents(json: JSON) {
+    
+    if json.arrayValue.count == 0 {
+      return
+    }
+    
+    if let realm = defaultRealm {
+      writeFunction {
+        realm.delete(realm.objects(EventEntity.self))
+      }
+    }
+    
     for daysInfo in json.arrayValue {
       for itemInfo in daysInfo["items"].arrayValue {
         let id = itemInfo["id"].intValue
@@ -173,6 +191,13 @@ class DataModelController {
     writeFunction(block: {
       defaultRealm?.add(newsEntity, update: true)
     })
+  }
+  
+  private static func isSuccess(json: JSON) -> Bool {
+    if let value = json["errors"].bool {
+      return !value
+    }
+    return false
   }
   
   // MARK: - Pdf

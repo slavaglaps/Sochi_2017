@@ -36,8 +36,6 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
     tableView.estimatedRowHeight = 181
     tableView.rowHeight = UITableViewAutomaticDimension
     
-    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
-    
     refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(NewsFeedViewController.refreshFeed), for: .valueChanged)
     tableView.addSubview(refreshControl)
@@ -50,6 +48,10 @@ class NewsFeedViewController: UIViewController, UpdateLanguageNotificationObserv
   }
   
   func updateLanguage() {
+    shouldLoadOldNewsInCount = 0
+    
+    news = defaultRealm?.objects(NewsEntity.self).sorted(byKeyPath: #keyPath(NewsEntity.dateOfCreation), ascending: false)
+    
     title = Localizations.MenuItem.News
     
     updateFeed(inDirection: .toNew)

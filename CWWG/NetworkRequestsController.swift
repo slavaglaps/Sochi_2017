@@ -30,6 +30,8 @@ struct NetworkRequestsController {
   
   static func requstNews(lastId: Int = 0, limit: Int = 20, ascending: Bool, completionBlock: @escaping CompletionBlockForData) {
     
+    let langage = LocalizationController.currentLocalization
+    
     let url = stringURLFromPostfix(string: "news")
     var body = ["pivot": lastId,
                 "limit": limit,
@@ -39,6 +41,11 @@ struct NetworkRequestsController {
     request(url, method: .get, parameters: body).responseJSON { (data) in
       if let data = data.data {
         let json = JSON(data: data)
+        
+        if langage != LocalizationController.currentLocalization {
+          return
+        }
+        
         DataModelController.processNewsFromServer(json: json["news"], completionBlock: completionBlock)
       } else {
         completionBlock(false, false)
@@ -50,10 +57,17 @@ struct NetworkRequestsController {
   // MARK: - News
   
   static func requestNewsInfo(id: Int, completionBlock: @escaping CompletionBlock) {
+    let langage = LocalizationController.currentLocalization
+    
     let url = stringURLFromPostfix(string: "news/\(id)")
     request(url, method: .get, parameters: nil).responseJSON { (data) in
       if let data = data.data {
         let json = JSON(data: data)
+        
+        if langage != LocalizationController.currentLocalization {
+          return
+        }
+        
         DataModelController.updateNews(id: id, json: json["news"], completionBlock: completionBlock)
       } else {
         completionBlock(false)

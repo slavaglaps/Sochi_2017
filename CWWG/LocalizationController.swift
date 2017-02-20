@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 // cd $BASE_PATH/CWWG/Localization
 // swift LaurineGenerator.swift -i en-EN.txt -c -o Localizations.swift
@@ -80,6 +81,12 @@ struct LocalizationController {
   }
   
   static func select(localization: Localization) {
+    Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+      sessionDataTask.forEach { $0.cancel() }
+      uploadData.forEach { $0.cancel() }
+      downloadData.forEach { $0.cancel() }
+    }
+    
     currentLocalization = localization
     loadLocalizationInMemory(localization: localization)
     

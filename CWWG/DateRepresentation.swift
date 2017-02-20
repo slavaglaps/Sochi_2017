@@ -42,22 +42,20 @@ struct DateRepresentation {
       let hoursDelta = abs(todayRepresentation.hour - dateRepresentation.hour)
       let minutesDelta = abs(todayRepresentation.minute - dateRepresentation.minute)
       
-      let time: String = date.hoursAndMinutes
-      
       if todayRepresentation.year != dateRepresentation.year {
         representationString = "\(day) \(month), \(dateRepresentation.year)"
       } else if todayRepresentation.month != dateRepresentation.month {
         representationString = "\(day) \(month)"
       } else if dayDeltaInOneMonth > 7 {
-        representationString = "\(day) \(month) \(Localizations.TimeManagment.At) \(time)"
+        representationString = "\(day) \(month)"
       } else if dayDeltaInOneMonth > 1 {
         let dayOfWeek = date.dayOfWeek
         let dayOfWeekString = localized(dayOfWeekAtIndex: dayOfWeek)
-        representationString = "\(dayOfWeekString) \(Localizations.TimeManagment.At) \(time)"
+        representationString = "\(dayOfWeekString)"
       } else if dayDeltaInOneMonth > 0 {
-        representationString = Localizations.TimeManagment.Yersteday(value1: time)
+        representationString = Localizations.TimeManagment.Yersteday
       } else if hoursDelta > 0 {
-        representationString = "\(Localizations.TimeManagment.Today) \(Localizations.TimeManagment.At) \(time)"
+        representationString = "\(Localizations.TimeManagment.Today)"
       } else if minutesDelta > 0 {
         representationString = Localizations.TimeManagment.InHour(value1: minutesDelta)
       } else {
